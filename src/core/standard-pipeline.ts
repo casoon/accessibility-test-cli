@@ -1,7 +1,7 @@
 import { SitemapParser } from '../parsers';
 import { AccessibilityChecker } from './accessibility-checker';
 import { OutputGenerator } from '../generators';
-import { DetailedReportGenerator } from '../reports';
+import { DetailedReportGenerator, PerformanceReportGenerator } from '../reports';
 import { TestOptions, TestSummary } from '../types';
 import * as path from 'path';
 
@@ -14,6 +14,7 @@ export interface StandardPipelineOptions {
   includeDetails?: boolean;
   includePa11yIssues?: boolean;
   generateDetailedReport?: boolean;
+  generatePerformanceReport?: boolean;
   hideElements?: string;
   includeNotices?: boolean;
   includeWarnings?: boolean;
@@ -133,6 +134,19 @@ export class StandardPipeline {
         includeCodeExamples: true
       });
       outputFiles.push(detailedReportPath);
+    }
+    
+    // Performance-Report generieren (falls gewünscht)
+    if (options.generatePerformanceReport !== false && options.collectPerformanceMetrics) {
+      const performanceReportGenerator = new PerformanceReportGenerator();
+      const performanceReportPath = await performanceReportGenerator.generatePerformanceReport(summary, {
+        outputDir: options.outputDir,
+        includeRecommendations: true,
+        includePageDetails: true,
+        includeCoreWebVitals: true,
+        includeResourceAnalysis: true
+      });
+      outputFiles.push(performanceReportPath);
     }
     
     return { summary, outputFiles };

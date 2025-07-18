@@ -41,6 +41,7 @@ program
   .option('--no-markdown', 'Disable automatic markdown output')
   .option('--output-dir <dir>', 'Output directory for markdown file', './reports')
   .option('--detailed-report', 'Generate detailed error report for automated fixes')
+  .option('--performance-report', 'Generate performance report with PageSpeed/Lightspeed analysis')
   .action(async (sitemapUrl, options) => {
     console.log('🚀 Starting Accessibility Test...');
     console.log(`📄 Sitemap: ${sitemapUrl}`);
@@ -49,13 +50,14 @@ program
     let maxPages = options.maxPages;
     let standard = options.standard;
     let generateDetailedReport = options.detailedReport;
+    let generatePerformanceReport = options.performanceReport;
     
     // Set default standard if not provided
     if (!standard) {
       standard = 'WCAG2AA';
     }
     
-    if (!maxPages || !generateDetailedReport) {
+    if (!maxPages || !generateDetailedReport || !generatePerformanceReport) {
       const maxPagesChoices = [
         { name: '5 pages (Quick test)', value: 5 },
         { name: '10 pages (Standard test)', value: 10 },
@@ -102,11 +104,21 @@ program
         });
       }
       
+      if (!generatePerformanceReport) {
+        prompts.push({
+          type: 'confirm',
+          name: 'generatePerformanceReport',
+          message: 'Would you like to generate a performance report with PageSpeed/Lightspeed analysis?',
+          default: true
+        });
+      }
+      
       const answers = await inquirer.prompt(prompts);
       
       maxPages = maxPages || answers.maxPages;
       standard = answers.standard; // Always use the selected standard
       generateDetailedReport = generateDetailedReport || answers.generateDetailedReport;
+      generatePerformanceReport = generatePerformanceReport || answers.generatePerformanceReport;
       
       if (maxPages) maxPages = parseInt(maxPages);
     } else {
@@ -117,6 +129,7 @@ program
     console.log(`⏱️  Timeout: ${options.timeout}ms`);
     console.log(`📋 Standard: ${standard}`);
     console.log(`📋 Detailed Report: ${generateDetailedReport ? 'Yes' : 'No'}`);
+    console.log(`📋 Performance Report: ${generatePerformanceReport ? 'Yes' : 'No'}`);
     
     try {
       // Extract domain for filename
@@ -152,12 +165,13 @@ program
         includeDetails: options.includeDetails,
         includePa11yIssues: options.includePa11y,
         generateDetailedReport: generateDetailedReport,
+        generatePerformanceReport: generatePerformanceReport,
         hideElements: options.hideElements,
         includeNotices: options.includeNotices,
         includeWarnings: options.includeWarnings,
         wait: parseInt(options.pa11yWait),
         // 🆕 Neue Playwright-Optionen
-        collectPerformanceMetrics: options.performanceMetrics,
+        collectPerformanceMetrics: options.performanceMetrics || generatePerformanceReport,
         captureScreenshots: options.screenshots,
         testKeyboardNavigation: options.keyboardTests,
         testColorContrast: options.colorContrast,
@@ -195,6 +209,8 @@ program
             const filename = path.basename(file);
             if (filename.includes('detailed-errors')) {
               console.log(`   📋 Detailed Error Report: ${file}`);
+            } else if (filename.includes('performance-report')) {
+              console.log(`   📊 Performance Report: ${file}`);
             } else {
               console.log(`   📄 Markdown Report: ${file}`);
             }
@@ -222,6 +238,8 @@ program
             const filename = path.basename(file);
             if (filename.includes('detailed-errors')) {
               console.log(`   📋 Detailed Error Report: ${file}`);
+            } else if (filename.includes('performance-report')) {
+              console.log(`   📊 Performance Report: ${file}`);
             }
           });
         }
