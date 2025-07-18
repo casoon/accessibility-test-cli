@@ -18,7 +18,7 @@ Optionen:
   --timeout <number>       Timeout in Millisekunden (Standard: 10000)
   --pa11y-standard <std>   pa11y Standard (WCAG2A|WCAG2AA|WCAG2AAA|Section508)
   --output-dir <dir>       Ausgabeverzeichnis (Standard: ./accessibility-reports)
-  --quick                  Schnelle Pipeline nur mit JSON-Output
+  --quick                  Schnelle Pipeline nur mit Markdown-Output
   --include-details        Detaillierte Informationen in Output-Dateien
   --include-pa11y          pa11y-Issues in Output-Dateien einschließen
 
@@ -28,10 +28,7 @@ Beispiele:
   node bin/standard-pipeline.js https://example.com/sitemap.xml --pa11y-standard WCAG2AAA
 
 Output-Dateien:
-  - JSON: Für KI-Verarbeitung (Standard)
-  - Markdown: Für Menschen lesbar
-  - CSV: Für Tabellenkalkulation
-  - HTML: Für Browser-Anzeige
+  - Markdown: Für Menschen lesbar (Standard)
 `);
     process.exit(1);
   }
@@ -63,7 +60,7 @@ Output-Dateien:
     
     if (isQuick) {
       console.log('⚡ Führe schnelle Pipeline aus...');
-      const { summary, jsonFile } = await pipeline.runQuick(options);
+      const { summary, markdownFile } = await pipeline.runQuick(options);
       
       console.log('');
       console.log('✅ Pipeline abgeschlossen!');
@@ -73,7 +70,7 @@ Output-Dateien:
       console.log(`   - Fehlgeschlagen: ${summary.failedPages}`);
       console.log(`   - Fehler: ${summary.totalErrors}`);
       console.log(`   - Warnungen: ${summary.totalWarnings}`);
-      console.log(`📄 JSON-Output: ${jsonFile}`);
+      console.log(`📄 Markdown-Output: ${markdownFile}`);
       
     } else {
       console.log('🔄 Führe vollständige Pipeline aus...');
@@ -87,8 +84,7 @@ Output-Dateien:
       console.log(`   - Fehlgeschlagen: ${summary.failedPages}`);
       console.log(`   - Fehler: ${summary.totalErrors}`);
       console.log(`   - Warnungen: ${summary.totalWarnings}`);
-      console.log(`📁 Output-Dateien:`);
-      outputFiles.forEach(file => console.log(`   - ${file}`));
+      console.log(`📁 Markdown-Output: ${outputFiles[0]}`);
     }
     
   } catch (error) {

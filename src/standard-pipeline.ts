@@ -79,18 +79,7 @@ export class StandardPipeline {
     const outputGenerator = new OutputGenerator();
     const outputFiles: string[] = [];
     
-    // JSON für KI-Verarbeitung (Standard)
-    const jsonOutputPath = path.join(outputDir, `accessibility-report-${timestamp}.json`);
-    await outputGenerator.generateOutput(summary, {
-      format: 'json',
-      outputFile: jsonOutputPath,
-      includeDetails: options.includeDetails || true,
-      includePa11yIssues: options.includePa11yIssues || true,
-      summaryOnly: false
-    });
-    outputFiles.push(jsonOutputPath);
-    
-    // Markdown für Menschen
+    // Markdown für Menschen (Standard)
     const mdOutputPath = path.join(outputDir, `accessibility-report-${timestamp}.md`);
     await outputGenerator.generateOutput(summary, {
       format: 'markdown',
@@ -101,37 +90,15 @@ export class StandardPipeline {
     });
     outputFiles.push(mdOutputPath);
     
-    // CSV für Tabellenkalkulation
-    const csvOutputPath = path.join(outputDir, `accessibility-report-${timestamp}.csv`);
-    await outputGenerator.generateOutput(summary, {
-      format: 'csv',
-      outputFile: csvOutputPath,
-      includeDetails: false,
-      includePa11yIssues: false,
-      summaryOnly: false
-    });
-    outputFiles.push(csvOutputPath);
-    
-    // HTML für Browser
-    const htmlOutputPath = path.join(outputDir, `accessibility-report-${timestamp}.html`);
-    await outputGenerator.generateOutput(summary, {
-      format: 'html',
-      outputFile: htmlOutputPath,
-      includeDetails: options.includeDetails || true,
-      includePa11yIssues: options.includePa11yIssues || false,
-      summaryOnly: false
-    });
-    outputFiles.push(htmlOutputPath);
-    
     return { summary, outputFiles };
   }
   
   /**
-   * Führt eine schnelle Pipeline nur mit JSON-Output aus
+   * Führt eine schnelle Pipeline nur mit Markdown-Output aus
    */
   async runQuick(options: StandardPipelineOptions): Promise<{
     summary: TestSummary;
-    jsonFile: string;
+    markdownFile: string;
   }> {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
     
@@ -180,18 +147,18 @@ export class StandardPipeline {
     
     await checker.cleanup();
     
-    // Nur JSON-Output generieren
+    // Nur Markdown-Output generieren
     const outputGenerator = new OutputGenerator();
-    const jsonFile = `accessibility-report-${timestamp}.json`;
+    const markdownFile = `accessibility-report-${timestamp}.md`;
     
     await outputGenerator.generateOutput(summary, {
-      format: 'json',
-      outputFile: jsonFile,
+      format: 'markdown',
+      outputFile: markdownFile,
       includeDetails: true,
-      includePa11yIssues: true,
+      includePa11yIssues: false,
       summaryOnly: false
     });
     
-    return { summary, jsonFile };
+    return { summary, markdownFile };
   }
 } 

@@ -20,10 +20,10 @@ npm link
 ### Standard Pipeline (Empfohlen)
 
 ```bash
-# Vollständige Pipeline mit allen Output-Formaten
+# Vollständige Pipeline mit Markdown-Output
 node bin/standard-pipeline.js https://example.com/sitemap.xml
 
-# Schnelle Pipeline nur mit JSON-Output für KI
+# Schnelle Pipeline nur mit Markdown-Output
 node bin/standard-pipeline.js https://example.com/sitemap.xml --quick
 
 # Mit benutzerdefinierten Optionen
@@ -98,62 +98,38 @@ The tool performs comprehensive accessibility checks using both Playwright and p
 
 ### Standard Pipeline Output
 
-Die Standard-Pipeline generiert automatisch **KI-freundliche Output-Dateien**:
-
-#### **JSON (Für KI-Verarbeitung)**
-```json
-{
-  "metadata": {
-    "timestamp": "2024-01-15T10:30:00.000Z",
-    "tool": "@casoon/accessibility-test-cli",
-    "version": "1.0.1",
-    "totalPages": 113,
-    "testedPages": 20,
-    "passedPages": 18,
-    "failedPages": 2,
-    "successRate": "90.00%"
-  },
-  "summary": {
-    "overall": "FAILED",
-    "score": 90,
-    "criticalIssues": 5,
-    "warnings": 12,
-    "averageLoadTime": 1200
-  },
-  "pages": [
-    {
-      "url": "https://example.com/",
-      "title": "Homepage",
-      "status": "PASSED",
-      "loadTime": 1200,
-      "errors": 0,
-      "warnings": 2,
-      "issues": {
-        "imagesWithoutAlt": 1,
-        "buttonsWithoutLabel": 1,
-        "headingsCount": 5
-      }
-    }
-  ],
-  "recommendations": [
-    "Fix 5 critical accessibility errors to meet WCAG standards.",
-    "Address 12 accessibility warnings to improve user experience."
-  ]
-}
-```
+Die Standard-Pipeline generiert automatisch **Markdown-Output-Dateien**:
 
 #### **Markdown (Für Menschen)**
+```markdown
+# Accessibility Test Report
+Generated: 2024-01-15T10:30:00.000Z
+
+## Summary
+- **Overall Status**: FAILED
+- **Success Rate**: 90.00%
+- **Score**: 90/100
+- **Critical Issues**: 5
+- **Warnings**: 12
+- **Average Load Time**: 1200ms
+
+## Page Results
+
+| URL | Title | Status | Load Time | Errors | Warnings |
+|-----|-------|--------|-----------|--------|----------|
+| https://example.com/ | Homepage | PASSED | 1200ms | 0 | 2 |
+| https://example.com/about | About | FAILED | 800ms | 1 | 0 |
+
+## Recommendations
+- Fix 5 critical accessibility errors to meet WCAG standards.
+- Address 12 accessibility warnings to improve user experience.
+```
+
+**Vorteile:**
 - Strukturierte Berichte mit Tabellen
 - Zusammenfassung und Empfehlungen
 - Einfach lesbar und teilbar
-
-#### **CSV (Für Tabellenkalkulation)**
-- Tabellarische Daten für Excel/Google Sheets
-- Einfache Filterung und Analyse
-
-#### **HTML (Für Browser)**
-- Interaktive Berichte mit Styling
-- Direkte Anzeige im Browser
+- Perfekt für Dokumentation und Berichte
 
 ### Console Output
 ```
