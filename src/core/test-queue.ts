@@ -20,6 +20,17 @@ export interface TestQueueOptions {
     pattern: string;
     priority: number;
   }>;
+  // 🆕 Parameter für Queue-Validierung
+  testParameters?: {
+    sitemapUrl: string;
+    maxPages: number;
+    pa11yStandard: string;
+    timeout: number;
+    collectPerformanceMetrics?: boolean;
+    generateDetailedReport?: boolean;
+    generatePerformanceReport?: boolean;
+    generateSeoReport?: boolean;
+  };
 }
 
 export class TestQueue {
@@ -174,7 +185,9 @@ export class TestQueue {
         queue: this.queue,
         completed: this.completed,
         failed: this.failed,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        // 🆕 Parameter mit speichern
+        testParameters: this.options.testParameters
       };
       
       fs.writeFileSync(this.dataFile, JSON.stringify(data, null, 2));
@@ -191,6 +204,17 @@ export class TestQueue {
     try {
       if (fs.existsSync(this.dataFile)) {
         const data = JSON.parse(fs.readFileSync(this.dataFile, 'utf8'));
+        
+        // 🆕 Parameter-Validierung
+        if (this.options.testParameters && data.testParameters) {
+          const isValid = this.validateParameters(data.testParameters);
+          if (!isValid) {
+            console.log(`⚠️  Queue parameters changed, creating new queue...`);
+            this.clearQueueFile();
+            return;
+          }
+        }
+        
         this.queue = data.queue || [];
         this.completed = data.completed || [];
         this.failed = data.failed || [];
@@ -206,6 +230,42 @@ export class TestQueue {
       }
     } catch (error) {
       console.error(`💥 Failed to load queue: ${error}`);
+    }
+  }
+
+  /**
+   * Parameter validieren
+   */
+  private validateParameters(savedParameters: any): boolean {
+    if (!this.options.testParameters) return false;
+    
+    const current = this.options.testParameters;
+    const saved = savedParameters;
+    
+    // Kritische Parameter vergleichen
+    return (
+      current.sitemapUrl === saved.sitemapUrl &&
+      current.maxPages === saved.maxPages &&
+      current.pa11yStandard === saved.pa11yStandard &&
+      current.timeout === saved.timeout &&
+      current.collectPerformanceMetrics === saved.collectPerformanceMetrics &&
+      current.generateDetailedReport === saved.generateDetailedReport &&
+      current.generatePerformanceReport === saved.generatePerformanceReport &&
+      current.generateSeoReport === saved.generateSeoReport
+    );
+  }
+
+  /**
+   * Queue-Datei löschen
+   */
+  private clearQueueFile(): void {
+    try {
+      if (fs.existsSync(this.dataFile)) {
+        fs.unlinkSync(this.dataFile);
+        console.log(`🗑️  Deleted invalid queue file: ${this.dataFile}`);
+      }
+    } catch (error) {
+      console.error(`💥 Failed to delete queue file: ${error}`);
     }
   }
 
@@ -246,6 +306,20 @@ export class TestQueue {
     this.completed = [];
     this.failed = [];
     this.saveQueue();
+  }
+
+  /**
+   * Queue-Datei nach erfolgreichem Abschluss löschen
+   */
+  cleanup(): void {
+    try {
+      if (fs.existsSync(this.dataFile)) {
+        fs.unlinkSync(this.dataFile);
+        console.log(`🧹 Cleaned up queue file: ${this.dataFile}`);
+      }
+    } catch (error) {
+      console.error(`💥 Failed to cleanup queue file: ${error}`);
+    }
   }
 
   /**

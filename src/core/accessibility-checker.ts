@@ -229,7 +229,18 @@ export class AccessibilityChecker {
           { pattern: '/contact', priority: 3 },
           { pattern: '/blog', priority: 4 },
           { pattern: '/products', priority: 4 }
-        ]
+        ],
+        // 🆕 Parameter für Validierung
+        testParameters: {
+          sitemapUrl: urls[0] || '', // Annahme: erste URL ist die Sitemap
+          maxPages: maxPages,
+          pa11yStandard: options.pa11yStandard || 'WCAG2AA',
+          timeout: options.timeout || 10000,
+          collectPerformanceMetrics: options.collectPerformanceMetrics,
+          generateDetailedReport: (options as any).generateDetailedReport,
+          generatePerformanceReport: (options as any).generatePerformanceReport,
+          generateSeoReport: (options as any).generateSeoReport
+        }
       });
       
       // Status der bestehenden Queue anzeigen
@@ -272,7 +283,18 @@ export class AccessibilityChecker {
           { pattern: '/contact', priority: 3 },
           { pattern: '/blog', priority: 4 },
           { pattern: '/products', priority: 4 }
-        ]
+        ],
+        // 🆕 Parameter für Validierung
+        testParameters: {
+          sitemapUrl: urls[0] || '', // Annahme: erste URL ist die Sitemap
+          maxPages: maxPages,
+          pa11yStandard: options.pa11yStandard || 'WCAG2AA',
+          timeout: options.timeout || 10000,
+          collectPerformanceMetrics: options.collectPerformanceMetrics,
+          generateDetailedReport: (options as any).generateDetailedReport,
+          generatePerformanceReport: (options as any).generatePerformanceReport,
+          generateSeoReport: (options as any).generateSeoReport
+        }
       });
 
       // URLs zur Queue hinzufügen
@@ -355,6 +377,13 @@ export class AccessibilityChecker {
     if (this.testQueue) {
       this.testQueue.stopAutoSave();
       this.testQueue.saveQueue();
+      
+      // 🆕 Queue-Datei nach erfolgreichem Abschluss löschen
+      const status = this.testQueue.getStatus();
+      if (status.pending === 0) {
+        console.log(`🧹 Cleaning up queue file after successful completion...`);
+        this.testQueue.cleanup();
+      }
     }
 
     return results;
