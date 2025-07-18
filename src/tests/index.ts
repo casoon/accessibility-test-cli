@@ -28,6 +28,9 @@ export { ValidationFormValidationTest } from './validation/validation-form-valid
 // Language tests
 export { LanguageI18nTest } from './language/language-i18n-test';
 export { LanguageTextDirectionTest } from './language/language-text-direction-test';
+export { SeoMetaTest } from './seo/seo-meta-test';
+export { SeoContentTest } from './seo/seo-content-test';
+export { SeoTechnicalTest } from './seo/seo-technical-test';
 
 // Test categories
 export const TEST_CATEGORIES = {

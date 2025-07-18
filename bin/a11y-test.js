@@ -42,6 +42,7 @@ program
   .option('--output-dir <dir>', 'Output directory for markdown file', './reports')
   .option('--detailed-report', 'Generate detailed error report for automated fixes')
   .option('--performance-report', 'Generate performance report with PageSpeed/Lightspeed analysis')
+  .option('--seo-report', 'Generate SEO report with search engine optimization analysis')
   .action(async (sitemapUrl, options) => {
     console.log('🚀 Starting Accessibility Test...');
     console.log(`📄 Sitemap: ${sitemapUrl}`);
@@ -51,13 +52,14 @@ program
     let standard = options.standard;
     let generateDetailedReport = options.detailedReport;
     let generatePerformanceReport = options.performanceReport;
+    let generateSeoReport = options.seoReport;
     
     // Set default standard if not provided
     if (!standard) {
       standard = 'WCAG2AA';
     }
     
-    if (!maxPages || !generateDetailedReport || !generatePerformanceReport) {
+    if (!maxPages || !generateDetailedReport || !generatePerformanceReport || !generateSeoReport) {
       const maxPagesChoices = [
         { name: '5 pages (Quick test)', value: 5 },
         { name: '10 pages (Standard test)', value: 10 },
@@ -113,12 +115,22 @@ program
         });
       }
       
+      if (!generateSeoReport) {
+        prompts.push({
+          type: 'confirm',
+          name: 'generateSeoReport',
+          message: 'Would you like to generate an SEO report with search engine optimization analysis?',
+          default: true
+        });
+      }
+      
       const answers = await inquirer.prompt(prompts);
       
       maxPages = maxPages || answers.maxPages;
       standard = answers.standard; // Always use the selected standard
       generateDetailedReport = generateDetailedReport || answers.generateDetailedReport;
       generatePerformanceReport = generatePerformanceReport || answers.generatePerformanceReport;
+      generateSeoReport = generateSeoReport || answers.generateSeoReport;
       
       if (maxPages) maxPages = parseInt(maxPages);
     } else {
@@ -130,6 +142,7 @@ program
     console.log(`📋 Standard: ${standard}`);
     console.log(`📋 Detailed Report: ${generateDetailedReport ? 'Yes' : 'No'}`);
     console.log(`📋 Performance Report: ${generatePerformanceReport ? 'Yes' : 'No'}`);
+    console.log(`📋 SEO Report: ${generateSeoReport ? 'Yes' : 'No'}`);
     
     try {
       // Extract domain for filename
@@ -166,6 +179,7 @@ program
         includePa11yIssues: options.includePa11y,
         generateDetailedReport: generateDetailedReport,
         generatePerformanceReport: generatePerformanceReport,
+        generateSeoReport: generateSeoReport,
         hideElements: options.hideElements,
         includeNotices: options.includeNotices,
         includeWarnings: options.includeWarnings,
@@ -211,6 +225,10 @@ program
               console.log(`   📋 Detailed Error Report: ${file}`);
             } else if (filename.includes('performance-report')) {
               console.log(`   📊 Performance Report: ${file}`);
+            } else if (filename.includes('seo-report')) {
+              console.log(`   🔍 SEO Report: ${file}`);
+            } else if (filename.includes('seo-report')) {
+              console.log(`   🔍 SEO Report: ${file}`);
             } else {
               console.log(`   📄 Markdown Report: ${file}`);
             }

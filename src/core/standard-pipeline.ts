@@ -1,7 +1,7 @@
 import { SitemapParser } from '../parsers';
 import { AccessibilityChecker } from './accessibility-checker';
 import { OutputGenerator } from '../generators';
-import { DetailedReportGenerator, PerformanceReportGenerator } from '../reports';
+import { DetailedReportGenerator, PerformanceReportGenerator, SeoReportGenerator } from '../reports';
 import { TestOptions, TestSummary } from '../types';
 import * as path from 'path';
 
@@ -15,6 +15,7 @@ export interface StandardPipelineOptions {
   includePa11yIssues?: boolean;
   generateDetailedReport?: boolean;
   generatePerformanceReport?: boolean;
+  generateSeoReport?: boolean;
   hideElements?: string;
   includeNotices?: boolean;
   includeWarnings?: boolean;
@@ -147,6 +148,19 @@ export class StandardPipeline {
         includeResourceAnalysis: true
       });
       outputFiles.push(performanceReportPath);
+    }
+    
+    // SEO-Report generieren (falls gewünscht)
+    if (options.generateSeoReport !== false) {
+      const seoReportGenerator = new SeoReportGenerator();
+      const seoReportPath = await seoReportGenerator.generateSeoReport(summary, {
+        outputDir: options.outputDir,
+        includeRecommendations: true,
+        includePageDetails: true,
+        includeTechnicalAnalysis: true,
+        includeContentAnalysis: true
+      });
+      outputFiles.push(seoReportPath);
     }
     
     return { summary, outputFiles };
