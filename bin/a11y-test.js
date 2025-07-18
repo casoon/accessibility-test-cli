@@ -47,7 +47,6 @@ program
   .option('--no-performance-report', 'Disable performance report generation')
   .option('--seo-report', 'Generate SEO report with search engine optimization analysis')
   .option('--no-seo-report', 'Disable SEO report generation')
-  .option('--interactive', 'Show interactive prompts for configuration')
   .action(async (sitemapUrl, options) => {
     console.log('🚀 Starting Accessibility Test...');
     console.log(`📄 Sitemap: ${sitemapUrl}`);
@@ -70,69 +69,88 @@ program
     if (generatePerformanceReport === undefined) generatePerformanceReport = true;
     if (generateSeoReport === undefined) generateSeoReport = true;
     
-    // Only show prompts if user explicitly wants interactive mode
-    // Since we have sensible defaults, we only show prompts if --interactive flag is set
-    const wantsInteractive = options.interactive;
+        // Show prompts for parameters that are not set via CLI
+    // Only skip prompts for parameters that are explicitly provided
+    const maxPagesChoices = [
+      { name: '5 pages (Quick test)', value: 5 },
+      { name: '10 pages (Standard test)', value: 10 },
+      { name: '20 pages (Comprehensive test)', value: 20 },
+      { name: '50 pages (Full audit)', value: 50 },
+      { name: '100 pages (Complete analysis)', value: 100 },
+      { name: 'All pages (Maximum coverage)', value: 1000 }
+    ];
     
-    if (wantsInteractive) {
-      const maxPagesChoices = [
-        { name: '5 pages (Quick test)', value: 5 },
-        { name: '10 pages (Standard test)', value: 10 },
-        { name: '20 pages (Comprehensive test)', value: 20 },
-        { name: '50 pages (Full audit)', value: 50 },
-        { name: '100 pages (Complete analysis)', value: 100 },
-        { name: 'All pages (Maximum coverage)', value: 1000 }
-      ];
-      
-      const standardChoices = [
-        { name: 'WCAG 2.0 Level A (Basic)', value: 'WCAG2A' },
-        { name: 'WCAG 2.0 Level AA (Recommended)', value: 'WCAG2AA' },
-        { name: 'WCAG 2.0 Level AAA (Strict)', value: 'WCAG2AAA' },
-        { name: 'Section 508 (US Federal)', value: 'Section508' }
-      ];
-      
-      const prompts = [
-        {
-          type: 'list',
-          name: 'maxPages',
-          message: 'How many pages would you like to test?',
-          choices: maxPagesChoices,
-          default: 20
-        },
-        {
-          type: 'list',
-          name: 'standard',
-          message: 'Which accessibility standard would you like to test against?',
-          choices: standardChoices,
-          default: standard
-        },
-        {
-          type: 'confirm',
-          name: 'generateDetailedReport',
-          message: 'Would you like to generate a detailed error report for automated fixes?',
-          default: true
-        },
-        {
-          type: 'confirm',
-          name: 'generatePerformanceReport',
-          message: 'Would you like to generate a performance report with PageSpeed/Lightspeed analysis?',
-          default: true
-        },
-        {
-          type: 'confirm',
-          name: 'generateSeoReport',
-          message: 'Would you like to generate an SEO report with search engine optimization analysis?',
-          default: true
-        }
-      ];
-      
+    const standardChoices = [
+      { name: 'WCAG 2.0 Level A (Basic)', value: 'WCAG2A' },
+      { name: 'WCAG 2.0 Level AA (Recommended)', value: 'WCAG2AA' },
+      { name: 'WCAG 2.0 Level AAA (Strict)', value: 'WCAG2AAA' },
+      { name: 'Section 508 (US Federal)', value: 'Section508' }
+    ];
+    
+    const prompts = [];
+    
+    // Only ask for maxPages if not provided via CLI
+    if (!options.maxPages) {
+      prompts.push({
+        type: 'list',
+        name: 'maxPages',
+        message: 'How many pages would you like to test?',
+        choices: maxPagesChoices,
+        default: 20
+      });
+    }
+    
+    // Only ask for standard if not provided via CLI
+    if (!options.standard) {
+      prompts.push({
+        type: 'list',
+        name: 'standard',
+        message: 'Which accessibility standard would you like to test against?',
+        choices: standardChoices,
+        default: standard
+      });
+    }
+    
+    // Only ask for detailed report if not provided via CLI
+    if (options.detailedReport === undefined && !options.noDetailedReport) {
+      prompts.push({
+        type: 'confirm',
+        name: 'generateDetailedReport',
+        message: 'Would you like to generate a detailed error report for automated fixes?',
+        default: true
+      });
+    }
+    
+    // Only ask for performance report if not provided via CLI
+    if (options.performanceReport === undefined && !options.noPerformanceReport) {
+      prompts.push({
+        type: 'confirm',
+        name: 'generatePerformanceReport',
+        message: 'Would you like to generate a performance report with PageSpeed/Lightspeed analysis?',
+        default: true
+      });
+    }
+    
+    // Only ask for SEO report if not provided via CLI
+    if (options.seoReport === undefined && !options.noSeoReport) {
+      prompts.push({
+        type: 'confirm',
+        name: 'generateSeoReport',
+        message: 'Would you like to generate an SEO report with search engine optimization analysis?',
+        default: true
+      });
+    }
+    
+    // Only show prompts if there are any to show
+    if (prompts.length > 0) {
       const answers = await inquirer.prompt(prompts);
       
-      maxPages = answers.maxPages;
-      standard = answers.standard;
-      generateDetailedReport = answers.generateDetailedReport;
-      generatePerformanceReport = answers.generatePerformanceReport;
-      generateSeoReport = answers.generateSeoReport;
+      // Update values from prompts (only for parameters that were prompted)
+      if (!options.maxPages) maxPages = answers.maxPages;
+      if (!options.standard) standard = answers.standard;
+      if (options.detailedReport === undefined && !options.noDetailedReport) generateDetailedReport = answers.generateDetailedReport;
+      if (options.performanceReport === undefined && !options.noPerformanceReport) generatePerformanceReport = answers.generatePerformanceReport;
+      if (options.seoReport === undefined && !options.noSeoReport) generateSeoReport = answers.generateSeoReport;
     }
     
     // Ensure maxPages is a number
