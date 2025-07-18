@@ -121,7 +121,7 @@ program
     try {
       // Extract domain for filename
       const domain = new URL(sitemapUrl).hostname.replace(/\./g, '-');
-      const timestamp = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
+      const timestamp = new Date().toISOString().replace(/[:.]/g, '-'); // Full timestamp for unique filenames
       const filename = `${domain}-accessibility-report-${timestamp}.md`;
       
       // Create output directory if it doesn't exist
