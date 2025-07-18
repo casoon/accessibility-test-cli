@@ -21,7 +21,7 @@ program
   .option(
     "-m, --max-pages <number>",
     "Maximale Anzahl zu testender Seiten",
-    "5",
+    "20",
   )
   .option("-t, --timeout <number>", "Timeout in Millisekunden", "10000")
   .option(
@@ -45,6 +45,11 @@ program
     "console",
   )
   .option("--output-file <file>", "Ausgabedatei")
+  .option(
+    "--pa11y-standard <standard>",
+    "pa11y Standard (WCAG2A|WCAG2AA|WCAG2AAA|Section508)",
+    "WCAG2AA"
+  )
   .action(async (sitemapUrl: string, options: any) => {
     const spinner = ora("Initialisiere Accessibility-Tests...").start();
 
@@ -87,6 +92,7 @@ program
         timeout: parseInt(options.timeout),
         waitUntil: options.waitUntil,
         verbose: options.verbose,
+        pa11yStandard: options.pa11yStandard,
       };
 
       const results = await checker.testMultiplePages(

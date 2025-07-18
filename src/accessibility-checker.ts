@@ -1,4 +1,5 @@
 import { chromium, Browser, Page } from "playwright";
+import pa11y from "pa11y";
 import { AccessibilityResult, TestOptions } from "./types";
 
 export class AccessibilityChecker {
@@ -70,6 +71,39 @@ export class AccessibilityChecker {
         .count();
       if (result.headingsCount === 0) {
         result.errors.push("No headings found");
+      }
+
+      // pa11y Accessibility-Tests durchführen
+      try {
+        const pa11yResult = await pa11y(url, {
+          timeout: options.timeout || 10000,
+          wait: 1000, // Warten nach dem Laden
+          standard: 'WCAG2AA', // WCAG 2.0 Level AA
+          hideElements: 'iframe[src*="google-analytics"], iframe[src*="doubleclick"]', // Tracking-Iframes ausblenden
+          includeNotices: true,
+          includeWarnings: true,
+        });
+
+        // pa11y-Ergebnisse in unser Format konvertieren
+        pa11yResult.issues.forEach((issue) => {
+          const message = `${issue.code}: ${issue.message}`;
+          
+          if (issue.type === 'error') {
+            result.errors.push(message);
+          } else if (issue.type === 'warning') {
+            result.warnings.push(message);
+          } else if (issue.type === 'notice') {
+            result.warnings.push(`Notice: ${message}`);
+          }
+        });
+
+        // Zusätzliche pa11y-Metriken
+        if (pa11yResult.documentTitle) {
+          result.title = pa11yResult.documentTitle;
+        }
+
+      } catch (pa11yError) {
+        result.warnings.push(`pa11y test failed: ${pa11yError}`);
       }
 
       // Prüfe auf kritische Fehler

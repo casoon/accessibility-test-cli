@@ -1,3 +1,11 @@
+export interface Pa11yIssue {
+  code: string;
+  message: string;
+  type: 'error' | 'warning' | 'notice';
+  selector?: string;
+  context?: string;
+}
+
 export interface AccessibilityResult {
   url: string;
   title: string;
@@ -8,6 +16,8 @@ export interface AccessibilityResult {
   warnings: string[];
   passed: boolean;
   duration: number;
+  pa11yIssues?: Pa11yIssue[];
+  pa11yScore?: number;
 }
 
 export interface TestOptions {
@@ -19,6 +29,7 @@ export interface TestOptions {
   verbose?: boolean;
   output?: "console" | "json" | "html";
   outputFile?: string;
+  pa11yStandard?: 'WCAG2A' | 'WCAG2AA' | 'WCAG2AAA' | 'Section508';
 }
 
 export interface SitemapUrl {

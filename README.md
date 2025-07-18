@@ -43,6 +43,9 @@ a11y-test https://example.com/sitemap.xml --verbose
 a11y-test https://example.com/sitemap.xml \
   --filter "demo,test,admin" \
   --include "blog,services"
+
+# Use different pa11y standard
+a11y-test https://example.com/sitemap.xml --pa11y-standard WCAG2AAA
 ```
 
 ## ⚙️ Options
@@ -57,15 +60,23 @@ a11y-test https://example.com/sitemap.xml \
 | `-v, --verbose` | Verbose output | `false` |
 | `-o, --output <format>` | Output format (console\|json\|html) | `console` |
 | `--output-file <file>` | Output file | - |
+| `--pa11y-standard <standard>` | pa11y Standard (WCAG2A\|WCAG2AA\|WCAG2AAA\|Section508) | `WCAG2AA` |
 
 ## 🧪 Accessibility Checks
 
-The tool performs the following accessibility checks:
+The tool performs comprehensive accessibility checks using both Playwright and pa11y:
 
+### Playwright Checks
 - **Page Title**: Checks if a title is present
 - **Alt Attributes**: Counts images without alt attribute
 - **Button Labels**: Counts buttons without aria-label
 - **Heading Hierarchy**: Checks if headings are present
+
+### pa11y WCAG Compliance Tests
+- **WCAG 2.0/2.1 Standards**: Full compliance testing (A, AA, AAA levels)
+- **Section 508**: US federal accessibility standards
+- **Detailed Issues**: Specific error codes and recommendations
+- **Context Information**: Element selectors and context for each issue
 
 ## 📊 Output
 
