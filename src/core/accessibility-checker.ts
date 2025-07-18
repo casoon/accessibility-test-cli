@@ -209,24 +209,75 @@ export class AccessibilityChecker {
     const maxPages = options.maxPages || urls.length;
     const pagesToTest = urls.slice(0, maxPages);
 
-    // TestQueue initialisieren
-    this.testQueue = new TestQueue({
-      maxRetries: 3,
-      maxConcurrent: 1,
-      saveInterval: 5000,
-      dataFile: `./test-queue-${Date.now()}.json`,
-      priorityPatterns: [
-        { pattern: '/home', priority: 1 },
-        { pattern: '/', priority: 2 },
-        { pattern: '/about', priority: 3 },
-        { pattern: '/contact', priority: 3 },
-        { pattern: '/blog', priority: 4 },
-        { pattern: '/products', priority: 4 }
-      ]
-    });
+    // Prüfen, ob eine bestehende Queue existiert
+    const existingQueueFile = this.findExistingQueueFile();
+    
+    if (existingQueueFile && !options.forceNewQueue) {
+      console.log(`🔄 Found existing queue: ${existingQueueFile}`);
+      console.log(`🔄 Resuming previous test session...`);
+      
+      // Bestehende Queue laden
+      this.testQueue = new TestQueue({
+        maxRetries: 3,
+        maxConcurrent: 1,
+        saveInterval: 5000,
+        dataFile: existingQueueFile,
+        priorityPatterns: [
+          { pattern: '/home', priority: 1 },
+          { pattern: '/', priority: 2 },
+          { pattern: '/about', priority: 3 },
+          { pattern: '/contact', priority: 3 },
+          { pattern: '/blog', priority: 4 },
+          { pattern: '/products', priority: 4 }
+        ]
+      });
+      
+      // Status der bestehenden Queue anzeigen
+      this.testQueue.showStats();
+      
+      // Prüfen, ob noch URLs zu testen sind
+      const status = this.testQueue.getStatus();
+      if (status.pending === 0) {
+        console.log(`✅ All URLs already tested! Loading results from queue...`);
+        
+        // Ergebnisse aus der Queue laden
+        const queueData = JSON.parse(fs.readFileSync(existingQueueFile, 'utf8'));
+        const completedResults = queueData.completed.map((item: any) => item.result);
+        const failedResults = queueData.failed.map((item: any) => ({
+          url: item.url,
+          title: "",
+          imagesWithoutAlt: 0,
+          buttonsWithoutLabel: 0,
+          headingsCount: 0,
+          errors: [`Test failed: ${item.error}`],
+          warnings: [],
+          passed: false,
+          duration: 0,
+        }));
+        
+        return [...completedResults, ...failedResults];
+      }
+      
+    } else {
+      // Neue Queue erstellen
+      this.testQueue = new TestQueue({
+        maxRetries: 3,
+        maxConcurrent: 1,
+        saveInterval: 5000,
+        dataFile: `./test-queue-${Date.now()}.json`,
+        priorityPatterns: [
+          { pattern: '/home', priority: 1 },
+          { pattern: '/', priority: 2 },
+          { pattern: '/about', priority: 3 },
+          { pattern: '/contact', priority: 3 },
+          { pattern: '/blog', priority: 4 },
+          { pattern: '/products', priority: 4 }
+        ]
+      });
 
-    // URLs zur Queue hinzufügen
-    this.testQueue.addUrls(pagesToTest);
+      // URLs zur Queue hinzufügen
+      this.testQueue.addUrls(pagesToTest);
+    }
     
     console.log(`🧪 Testing ${pagesToTest.length} pages using queue system...`);
     this.testQueue.showStats();
@@ -307,6 +358,26 @@ export class AccessibilityChecker {
     }
 
     return results;
+  }
+
+  /**
+   * Findet eine bestehende Queue-Datei
+   */
+  private findExistingQueueFile(): string | null {
+    try {
+      const files = fs.readdirSync('.');
+      const queueFiles = files.filter(file => 
+        file.startsWith('test-queue-') && file.endsWith('.json')
+      );
+      
+      if (queueFiles.length === 0) return null;
+      
+      // Neueste Queue-Datei verwenden
+      const latestFile = queueFiles.sort().reverse()[0];
+      return latestFile;
+    } catch (error) {
+      return null;
+    }
   }
 
   // 🆕 Erweiterte Page-Konfiguration

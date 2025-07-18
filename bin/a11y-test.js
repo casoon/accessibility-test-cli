@@ -40,6 +40,7 @@ program
   .option('--user-agent <agent>', 'Set custom user agent (default: a11y-test/1.0)')
   .option('--no-markdown', 'Disable automatic markdown output')
   .option('--output-dir <dir>', 'Output directory for markdown file', './reports')
+  .option('--force-new-queue', 'Force creation of new queue (ignore existing queue)')
   .option('--detailed-report', 'Generate detailed error report for automated fixes')
   .option('--performance-report', 'Generate performance report with PageSpeed/Lightspeed analysis')
   .option('--seo-report', 'Generate SEO report with search engine optimization analysis')
@@ -194,7 +195,9 @@ program
         blockCSS: options.blockCSS,
         mobileEmulation: options.mobileEmulation,
         viewportSize,
-        userAgent: options.userAgent
+        userAgent: options.userAgent,
+        // 🆕 Queue-Optionen
+        forceNewQueue: options.forceNewQueue
       };
       
       console.log('🧪 Running accessibility tests...');

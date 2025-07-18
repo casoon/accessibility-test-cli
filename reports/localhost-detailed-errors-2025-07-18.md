@@ -1,5 +1,5 @@
 # Detailed Accessibility Error Report
-Generated: 2025-07-18T19:54:20.489Z
+Generated: 2025-07-18T20:02:31.753Z
 Total Errors: 19
 Total Warnings: 172
 Failed Pages: 3

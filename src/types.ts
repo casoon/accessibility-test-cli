@@ -66,6 +66,8 @@ export interface TestOptions {
   mobileEmulation?: boolean;
   viewportSize?: { width: number; height: number };
   userAgent?: string;
+  // 🆕 Queue-Optionen
+  forceNewQueue?: boolean;
 }
 
 export interface SitemapUrl {
