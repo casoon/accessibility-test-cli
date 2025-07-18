@@ -28,6 +28,16 @@ program
   .option('--include-notices', 'Include pa11y notices in output')
   .option('--include-warnings', 'Include pa11y warnings in output', true)
   .option('--pa11y-wait <ms>', 'Wait time after page load for pa11y tests', '1000')
+  .option('--performance-metrics', 'Collect performance metrics')
+  .option('--screenshots', 'Capture desktop and mobile screenshots')
+  .option('--keyboard-tests', 'Test keyboard navigation')
+  .option('--color-contrast', 'Test color contrast (simplified)')
+  .option('--focus-management', 'Test focus management')
+  .option('--block-images', 'Block images for faster testing')
+  .option('--block-css', 'Block CSS for faster testing')
+  .option('--mobile-emulation', 'Enable mobile emulation')
+  .option('--viewport <size>', 'Set viewport size (e.g., 1920x1080)')
+  .option('--user-agent <agent>', 'Set custom user agent')
   .option('--no-markdown', 'Disable automatic markdown output')
   .option('--output-dir <dir>', 'Output directory for markdown file', './reports')
   .option('--detailed-report', 'Generate detailed error report for automated fixes')
@@ -105,6 +115,15 @@ program
       
       // Run standard pipeline
       const pipeline = new StandardPipeline();
+      // Parse viewport size if provided
+      let viewportSize;
+      if (options.viewport) {
+        const [width, height] = options.viewport.split('x').map(Number);
+        if (width && height) {
+          viewportSize = { width, height };
+        }
+      }
+
       const pipelineOptions = {
         sitemapUrl,
         maxPages: maxPages,
@@ -117,7 +136,18 @@ program
         hideElements: options.hideElements,
         includeNotices: options.includeNotices,
         includeWarnings: options.includeWarnings,
-        wait: parseInt(options.pa11yWait)
+        wait: parseInt(options.pa11yWait),
+        // 🆕 Neue Playwright-Optionen
+        collectPerformanceMetrics: options.performanceMetrics,
+        captureScreenshots: options.screenshots,
+        testKeyboardNavigation: options.keyboardTests,
+        testColorContrast: options.colorContrast,
+        testFocusManagement: options.focusManagement,
+        blockImages: options.blockImages,
+        blockCSS: options.blockCSS,
+        mobileEmulation: options.mobileEmulation,
+        viewportSize,
+        userAgent: options.userAgent
       };
       
       console.log('🧪 Running accessibility tests...');

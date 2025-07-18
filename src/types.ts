@@ -21,6 +21,22 @@ export interface AccessibilityResult {
   duration: number;
   pa11yIssues?: Pa11yIssue[];
   pa11yScore?: number;
+  performanceMetrics?: {
+    loadTime: number;
+    domContentLoaded: number;
+    firstPaint: number;
+    firstContentfulPaint: number;
+    largestContentfulPaint: number;
+  };
+  keyboardNavigation?: string[];
+  colorContrastIssues?: string[];
+  focusManagementIssues?: string[];
+  screenshots?: {
+    desktop?: string;
+    mobile?: string;
+  };
+  consoleErrors?: string[];
+  networkErrors?: string[];
 }
 
 export interface TestOptions {
@@ -40,6 +56,16 @@ export interface TestOptions {
   runners?: string[];
   wait?: number;
   chromeLaunchConfig?: any;
+  captureScreenshots?: boolean;
+  testKeyboardNavigation?: boolean;
+  testColorContrast?: boolean;
+  testFocusManagement?: boolean;
+  collectPerformanceMetrics?: boolean;
+  blockImages?: boolean;
+  blockCSS?: boolean;
+  mobileEmulation?: boolean;
+  viewportSize?: { width: number; height: number };
+  userAgent?: string;
 }
 
 export interface SitemapUrl {

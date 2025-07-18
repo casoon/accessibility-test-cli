@@ -119,6 +119,33 @@ a11y-test https://example.com/sitemap.xml --include-pa11y --include-details
 
 # Custom wait time for dynamic content
 a11y-test https://example.com/sitemap.xml --pa11y-wait 2000
+
+# Performance monitoring
+a11y-test https://example.com/sitemap.xml --performance-metrics
+
+# Visual testing with screenshots
+a11y-test https://example.com/sitemap.xml --screenshots
+
+# Keyboard navigation testing
+a11y-test https://example.com/sitemap.xml --keyboard-tests
+
+# Color contrast testing
+a11y-test https://example.com/sitemap.xml --color-contrast
+
+# Focus management testing
+a11y-test https://example.com/sitemap.xml --focus-management
+
+# Block resources for faster testing
+a11y-test https://example.com/sitemap.xml --block-images --block-css
+
+# Mobile emulation
+a11y-test https://example.com/sitemap.xml --mobile-emulation
+
+# Custom viewport size
+a11y-test https://example.com/sitemap.xml --viewport 1920x1080
+
+# Custom user agent
+a11y-test https://example.com/sitemap.xml --user-agent "Custom-Bot/1.0"
 ```
 
 ## ⚙️ Options
@@ -142,6 +169,16 @@ a11y-test https://example.com/sitemap.xml --pa11y-wait 2000
 | `--include-notices` | Include pa11y notices in output | `false` |
 | `--include-warnings` | Include pa11y warnings in output | `true` |
 | `--pa11y-wait <ms>` | Wait time after page load for pa11y tests | `1000` |
+| `--performance-metrics` | Collect performance metrics | `false` |
+| `--screenshots` | Capture desktop and mobile screenshots | `false` |
+| `--keyboard-tests` | Test keyboard navigation | `false` |
+| `--color-contrast` | Test color contrast (simplified) | `false` |
+| `--focus-management` | Test focus management | `false` |
+| `--block-images` | Block images for faster testing | `false` |
+| `--block-css` | Block CSS for faster testing | `false` |
+| `--mobile-emulation` | Enable mobile emulation | `false` |
+| `--viewport <size>` | Set viewport size (e.g., 1920x1080) | `1920x1080` |
+| `--user-agent <agent>` | Set custom user agent | - |
 | `--detailed-report` | Generate detailed error report for automated fixes | `false` |
 
 ## 🧪 Accessibility Checks
@@ -153,6 +190,12 @@ The tool performs comprehensive accessibility checks using both Playwright and p
 - **Alt Attributes**: Counts images without alt attribute
 - **Button Labels**: Counts buttons without aria-label
 - **Heading Hierarchy**: Checks if headings are present
+- **Performance Metrics**: Load time, FCP, LCP, and other performance indicators
+- **Keyboard Navigation**: Tests tab order and focusable elements
+- **Color Contrast**: Simplified color contrast analysis
+- **Focus Management**: Checks for proper focus indicators
+- **Screenshots**: Desktop and mobile screenshots for visual testing
+- **Network Optimization**: Block images/CSS for faster testing
 
 ### pa11y WCAG Compliance Tests
 - **WCAG 2.0/2.1 Standards**: Full compliance testing (A, AA, AAA levels)

@@ -84,7 +84,12 @@ export class OutputGenerator {
           buttonsWithoutLabel: result.buttonsWithoutLabel,
           headingsCount: result.headingsCount,
           pa11yIssues: options.includePa11yIssues ? result.pa11yIssues : undefined,
-          pa11yScore: result.pa11yScore
+          pa11yScore: result.pa11yScore,
+          performanceMetrics: result.performanceMetrics,
+          keyboardNavigation: result.keyboardNavigation,
+          colorContrastIssues: result.colorContrastIssues,
+          focusManagementIssues: result.focusManagementIssues,
+          screenshots: result.screenshots
         } : undefined,
         errorDetails: options.includeDetails ? result.errors : undefined,
         warningDetails: options.includeDetails ? result.warnings : undefined
@@ -101,11 +106,14 @@ export class OutputGenerator {
     const lines: string[] = [];
     
     // Header
-    lines.push('URL,Title,Status,LoadTime,Errors,Warnings,ImagesWithoutAlt,ButtonsWithoutLabel,HeadingsCount,Pa11yScore');
+    lines.push('URL,Title,Status,LoadTime,Errors,Warnings,ImagesWithoutAlt,ButtonsWithoutLabel,HeadingsCount,Pa11yScore,PerformanceScore,KeyboardNavigation,ColorContrastIssues,FocusIssues');
     
     // Data rows
     data.pages.forEach((page: any) => {
       const issues = page.issues || {};
+      const performanceScore = issues.performanceMetrics?.loadTime ? 
+        Math.max(0, 100 - Math.round(issues.performanceMetrics.loadTime / 100)) : 'N/A';
+      
       lines.push([
         page.url,
         `"${page.title}"`,
@@ -116,7 +124,11 @@ export class OutputGenerator {
         issues.imagesWithoutAlt || 0,
         issues.buttonsWithoutLabel || 0,
         issues.headingsCount || 0,
-        issues.pa11yScore || 'N/A'
+        issues.pa11yScore || 'N/A',
+        performanceScore,
+        issues.keyboardNavigation?.length || 0,
+        issues.colorContrastIssues?.length || 0,
+        issues.focusManagementIssues?.length || 0
       ].join(','));
     });
     
@@ -146,18 +158,49 @@ export class OutputGenerator {
       const avgPa11yScore = pagesWithPa11yScore.reduce((sum: number, page: any) => sum + page.issues.pa11yScore, 0) / pagesWithPa11yScore.length;
       lines.push(`- **Average Pa11y Score**: ${Math.round(avgPa11yScore)}/100`);
     }
+
+    // Performance Metrics if available
+    const pagesWithPerformance = data.pages.filter((page: any) => page.issues?.performanceMetrics);
+    if (pagesWithPerformance.length > 0) {
+      const avgLoadTime = pagesWithPerformance.reduce((sum: number, page: any) => sum + page.issues.performanceMetrics.loadTime, 0) / pagesWithPerformance.length;
+      lines.push(`- **Average Load Time**: ${Math.round(avgLoadTime)}ms`);
+    }
+
+    // Keyboard Navigation if available
+    const pagesWithKeyboard = data.pages.filter((page: any) => page.issues?.keyboardNavigation?.length > 0);
+    if (pagesWithKeyboard.length > 0) {
+      lines.push(`- **Pages with Keyboard Navigation**: ${pagesWithKeyboard.length}`);
+    }
+
+    // Color Contrast Issues if available
+    const totalColorIssues = data.pages.reduce((sum: number, page: any) => sum + (page.issues?.colorContrastIssues?.length || 0), 0);
+    if (totalColorIssues > 0) {
+      lines.push(`- **Total Color Contrast Issues**: ${totalColorIssues}`);
+    }
+
+    // Focus Management Issues if available
+    const totalFocusIssues = data.pages.reduce((sum: number, page: any) => sum + (page.issues?.focusManagementIssues?.length || 0), 0);
+    if (totalFocusIssues > 0) {
+      lines.push(`- **Total Focus Management Issues**: ${totalFocusIssues}`);
+    }
     lines.push('');
     
     // Pages
     if (data.pages.length > 0) {
       lines.push('## Page Results');
       lines.push('');
-      lines.push('| URL | Title | Status | Load Time | Errors | Warnings | Pa11y Score |');
-      lines.push('|-----|-------|--------|-----------|--------|----------|-------------|');
+      lines.push('| URL | Title | Status | Load Time | Errors | Warnings | Pa11y Score | Performance | Keyboard | Contrast | Focus |');
+      lines.push('|-----|-------|--------|-----------|--------|----------|-------------|-------------|----------|----------|-------|');
       
       data.pages.forEach((page: any) => {
         const pa11yScore = page.issues?.pa11yScore || 'N/A';
-        lines.push(`| ${page.url} | ${page.title} | ${page.status} | ${page.loadTime}ms | ${page.errors} | ${page.warnings} | ${pa11yScore} |`);
+        const performanceScore = page.issues?.performanceMetrics?.loadTime ? 
+          Math.max(0, 100 - Math.round(page.issues.performanceMetrics.loadTime / 100)) : 'N/A';
+        const keyboardCount = page.issues?.keyboardNavigation?.length || 0;
+        const contrastCount = page.issues?.colorContrastIssues?.length || 0;
+        const focusCount = page.issues?.focusManagementIssues?.length || 0;
+        
+        lines.push(`| ${page.url} | ${page.title} | ${page.status} | ${page.loadTime}ms | ${page.errors} | ${page.warnings} | ${pa11yScore} | ${performanceScore} | ${keyboardCount} | ${contrastCount} | ${focusCount} |`);
       });
       lines.push('');
     }
@@ -191,6 +234,76 @@ export class OutputGenerator {
           }
           lines.push('');
         });
+      });
+    }
+
+    // 🆕 Detailed Playwright Test Results
+    const pagesWithPlaywrightTests = data.pages.filter((page: any) => 
+      page.issues?.keyboardNavigation?.length > 0 || 
+      page.issues?.colorContrastIssues?.length > 0 || 
+      page.issues?.focusManagementIssues?.length > 0 ||
+      page.issues?.performanceMetrics ||
+      page.issues?.screenshots
+    );
+
+    if (pagesWithPlaywrightTests.length > 0) {
+      lines.push('## Detailed Playwright Test Results');
+      lines.push('');
+      
+      pagesWithPlaywrightTests.forEach((page: any) => {
+        lines.push(`### ${page.title} (${page.url})`);
+        lines.push('');
+        
+        // Performance Metrics
+        if (page.issues?.performanceMetrics) {
+          lines.push('#### Performance Metrics');
+          const metrics = page.issues.performanceMetrics;
+          lines.push(`- **Load Time**: ${Math.round(metrics.loadTime)}ms`);
+          lines.push(`- **DOM Content Loaded**: ${Math.round(metrics.domContentLoaded)}ms`);
+          lines.push(`- **First Paint**: ${Math.round(metrics.firstPaint)}ms`);
+          lines.push(`- **First Contentful Paint**: ${Math.round(metrics.firstContentfulPaint)}ms`);
+          lines.push(`- **Largest Contentful Paint**: ${Math.round(metrics.largestContentfulPaint)}ms`);
+          lines.push('');
+        }
+
+        // Keyboard Navigation
+        if (page.issues?.keyboardNavigation?.length > 0) {
+          lines.push('#### Keyboard Navigation Elements');
+          page.issues.keyboardNavigation.forEach((element: string, index: number) => {
+            lines.push(`${index + 1}. ${element}`);
+          });
+          lines.push('');
+        }
+
+        // Color Contrast Issues
+        if (page.issues?.colorContrastIssues?.length > 0) {
+          lines.push('#### Color Contrast Issues');
+          page.issues.colorContrastIssues.forEach((issue: string, index: number) => {
+            lines.push(`${index + 1}. ${issue}`);
+          });
+          lines.push('');
+        }
+
+        // Focus Management Issues
+        if (page.issues?.focusManagementIssues?.length > 0) {
+          lines.push('#### Focus Management Issues');
+          page.issues.focusManagementIssues.forEach((issue: string, index: number) => {
+            lines.push(`${index + 1}. ${issue}`);
+          });
+          lines.push('');
+        }
+
+        // Screenshots
+        if (page.issues?.screenshots) {
+          lines.push('#### Screenshots');
+          if (page.issues.screenshots.desktop) {
+            lines.push(`- **Desktop**: ${page.issues.screenshots.desktop}`);
+          }
+          if (page.issues.screenshots.mobile) {
+            lines.push(`- **Mobile**: ${page.issues.screenshots.mobile}`);
+          }
+          lines.push('');
+        }
       });
     }
     

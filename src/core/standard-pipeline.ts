@@ -18,6 +18,17 @@ export interface StandardPipelineOptions {
   includeNotices?: boolean;
   includeWarnings?: boolean;
   wait?: number;
+  // 🆕 Neue Playwright-Optionen
+  collectPerformanceMetrics?: boolean;
+  captureScreenshots?: boolean;
+  testKeyboardNavigation?: boolean;
+  testColorContrast?: boolean;
+  testFocusManagement?: boolean;
+  blockImages?: boolean;
+  blockCSS?: boolean;
+  mobileEmulation?: boolean;
+  viewportSize?: { width: number; height: number };
+  userAgent?: string;
 }
 
 export class StandardPipeline {
@@ -63,7 +74,18 @@ export class StandardPipeline {
       hideElements: options.hideElements,
       includeNotices: options.includeNotices,
       includeWarnings: options.includeWarnings,
-      wait: options.wait
+      wait: options.wait,
+      // 🆕 Neue Playwright-Optionen
+      collectPerformanceMetrics: options.collectPerformanceMetrics,
+      captureScreenshots: options.captureScreenshots,
+      testKeyboardNavigation: options.testKeyboardNavigation,
+      testColorContrast: options.testColorContrast,
+      testFocusManagement: options.testFocusManagement,
+      blockImages: options.blockImages,
+      blockCSS: options.blockCSS,
+      mobileEmulation: options.mobileEmulation,
+      viewportSize: options.viewportSize,
+      userAgent: options.userAgent
     };
     
     const results = await checker.testMultiplePages(
@@ -152,7 +174,18 @@ export class StandardPipeline {
       hideElements: options.hideElements,
       includeNotices: options.includeNotices,
       includeWarnings: options.includeWarnings,
-      wait: options.wait
+      wait: options.wait,
+      // 🆕 Neue Playwright-Optionen
+      collectPerformanceMetrics: options.collectPerformanceMetrics,
+      captureScreenshots: options.captureScreenshots,
+      testKeyboardNavigation: options.testKeyboardNavigation,
+      testColorContrast: options.testColorContrast,
+      testFocusManagement: options.testFocusManagement,
+      blockImages: options.blockImages,
+      blockCSS: options.blockCSS,
+      mobileEmulation: options.mobileEmulation,
+      viewportSize: options.viewportSize,
+      userAgent: options.userAgent
     };
     
     const results = await checker.testMultiplePages(

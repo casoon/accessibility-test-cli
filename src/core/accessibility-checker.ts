@@ -1,12 +1,24 @@
 import { chromium, Browser, Page } from "playwright";
 import pa11y from "pa11y";
 import { AccessibilityResult, TestOptions, Pa11yIssue } from "../types";
+import * as fs from 'fs';
+import * as path from 'path';
 
 export class AccessibilityChecker {
   private browser: Browser | null = null;
 
   async initialize(): Promise<void> {
-    this.browser = await chromium.launch({ headless: true });
+    this.browser = await chromium.launch({
+      headless: true,
+      args: [
+        '--disable-web-security',
+        '--disable-features=VizDisplayCompositor',
+        '--no-sandbox',
+        '--disable-setuid-sandbox'
+      ],
+      slowMo: 0,
+      devtools: false
+    });
   }
 
   async cleanup(): Promise<void> {
@@ -38,10 +50,18 @@ export class AccessibilityChecker {
     };
 
     try {
+      // 🆕 Erweiterte Page-Konfiguration
+      await this.configurePage(page, options);
+
       await page.goto(url, {
         waitUntil: options.waitUntil || "domcontentloaded",
         timeout: options.timeout || 10000,
       });
+
+      // 🆕 Performance-Metriken sammeln
+      if (options.collectPerformanceMetrics) {
+        await this.collectPerformanceMetrics(page, result, options);
+      }
 
       // Seitentitel prüfen
       result.title = await page.title();
@@ -71,6 +91,24 @@ export class AccessibilityChecker {
         .count();
       if (result.headingsCount === 0) {
         result.errors.push("No headings found");
+      }
+
+      // 🆕 Erweiterte Accessibility-Tests
+      if (options.testKeyboardNavigation) {
+        await this.testKeyboardNavigation(page, result, options);
+      }
+
+      if (options.testColorContrast) {
+        await this.testColorContrast(page, result, options);
+      }
+
+      if (options.testFocusManagement) {
+        await this.testFocusManagement(page, result, options);
+      }
+
+      // 🆕 Screenshots
+      if (options.captureScreenshots) {
+        await this.captureScreenshots(page, url, result, options);
       }
 
       // pa11y Accessibility-Tests durchführen
@@ -162,5 +200,202 @@ export class AccessibilityChecker {
     }
 
     return results;
+  }
+
+  // 🆕 Erweiterte Page-Konfiguration
+  private async configurePage(page: Page, options: TestOptions): Promise<void> {
+    // Viewport-Konfiguration
+    const viewportSize = options.viewportSize || { width: 1920, height: 1080 };
+    await page.setViewportSize(viewportSize);
+
+    // User-Agent setzen
+    if (options.userAgent) {
+      await page.setExtraHTTPHeaders({
+        'User-Agent': options.userAgent
+      });
+    }
+
+    // Network-Interception für Performance
+    if (options.blockImages) {
+      await page.route('**/*.{png,jpg,jpeg,gif,svg,webp}', route => {
+        route.abort();
+      });
+    }
+
+    if (options.blockCSS) {
+      await page.route('**/*.css', route => {
+        route.abort();
+      });
+    }
+
+    // Console-Logging
+    page.on('console', msg => {
+      if (options.verbose) {
+        console.log(`Browser Console: ${msg.text()}`);
+      }
+    });
+
+    // Error-Handling
+    page.on('pageerror', error => {
+      if (options.verbose) {
+        console.log(`JavaScript Error: ${error.message}`);
+      }
+    });
+  }
+
+  // 🆕 Performance-Metriken sammeln
+  private async collectPerformanceMetrics(page: Page, result: AccessibilityResult, options: TestOptions): Promise<void> {
+    try {
+      const metrics = await page.evaluate(() => {
+        const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+        return {
+          loadTime: navigation.loadEventEnd - navigation.loadEventStart,
+          domContentLoaded: navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart,
+          firstPaint: performance.getEntriesByName('first-paint')[0]?.startTime || 0,
+          firstContentfulPaint: performance.getEntriesByName('first-contentful-paint')[0]?.startTime || 0,
+          largestContentfulPaint: performance.getEntriesByName('largest-contentful-paint')[0]?.startTime || 0
+        };
+      });
+
+      result.performanceMetrics = metrics;
+
+      // Performance-Warnungen
+      if (metrics.loadTime > 3000) {
+        result.warnings.push(`Slow page load: ${Math.round(metrics.loadTime)}ms`);
+      }
+    } catch (error) {
+      if (options.verbose) {
+        console.log(`Performance metrics collection failed: ${error}`);
+      }
+    }
+  }
+
+  // 🆕 Keyboard Navigation Test
+  private async testKeyboardNavigation(page: Page, result: AccessibilityResult, options: TestOptions): Promise<void> {
+    try {
+      const keyboardNavigation = await page.evaluate(() => {
+        const focusableElements = document.querySelectorAll('button, input, select, textarea, a[href], [tabindex]:not([tabindex="-1"])');
+        const navigation: string[] = [];
+        
+        // Simuliere Tab-Navigation für die ersten 10 Elemente
+        for (let i = 0; i < Math.min(focusableElements.length, 10); i++) {
+          const element = focusableElements[i] as HTMLElement;
+          navigation.push(`${element.tagName.toLowerCase()}: ${element.textContent?.trim().substring(0, 50) || element.outerHTML}`);
+        }
+        
+        return navigation;
+      });
+
+      result.keyboardNavigation = keyboardNavigation;
+    } catch (error) {
+      if (options.verbose) {
+        console.log(`Keyboard navigation test failed: ${error}`);
+      }
+    }
+  }
+
+  // 🆕 Color Contrast Test (vereinfacht)
+  private async testColorContrast(page: Page, result: AccessibilityResult, options: TestOptions): Promise<void> {
+    try {
+      const contrastIssues = await page.evaluate(() => {
+        const elements = document.querySelectorAll('p, span, div, h1, h2, h3, h4, h5, h6, a, button, input, label');
+        const issues: string[] = [];
+        
+        elements.forEach(el => {
+          const style = window.getComputedStyle(el);
+          const color = style.color;
+          const backgroundColor = style.backgroundColor;
+          
+          // Einfache Kontrast-Prüfung (vereinfacht)
+          if (color && backgroundColor && 
+              color !== backgroundColor && 
+              color !== 'rgba(0, 0, 0, 0)' && 
+              backgroundColor !== 'rgba(0, 0, 0, 0)') {
+            issues.push(`${el.tagName}: ${color} on ${backgroundColor}`);
+          }
+        });
+        
+        return issues.slice(0, 10); // Limitiere auf 10 Issues
+      });
+
+      if (contrastIssues.length > 0) {
+        result.colorContrastIssues = contrastIssues;
+        result.warnings.push(`${contrastIssues.length} potential color contrast issues found`);
+      }
+    } catch (error) {
+      if (options.verbose) {
+        console.log(`Color contrast test failed: ${error}`);
+      }
+    }
+  }
+
+  // 🆕 Focus Management Test
+  private async testFocusManagement(page: Page, result: AccessibilityResult, options: TestOptions): Promise<void> {
+    try {
+      const focusIssues = await page.evaluate(() => {
+        const issues: string[] = [];
+        
+        // Prüfe auf focus-visible
+        const focusableElements = document.querySelectorAll('button, input, select, textarea, a[href]');
+        focusableElements.forEach(el => {
+          const style = window.getComputedStyle(el);
+          if (style.outline === 'none' && 
+              style.border === 'none' && 
+              !el.classList.contains('focus-visible') &&
+              !el.classList.contains('focus')) {
+            issues.push(`Element without focus indicator: ${el.tagName} - ${el.textContent?.trim().substring(0, 30) || 'no text'}`);
+          }
+        });
+        
+        return issues.slice(0, 10); // Limitiere auf 10 Issues
+      });
+
+      if (focusIssues.length > 0) {
+        result.focusManagementIssues = focusIssues;
+        result.warnings.push(`${focusIssues.length} focus management issues found`);
+      }
+    } catch (error) {
+      if (options.verbose) {
+        console.log(`Focus management test failed: ${error}`);
+      }
+    }
+  }
+
+  // 🆕 Screenshot-Funktionalität
+  private async captureScreenshots(page: Page, url: string, result: AccessibilityResult, options: TestOptions): Promise<void> {
+    try {
+      // Screenshots-Ordner erstellen
+      const screenshotsDir = './screenshots';
+      if (!fs.existsSync(screenshotsDir)) {
+        fs.mkdirSync(screenshotsDir, { recursive: true });
+      }
+
+      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+      const domain = new URL(url).hostname.replace(/\./g, '-');
+      
+      // Desktop Screenshot
+      const desktopPath = path.join(screenshotsDir, `${domain}-desktop-${timestamp}.png`);
+      await page.screenshot({
+        path: desktopPath,
+        fullPage: true
+      });
+      result.screenshots = { desktop: desktopPath };
+
+      // Mobile Screenshot
+      await page.setViewportSize({ width: 375, height: 667 });
+      const mobilePath = path.join(screenshotsDir, `${domain}-mobile-${timestamp}.png`);
+      await page.screenshot({
+        path: mobilePath,
+        fullPage: true
+      });
+      result.screenshots.mobile = mobilePath;
+      
+      // Reset viewport
+      await page.setViewportSize({ width: 1920, height: 1080 });
+    } catch (error) {
+      if (options.verbose) {
+        console.log(`Screenshot capture failed: ${error}`);
+      }
+    }
   }
 }
