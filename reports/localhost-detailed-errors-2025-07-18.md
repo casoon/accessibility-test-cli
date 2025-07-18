@@ -1,20 +1,20 @@
 # Detailed Accessibility Error Report
-Generated: 2025-07-18T18:32:45.894Z
-Total Errors: 13
-Total Warnings: 113
-Failed Pages: 2
+Generated: 2025-07-18T19:13:06.843Z
+Total Errors: 11
+Total Warnings: 59
+Failed Pages: 1
 
 ## Executive Summary
 
 This report contains structured accessibility errors that can be automatically fixed by AI tools.
-- **Critical Issues**: 13 errors requiring immediate attention
-- **Warnings**: 113 issues for improvement
-- **Pages with Issues**: 2 out of 2 tested
+- **Critical Issues**: 11 errors requiring immediate attention
+- **Warnings**: 59 issues for improvement
+- **Pages with Issues**: 1 out of 1 tested
 - **Success Rate**: 0.0%
 
 ## Errors Grouped by Type
 
-### General Accessibility Issue (13 occurrences)
+### General Accessibility Issue (11 occurrences)
 
 #### Error 1: Website Angebote - CASOON
 - **URL**: http://localhost:4321/angebote/webseite
@@ -82,19 +82,7 @@ This report contains structured accessibility errors that can be automatically f
 - **Element**: `p, span, div, a, button, input, textarea, label`
 - **Context**: `Text elements that may have insufficient color contrast`
 
-#### Error 12: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)
-- **Element**: `p, span, div, a, button, input, textarea, label`
-- **Context**: `Text elements that may have insufficient color contrast`
-
-#### Error 13: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.43:1. Recommendation:  change background to #f7f7f7.
-- **Element**: `p, span, div, a, button, input, textarea, label`
-- **Context**: `Text elements that may have insufficient color contrast`
-
-### Color Contrast Issues (8 occurrences)
+### Color Contrast Issues (7 occurrences)
 
 #### Error 1: Website Angebote - CASOON
 - **URL**: http://localhost:4321/angebote/webseite
@@ -139,13 +127,6 @@ This report contains structured accessibility errors that can be automatically f
 - **Element**: `#site-content > main > main > section:nth-child(2) > div > div:nth-child(3) > div > div:nth-child(2) > div > span`
 - **Context**: `<span class="text-white font-bold text-sm">L</span>`
 
-#### Error 8: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)
-- **Element**: `#site-content > footer > div > p`
-- **Context**: `<p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2025 —
-<a href="/impressum" c...</p>`
-
 ### Heading Structure Issues (1 occurrences)
 
 #### Error 1: Website Angebote - CASOON
@@ -154,7 +135,7 @@ This report contains structured accessibility errors that can be automatically f
 - **Element**: `#site-content > main > main > section:nth-child(2) > div > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > h3`
 - **Context**: `<h3 class="text-sm font-semibold text-secondary-500 uppercase tracking-wider mb-4">STARTER</h3>`
 
-### WCAG Compliance Issue (117 occurrences)
+### WCAG Compliance Issue (62 occurrences)
 
 #### Error 1: Website Angebote - CASOON
 - **URL**: http://localhost:4321/angebote/webseite
@@ -485,292 +466,6 @@ Datenschutz
 
 #### Error 62: Website Angebote - CASOON
 - **URL**: http://localhost:4321/angebote/webseite
-- **Error**: Check that status messages can be programmatically determined through role or properties such that they can be presented to the user by assistive technologies without receiving focus.
-
-#### Error 63: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Main landmark should not be contained in another landmark (https://dequeuniversity.com/rules/axe/4.10/landmark-main-is-top-level?application=axeAPI)
-- **Element**: `#site-content > main > main`
-- **Context**: `<main>  <section class="section-paddi...</main>`
-
-#### Error 64: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Document should not have more than one main landmark (https://dequeuniversity.com/rules/axe/4.10/landmark-no-duplicate-main?application=axeAPI)
-- **Element**: `#site-content > main`
-- **Context**: `<main>   <main>  <section class="sect...</main>`
-
-#### Error 65: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Landmarks should have a unique role or role/label/title (i.e. accessible name) combination (https://dequeuniversity.com/rules/axe/4.10/landmark-unique?application=axeAPI)
-- **Element**: `#site-content > main`
-- **Context**: `<main>   <main>  <section class="sect...</main>`
-
-#### Error 66: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that the title element describes the document.
-- **Element**: `html > head > title`
-- **Context**: `<title>Datenschutz</title>`
-
-#### Error 67: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: This element has "position: fixed". This may require scrolling in two dimensions, which is considered a failure of this Success Criterion.
-- **Element**: `html > body > astro-island > nav`
-- **Context**: `<nav style="z-index: 100;" class=" fixed top-0 left-0 right-0 z-[100] mt-0 lg:mt-8"><div class="hidden lg:flex just...</nav>`
-
-#### Error 68: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that the link text combined with programmatically determined link context identifies the purpose of the link.
-- **Element**: `html > body > astro-island > nav > div:nth-child(1) > div:nth-child(1) > a`
-- **Context**: `<a href="/" class="hover:opacity-80 transition-opacity"><img alt="CASOON Logo" class="w...</a>`
-
-#### Error 69: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Ensure that the img element's alt text serves the same purpose and presents the same information as the image.
-- **Element**: `html > body > astro-island > nav > div:nth-child(1) > div:nth-child(1) > a > img`
-- **Context**: `<img alt="CASOON Logo" class="w-24 h-24" src="/logo_menu.svg">`
-
-#### Error 70: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.
-- **Element**: `html > body > astro-island > nav > div:nth-child(1) > div:nth-child(1) > a > img`
-- **Context**: `<img alt="CASOON Logo" class="w-24 h-24" src="/logo_menu.svg">`
-
-#### Error 71: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: If this element contains a navigation section, it is recommended that it be marked up as a list.
-- **Element**: `html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2)`
-- **Context**: `<div style="will-change: opacity, transform; z-index: 10;" class="flex items-center space-x-3 absolute right-56 top-1/2 -translate-y-1/2 transition-all duration-500 opacity-0 translate-x-20 pointer-events-none"><!----><a class="px-4 py-2 text...</div>`
-
-#### Error 72: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1.
-- **Element**: `html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(1)`
-- **Context**: `<a class="px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline" href="/ueber-uns">Über uns</a>`
-
-#### Error 73: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that the link text combined with programmatically determined link context identifies the purpose of the link.
-- **Element**: `html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(1)`
-- **Context**: `<a class="px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline" href="/ueber-uns">Über uns</a>`
-
-#### Error 74: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1.
-- **Element**: `html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(2)`
-- **Context**: `<a class="px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline" href="/leistungen">Leistungen</a>`
-
-#### Error 75: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that the link text combined with programmatically determined link context identifies the purpose of the link.
-- **Element**: `html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(2)`
-- **Context**: `<a class="px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline" href="/leistungen">Leistungen</a>`
-
-#### Error 76: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1.
-- **Element**: `html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(3)`
-- **Context**: `<a class="px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline" href="/insights">Insights</a>`
-
-#### Error 77: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that the link text combined with programmatically determined link context identifies the purpose of the link.
-- **Element**: `html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(3)`
-- **Context**: `<a class="px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline" href="/insights">Insights</a>`
-
-#### Error 78: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that a change of context does not occur when this input field receives focus.
-- **Element**: `html > body > astro-island > nav > div:nth-child(1) > button`
-- **Context**: `<button class="ml-auto mr-8 flex items-center justify-center w-12 h-12 bg-transparent transition-colors focus:outline-none relative" style="z-index: 20;" aria-label="Menü öffnen"><svg width="32" height="32" vie...</button>`
-
-#### Error 79: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that the link text combined with programmatically determined link context identifies the purpose of the link.
-- **Element**: `html > body > astro-island > nav > div:nth-child(2) > div > a`
-- **Context**: `<a href="/" class="hover:opacity-80 transition-opacity"><img alt="CASOON Logo" class="w...</a>`
-
-#### Error 80: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Ensure that the img element's alt text serves the same purpose and presents the same information as the image.
-- **Element**: `html > body > astro-island > nav > div:nth-child(2) > div > a > img`
-- **Context**: `<img alt="CASOON Logo" class="w-32 h-32" src="/logo.svg">`
-
-#### Error 81: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.
-- **Element**: `html > body > astro-island > nav > div:nth-child(2) > div > a > img`
-- **Context**: `<img alt="CASOON Logo" class="w-32 h-32" src="/logo.svg">`
-
-#### Error 82: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that a change of context does not occur when this input field receives focus.
-- **Element**: `html > body > astro-island > nav > div:nth-child(2) > button`
-- **Context**: `<button class="px-4 py-2 text-sm font-medium text-secondary-700 bg-white/30 rounded-full border border-secondary-300 hover:bg-white/60 transition-all" aria-label="Mobilmenü öffnen">Menü</button>`
-
-#### Error 83: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Anchor element found with link content, but no href, ID or name attribute has been supplied.
-- **Element**: `#site-content > footer > div > a`
-- **Context**: `<a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"> <span class="ml-3 text-xl">CAS...</a>`
-
-#### Error 84: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that the link text combined with programmatically determined link context identifies the purpose of the link.
-- **Element**: `#site-content > footer > div > a`
-- **Context**: `<a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"> <span class="ml-3 text-xl">CAS...</a>`
-
-#### Error 85: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.43:1. Recommendation:  change background to #f7f7f7.
-- **Element**: `#site-content > footer > div > p`
-- **Context**: `<p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2025 —
-<a href="/impressum" c...</p>`
-
-#### Error 86: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: If this element contains a navigation section, it is recommended that it be marked up as a list.
-- **Element**: `#site-content > footer > div > p`
-- **Context**: `<p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2025 —
-<a href="/impressum" c...</p>`
-
-#### Error 87: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that the link text combined with programmatically determined link context identifies the purpose of the link.
-- **Element**: `#site-content > footer > div > p > a:nth-child(1)`
-- **Context**: `<a href="/impressum" class="text-gray-600 ml-1">
-Impressum
-</a>`
-
-#### Error 88: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that the link text combined with programmatically determined link context identifies the purpose of the link.
-- **Element**: `#site-content > footer > div > p > a:nth-child(2)`
-- **Context**: `<a href="/datenschutz" class="text-gray-600 ml-1">
-Datenschutz
-</a>`
-
-#### Error 89: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that the link text combined with programmatically determined link context identifies the purpose of the link.
-- **Element**: `#site-content > footer > div > span > a:nth-child(1)`
-- **Context**: `<a class="text-gray-500" href="#" aria-label="Facebook"> <svg fill="currentColor" strok...</a>`
-
-#### Error 90: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that the link text combined with programmatically determined link context identifies the purpose of the link.
-- **Element**: `#site-content > footer > div > span > a:nth-child(2)`
-- **Context**: `<a class="ml-3 text-gray-500" href="#" aria-label="Twitter"> <svg fill="currentColor" strok...</a>`
-
-#### Error 91: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that the link text combined with programmatically determined link context identifies the purpose of the link.
-- **Element**: `#site-content > footer > div > span > a:nth-child(3)`
-- **Context**: `<a class="ml-3 text-gray-500" href="#" aria-label="Instagram"> <svg fill="none" stroke="curre...</a>`
-
-#### Error 92: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that the link text combined with programmatically determined link context identifies the purpose of the link.
-- **Element**: `#site-content > footer > div > span > a:nth-child(4)`
-- **Context**: `<a class="ml-3 text-gray-500" href="#" aria-label="LinkedIn"> <svg fill="currentColor" strok...</a>`
-
-#### Error 93: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that the content is ordered in a meaningful sequence when linearised, such as when style sheets are disabled.
-
-#### Error 94: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Where instructions are provided for understanding the content, do not rely on sensory characteristics alone (such as shape, size or location) to describe objects.
-
-#### Error 95: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that content does not restrict its view and operation to a single display orientation, such as portrait or landscape, unless a specific display orientation is essential.
-
-#### Error 96: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that any information conveyed using colour alone is also available in text, or through other visual cues.
-
-#### Error 97: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that text can be resized without assistive technology up to 200 percent without loss of content or functionality.
-
-#### Error 98: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: If the technologies being used can achieve the visual presentation, check that text is used to convey information rather than images of text, except when the image of text is essential to the information being conveyed, or can be visually customised to the user's requirements.
-
-#### Error 99: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for:     Vertical scrolling content at a width equivalent to 320 CSS pixels;     Horizontal scrolling content at a height equivalent to 256 CSS pixels;     Except for parts of the content which require two-dimensional layout for usage or meaning.
-
-#### Error 100: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that the visual presentation of the following have a contrast ratio of at least 3:1 against adjacent color(s):     User Interface Components: Visual information required to identify user interface components and states, except for inactive components or where the appearance of the component is determined by the user agent and not modified by the author;     Graphical Objects: Parts of graphics required to understand the content, except when a particular presentation of graphics is essential to the information being conveyed.
-
-#### Error 101: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that no loss of content or functionality occurs by setting all of the following and by changing no other style property:              Line height (line spacing) to at least 1.5 times the font size;         Spacing following paragraphs to at least 2 times the font size;         Letter spacing (tracking) to at least 0.12 times the font size;         Word spacing to at least 0.16 times the font size.
-
-#### Error 102: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that where receiving and then removing pointer hover or keyboard focus triggers additional content to become visible and then hidden, the following are true:              Dismissable: A mechanism is available to dismiss the additional content without moving pointer hover or keyboard focus, unless the additional content communicates an input error or does not obscure or replace other content;         Hoverable: If pointer hover can trigger the additional content, then the pointer can be moved over the additional content without the additional content disappearing;         Persistent: The additional content remains visible until the hover or focus trigger is removed, the user dismisses it, or its information is no longer valid.
-
-#### Error 103: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that if a keyboard shortcut is implemented in content using only letter (including upper- and lower-case letters), punctuation, number, or symbol characters, then at least one of the following is true:              Turn off: A mechanism is available to turn the shortcut off;         Remap: A mechanism is available to remap the shortcut to use one or more non-printable keyboard characters (e.g. Ctrl, Alt, etc);         Active only on focus: The keyboard shortcut for a user interface component is only active when that component has focus.     
-
-#### Error 104: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: If any part of the content moves, scrolls or blinks for more than 5 seconds, or auto-updates, check that there is a mechanism available to pause, stop, or hide the content.
-
-#### Error 105: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that no component of the content flashes more than three times in any 1-second period, or that the size of any flashing area is sufficiently small.
-
-#### Error 106: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Ensure that any common navigation elements can be bypassed; for instance, by use of skip links, header elements, or ARIA landmark roles.
-
-#### Error 107: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: If this Web page is not part of a linear process, check that there is more than one way of locating this Web page within a set of Web pages.
-
-#### Error 108: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that headings and labels describe topic or purpose.
-
-#### Error 109: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that there is at least one mode of operation where the keyboard focus indicator can be visually located on user interface controls.
-
-#### Error 110: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that all functionality that uses multipoint or path-based gestures for operation can be operated with a single pointer without a path-based gesture, unless a multipoint or path-based gesture is essential.
-
-#### Error 111: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that for functionality that can be operated using a single pointer, at least one of the following is true:         No Down-Event: The down-event of the pointer is not used to execute any part of the function;         Abort or Undo: Completion of the function is on the up-event, and a mechanism is available to abort the function before completion or to undo the function after completion;         Up Reversal: The up-event reverses any outcome of the preceding down-event;         Essential: Completing the function on the down-event is essential.
-
-#### Error 112: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that for user interface components with labels that include text or images of text, the name contains the text that is presented visually.
-
-#### Error 113: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that functionality that can be operated by device motion or user motion can also be operated by user interface components and responding to the motion can be disabled to prevent accidental actuation, except when:              Supported Interface: The motion is used to operate functionality through an accessibility supported interface;         Essential: The motion is essential for the function and doing so would invalidate the activity.     
-
-#### Error 114: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Ensure that any change in language is marked using the lang and/or xml:lang attribute on an element, as appropriate.
-
-#### Error 115: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that navigational mechanisms that are repeated on multiple Web pages occur in the same relative order each time they are repeated, unless a change is initiated by the user.
-
-#### Error 116: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
-- **Error**: Check that components that have the same functionality within this Web page are identified consistently in the set of Web pages to which it belongs.
-
-#### Error 117: Datenschutz
-- **URL**: http://localhost:4321/datenschutz
 - **Error**: Check that status messages can be programmatically determined through role or properties such that they can be presented to the user by assistive technologies without receiving focus.
 
 ## Detailed Error List
@@ -1579,547 +1274,6 @@ Datenschutz
 - **Message**: Check that status messages can be programmatically determined through role or properties such that they can be presented to the user by assistive technologies without receiving focus.
 - **Recommendation**: Review WCAG guidelines for this specific error type
 
-### Error 82
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: General Accessibility Issue
-- **Code**: PLAYWRIGHT_ERROR
-- **Message**: color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)
-- **Selector**: `p, span, div, a, button, input, textarea, label`
-- **Context**: `Text elements that may have insufficient color contrast`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 83
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: General Accessibility Issue
-- **Code**: PLAYWRIGHT_ERROR
-- **Message**: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.43:1. Recommendation:  change background to #f7f7f7.
-- **Selector**: `p, span, div, a, button, input, textarea, label`
-- **Context**: `Text elements that may have insufficient color contrast`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 84
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: Color Contrast Issues
-- **Code**: color-contrast
-- **Message**: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)
-- **Selector**: `#site-content > footer > div > p`
-- **Context**: `<p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2025 —
-<a href="/impressum" c...</p>`
-- **Code Example**:
-```html
-<p style="color: #000; background-color: #fff;">High contrast text</p>
-```
-- **Recommendation**: Increase color contrast ratio to at least 4.5:1 for normal text, 3:1 for large text
-
-### Error 85
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: landmark-main-is-top-level
-- **Message**: Main landmark should not be contained in another landmark (https://dequeuniversity.com/rules/axe/4.10/landmark-main-is-top-level?application=axeAPI)
-- **Selector**: `#site-content > main > main`
-- **Context**: `<main>  <section class="section-paddi...</main>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 86
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: landmark-no-duplicate-main
-- **Message**: Document should not have more than one main landmark (https://dequeuniversity.com/rules/axe/4.10/landmark-no-duplicate-main?application=axeAPI)
-- **Selector**: `#site-content > main`
-- **Context**: `<main>   <main>  <section class="sect...</main>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 87
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: landmark-unique
-- **Message**: Landmarks should have a unique role or role/label/title (i.e. accessible name) combination (https://dequeuniversity.com/rules/axe/4.10/landmark-unique?application=axeAPI)
-- **Selector**: `#site-content > main`
-- **Context**: `<main>   <main>  <section class="sect...</main>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 88
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle2.Guideline2_4.2_4_2.H25.2
-- **Message**: Check that the title element describes the document.
-- **Selector**: `html > head > title`
-- **Context**: `<title>Datenschutz</title>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 89
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle1.Guideline1_4.1_4_10.C32,C31,C33,C38,SCR34,G206
-- **Message**: This element has "position: fixed". This may require scrolling in two dimensions, which is considered a failure of this Success Criterion.
-- **Selector**: `html > body > astro-island > nav`
-- **Context**: `<nav style="z-index: 100;" class=" fixed top-0 left-0 right-0 z-[100] mt-0 lg:mt-8"><div class="hidden lg:flex just...</nav>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 90
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81
-- **Message**: Check that the link text combined with programmatically determined link context identifies the purpose of the link.
-- **Selector**: `html > body > astro-island > nav > div:nth-child(1) > div:nth-child(1) > a`
-- **Context**: `<a href="/" class="hover:opacity-80 transition-opacity"><img alt="CASOON Logo" class="w...</a>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 91
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle1.Guideline1_1.1_1_1.G94.Image
-- **Message**: Ensure that the img element's alt text serves the same purpose and presents the same information as the image.
-- **Selector**: `html > body > astro-island > nav > div:nth-child(1) > div:nth-child(1) > a > img`
-- **Context**: `<img alt="CASOON Logo" class="w-24 h-24" src="/logo_menu.svg">`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 92
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle1.Guideline1_1.1_1_1.G73,G74
-- **Message**: If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.
-- **Selector**: `html > body > astro-island > nav > div:nth-child(1) > div:nth-child(1) > a > img`
-- **Context**: `<img alt="CASOON Logo" class="w-24 h-24" src="/logo_menu.svg">`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 93
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle1.Guideline1_3.1_3_1.H48
-- **Message**: If this element contains a navigation section, it is recommended that it be marked up as a list.
-- **Selector**: `html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2)`
-- **Context**: `<div style="will-change: opacity, transform; z-index: 10;" class="flex items-center space-x-3 absolute right-56 top-1/2 -translate-y-1/2 transition-all duration-500 opacity-0 translate-x-20 pointer-events-none"><!----><a class="px-4 py-2 text...</div>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 94
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Abs
-- **Message**: This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1.
-- **Selector**: `html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(1)`
-- **Context**: `<a class="px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline" href="/ueber-uns">Über uns</a>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 95
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81
-- **Message**: Check that the link text combined with programmatically determined link context identifies the purpose of the link.
-- **Selector**: `html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(1)`
-- **Context**: `<a class="px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline" href="/ueber-uns">Über uns</a>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 96
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Abs
-- **Message**: This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1.
-- **Selector**: `html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(2)`
-- **Context**: `<a class="px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline" href="/leistungen">Leistungen</a>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 97
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81
-- **Message**: Check that the link text combined with programmatically determined link context identifies the purpose of the link.
-- **Selector**: `html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(2)`
-- **Context**: `<a class="px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline" href="/leistungen">Leistungen</a>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 98
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Abs
-- **Message**: This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1.
-- **Selector**: `html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(3)`
-- **Context**: `<a class="px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline" href="/insights">Insights</a>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 99
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81
-- **Message**: Check that the link text combined with programmatically determined link context identifies the purpose of the link.
-- **Selector**: `html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(3)`
-- **Context**: `<a class="px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline" href="/insights">Insights</a>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 100
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle3.Guideline3_2.3_2_1.G107
-- **Message**: Check that a change of context does not occur when this input field receives focus.
-- **Selector**: `html > body > astro-island > nav > div:nth-child(1) > button`
-- **Context**: `<button class="ml-auto mr-8 flex items-center justify-center w-12 h-12 bg-transparent transition-colors focus:outline-none relative" style="z-index: 20;" aria-label="Menü öffnen"><svg width="32" height="32" vie...</button>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 101
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81
-- **Message**: Check that the link text combined with programmatically determined link context identifies the purpose of the link.
-- **Selector**: `html > body > astro-island > nav > div:nth-child(2) > div > a`
-- **Context**: `<a href="/" class="hover:opacity-80 transition-opacity"><img alt="CASOON Logo" class="w...</a>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 102
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle1.Guideline1_1.1_1_1.G94.Image
-- **Message**: Ensure that the img element's alt text serves the same purpose and presents the same information as the image.
-- **Selector**: `html > body > astro-island > nav > div:nth-child(2) > div > a > img`
-- **Context**: `<img alt="CASOON Logo" class="w-32 h-32" src="/logo.svg">`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 103
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle1.Guideline1_1.1_1_1.G73,G74
-- **Message**: If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.
-- **Selector**: `html > body > astro-island > nav > div:nth-child(2) > div > a > img`
-- **Context**: `<img alt="CASOON Logo" class="w-32 h-32" src="/logo.svg">`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 104
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle3.Guideline3_2.3_2_1.G107
-- **Message**: Check that a change of context does not occur when this input field receives focus.
-- **Selector**: `html > body > astro-island > nav > div:nth-child(2) > button`
-- **Context**: `<button class="px-4 py-2 text-sm font-medium text-secondary-700 bg-white/30 rounded-full border border-secondary-300 hover:bg-white/60 transition-all" aria-label="Mobilmenü öffnen">Menü</button>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 105
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.Placeholder
-- **Message**: Anchor element found with link content, but no href, ID or name attribute has been supplied.
-- **Selector**: `#site-content > footer > div > a`
-- **Context**: `<a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"> <span class="ml-3 text-xl">CAS...</a>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 106
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81
-- **Message**: Check that the link text combined with programmatically determined link context identifies the purpose of the link.
-- **Selector**: `#site-content > footer > div > a`
-- **Context**: `<a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"> <span class="ml-3 text-xl">CAS...</a>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 107
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail
-- **Message**: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.43:1. Recommendation:  change background to #f7f7f7.
-- **Selector**: `#site-content > footer > div > p`
-- **Context**: `<p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2025 —
-<a href="/impressum" c...</p>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 108
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle1.Guideline1_3.1_3_1.H48
-- **Message**: If this element contains a navigation section, it is recommended that it be marked up as a list.
-- **Selector**: `#site-content > footer > div > p`
-- **Context**: `<p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2025 —
-<a href="/impressum" c...</p>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 109
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81
-- **Message**: Check that the link text combined with programmatically determined link context identifies the purpose of the link.
-- **Selector**: `#site-content > footer > div > p > a:nth-child(1)`
-- **Context**: `<a href="/impressum" class="text-gray-600 ml-1">
-Impressum
-</a>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 110
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81
-- **Message**: Check that the link text combined with programmatically determined link context identifies the purpose of the link.
-- **Selector**: `#site-content > footer > div > p > a:nth-child(2)`
-- **Context**: `<a href="/datenschutz" class="text-gray-600 ml-1">
-Datenschutz
-</a>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 111
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81
-- **Message**: Check that the link text combined with programmatically determined link context identifies the purpose of the link.
-- **Selector**: `#site-content > footer > div > span > a:nth-child(1)`
-- **Context**: `<a class="text-gray-500" href="#" aria-label="Facebook"> <svg fill="currentColor" strok...</a>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 112
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81
-- **Message**: Check that the link text combined with programmatically determined link context identifies the purpose of the link.
-- **Selector**: `#site-content > footer > div > span > a:nth-child(2)`
-- **Context**: `<a class="ml-3 text-gray-500" href="#" aria-label="Twitter"> <svg fill="currentColor" strok...</a>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 113
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81
-- **Message**: Check that the link text combined with programmatically determined link context identifies the purpose of the link.
-- **Selector**: `#site-content > footer > div > span > a:nth-child(3)`
-- **Context**: `<a class="ml-3 text-gray-500" href="#" aria-label="Instagram"> <svg fill="none" stroke="curre...</a>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 114
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81
-- **Message**: Check that the link text combined with programmatically determined link context identifies the purpose of the link.
-- **Selector**: `#site-content > footer > div > span > a:nth-child(4)`
-- **Context**: `<a class="ml-3 text-gray-500" href="#" aria-label="LinkedIn"> <svg fill="currentColor" strok...</a>`
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 115
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle1.Guideline1_3.1_3_2.G57
-- **Message**: Check that the content is ordered in a meaningful sequence when linearised, such as when style sheets are disabled.
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 116
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle1.Guideline1_3.1_3_3.G96
-- **Message**: Where instructions are provided for understanding the content, do not rely on sensory characteristics alone (such as shape, size or location) to describe objects.
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 117
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle1.Guideline1_3.1_3_4.
-- **Message**: Check that content does not restrict its view and operation to a single display orientation, such as portrait or landscape, unless a specific display orientation is essential.
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 118
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle1.Guideline1_4.1_4_1.G14,G182
-- **Message**: Check that any information conveyed using colour alone is also available in text, or through other visual cues.
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 119
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle1.Guideline1_4.1_4_4.G142
-- **Message**: Check that text can be resized without assistive technology up to 200 percent without loss of content or functionality.
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 120
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle1.Guideline1_4.1_4_5.G140,C22,C30.AALevel
-- **Message**: If the technologies being used can achieve the visual presentation, check that text is used to convey information rather than images of text, except when the image of text is essential to the information being conveyed, or can be visually customised to the user's requirements.
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 121
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle1.Guideline1_4.1_4_10.C32,C31,C33,C38,SCR34,G206
-- **Message**: Check that content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for:     Vertical scrolling content at a width equivalent to 320 CSS pixels;     Horizontal scrolling content at a height equivalent to 256 CSS pixels;     Except for parts of the content which require two-dimensional layout for usage or meaning.
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 122
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle1.Guideline1_4.1_4_11.G195,G207,G18,G145,G174,F78
-- **Message**: Check that the visual presentation of the following have a contrast ratio of at least 3:1 against adjacent color(s):     User Interface Components: Visual information required to identify user interface components and states, except for inactive components or where the appearance of the component is determined by the user agent and not modified by the author;     Graphical Objects: Parts of graphics required to understand the content, except when a particular presentation of graphics is essential to the information being conveyed.
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 123
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle1.Guideline1_4.1_4_12.C36,C35
-- **Message**: Check that no loss of content or functionality occurs by setting all of the following and by changing no other style property:              Line height (line spacing) to at least 1.5 times the font size;         Spacing following paragraphs to at least 2 times the font size;         Letter spacing (tracking) to at least 0.12 times the font size;         Word spacing to at least 0.16 times the font size.
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 124
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle1.Guideline1_4.1_4_13.F95
-- **Message**: Check that where receiving and then removing pointer hover or keyboard focus triggers additional content to become visible and then hidden, the following are true:              Dismissable: A mechanism is available to dismiss the additional content without moving pointer hover or keyboard focus, unless the additional content communicates an input error or does not obscure or replace other content;         Hoverable: If pointer hover can trigger the additional content, then the pointer can be moved over the additional content without the additional content disappearing;         Persistent: The additional content remains visible until the hover or focus trigger is removed, the user dismisses it, or its information is no longer valid.
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 125
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle2.Guideline2_1.2_1_4.
-- **Message**: Check that if a keyboard shortcut is implemented in content using only letter (including upper- and lower-case letters), punctuation, number, or symbol characters, then at least one of the following is true:              Turn off: A mechanism is available to turn the shortcut off;         Remap: A mechanism is available to remap the shortcut to use one or more non-printable keyboard characters (e.g. Ctrl, Alt, etc);         Active only on focus: The keyboard shortcut for a user interface component is only active when that component has focus.     
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 126
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle2.Guideline2_2.2_2_2.SCR33,SCR22,G187,G152,G186,G191
-- **Message**: If any part of the content moves, scrolls or blinks for more than 5 seconds, or auto-updates, check that there is a mechanism available to pause, stop, or hide the content.
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 127
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle2.Guideline2_3.2_3_1.G19,G176
-- **Message**: Check that no component of the content flashes more than three times in any 1-second period, or that the size of any flashing area is sufficiently small.
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 128
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle2.Guideline2_4.2_4_1.G1,G123,G124,H69
-- **Message**: Ensure that any common navigation elements can be bypassed; for instance, by use of skip links, header elements, or ARIA landmark roles.
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 129
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle2.Guideline2_4.2_4_5.G125,G64,G63,G161,G126,G185
-- **Message**: If this Web page is not part of a linear process, check that there is more than one way of locating this Web page within a set of Web pages.
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 130
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle2.Guideline2_4.2_4_6.G130,G131
-- **Message**: Check that headings and labels describe topic or purpose.
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 131
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle2.Guideline2_4.2_4_7.G149,G165,G195,C15,SCR31
-- **Message**: Check that there is at least one mode of operation where the keyboard focus indicator can be visually located on user interface controls.
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 132
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle2.Guideline2_5.2_5_1.
-- **Message**: Check that all functionality that uses multipoint or path-based gestures for operation can be operated with a single pointer without a path-based gesture, unless a multipoint or path-based gesture is essential.
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 133
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle2.Guideline2_5.2_5_2.
-- **Message**: Check that for functionality that can be operated using a single pointer, at least one of the following is true:         No Down-Event: The down-event of the pointer is not used to execute any part of the function;         Abort or Undo: Completion of the function is on the up-event, and a mechanism is available to abort the function before completion or to undo the function after completion;         Up Reversal: The up-event reverses any outcome of the preceding down-event;         Essential: Completing the function on the down-event is essential.
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 134
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle2.Guideline2_5.2_5_3.F96
-- **Message**: Check that for user interface components with labels that include text or images of text, the name contains the text that is presented visually.
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 135
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle2.Guideline2_5.2_5_4.
-- **Message**: Check that functionality that can be operated by device motion or user motion can also be operated by user interface components and responding to the motion can be disabled to prevent accidental actuation, except when:              Supported Interface: The motion is used to operate functionality through an accessibility supported interface;         Essential: The motion is essential for the function and doing so would invalidate the activity.     
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 136
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle3.Guideline3_1.3_1_2.H58
-- **Message**: Ensure that any change in language is marked using the lang and/or xml:lang attribute on an element, as appropriate.
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 137
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle3.Guideline3_2.3_2_3.G61
-- **Message**: Check that navigational mechanisms that are repeated on multiple Web pages occur in the same relative order each time they are repeated, unless a change is initiated by the user.
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 138
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle3.Guideline3_2.3_2_4.G197
-- **Message**: Check that components that have the same functionality within this Web page are identified consistently in the set of Web pages to which it belongs.
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
-### Error 139
-- **Page**: http://localhost:4321/datenschutz
-- **Title**: Datenschutz
-- **Type**: WCAG Compliance Issue
-- **Code**: WCAG2AA.Principle4.Guideline4_1.4_1_3.
-- **Message**: Check that status messages can be programmatically determined through role or properties such that they can be presented to the user by assistive technologies without receiving focus.
-- **Recommendation**: Review WCAG guidelines for this specific error type
-
 ## Processing Instructions
 
 This report is structured for automated tools to fix accessibility issues:
@@ -2150,134 +1304,76 @@ Process errors in this order for maximum impact:
 6. **Color Contrast Issues** - Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI) (http://localhost:4321/angebote/webseite)
 7. **Color Contrast Issues** - Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI) (http://localhost:4321/angebote/webseite)
 8. **Color Contrast Issues** - Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI) (http://localhost:4321/angebote/webseite)
-9. **Color Contrast Issues** - Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI) (http://localhost:4321/datenschutz)
-10. **WCAG Compliance Issue** - Main landmark should not be contained in another landmark (https://dequeuniversity.com/rules/axe/4.10/landmark-main-is-top-level?application=axeAPI) (http://localhost:4321/angebote/webseite)
-11. **WCAG Compliance Issue** - Document should not have more than one main landmark (https://dequeuniversity.com/rules/axe/4.10/landmark-no-duplicate-main?application=axeAPI) (http://localhost:4321/angebote/webseite)
-12. **WCAG Compliance Issue** - Landmarks should have a unique role or role/label/title (i.e. accessible name) combination (https://dequeuniversity.com/rules/axe/4.10/landmark-unique?application=axeAPI) (http://localhost:4321/angebote/webseite)
-13. **WCAG Compliance Issue** - Check that the title element describes the document. (http://localhost:4321/angebote/webseite)
-14. **WCAG Compliance Issue** - This element has "position: fixed". This may require scrolling in two dimensions, which is considered a failure of this Success Criterion. (http://localhost:4321/angebote/webseite)
-15. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/angebote/webseite)
-16. **WCAG Compliance Issue** - Ensure that the img element's alt text serves the same purpose and presents the same information as the image. (http://localhost:4321/angebote/webseite)
-17. **WCAG Compliance Issue** - If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link. (http://localhost:4321/angebote/webseite)
-18. **WCAG Compliance Issue** - If this element contains a navigation section, it is recommended that it be marked up as a list. (http://localhost:4321/angebote/webseite)
-19. **WCAG Compliance Issue** - This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1. (http://localhost:4321/angebote/webseite)
-20. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/angebote/webseite)
-21. **WCAG Compliance Issue** - This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1. (http://localhost:4321/angebote/webseite)
-22. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/angebote/webseite)
-23. **WCAG Compliance Issue** - This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1. (http://localhost:4321/angebote/webseite)
-24. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/angebote/webseite)
-25. **WCAG Compliance Issue** - Check that a change of context does not occur when this input field receives focus. (http://localhost:4321/angebote/webseite)
-26. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/angebote/webseite)
-27. **WCAG Compliance Issue** - Ensure that the img element's alt text serves the same purpose and presents the same information as the image. (http://localhost:4321/angebote/webseite)
-28. **WCAG Compliance Issue** - If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link. (http://localhost:4321/angebote/webseite)
-29. **WCAG Compliance Issue** - Check that a change of context does not occur when this input field receives focus. (http://localhost:4321/angebote/webseite)
-30. **WCAG Compliance Issue** - The heading structure is not logically nested. This h3 element should be an h2 to be properly nested. (http://localhost:4321/angebote/webseite)
+9. **WCAG Compliance Issue** - Main landmark should not be contained in another landmark (https://dequeuniversity.com/rules/axe/4.10/landmark-main-is-top-level?application=axeAPI) (http://localhost:4321/angebote/webseite)
+10. **WCAG Compliance Issue** - Document should not have more than one main landmark (https://dequeuniversity.com/rules/axe/4.10/landmark-no-duplicate-main?application=axeAPI) (http://localhost:4321/angebote/webseite)
+11. **WCAG Compliance Issue** - Landmarks should have a unique role or role/label/title (i.e. accessible name) combination (https://dequeuniversity.com/rules/axe/4.10/landmark-unique?application=axeAPI) (http://localhost:4321/angebote/webseite)
+12. **WCAG Compliance Issue** - Check that the title element describes the document. (http://localhost:4321/angebote/webseite)
+13. **WCAG Compliance Issue** - This element has "position: fixed". This may require scrolling in two dimensions, which is considered a failure of this Success Criterion. (http://localhost:4321/angebote/webseite)
+14. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/angebote/webseite)
+15. **WCAG Compliance Issue** - Ensure that the img element's alt text serves the same purpose and presents the same information as the image. (http://localhost:4321/angebote/webseite)
+16. **WCAG Compliance Issue** - If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link. (http://localhost:4321/angebote/webseite)
+17. **WCAG Compliance Issue** - If this element contains a navigation section, it is recommended that it be marked up as a list. (http://localhost:4321/angebote/webseite)
+18. **WCAG Compliance Issue** - This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1. (http://localhost:4321/angebote/webseite)
+19. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/angebote/webseite)
+20. **WCAG Compliance Issue** - This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1. (http://localhost:4321/angebote/webseite)
+21. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/angebote/webseite)
+22. **WCAG Compliance Issue** - This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1. (http://localhost:4321/angebote/webseite)
+23. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/angebote/webseite)
+24. **WCAG Compliance Issue** - Check that a change of context does not occur when this input field receives focus. (http://localhost:4321/angebote/webseite)
+25. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/angebote/webseite)
+26. **WCAG Compliance Issue** - Ensure that the img element's alt text serves the same purpose and presents the same information as the image. (http://localhost:4321/angebote/webseite)
+27. **WCAG Compliance Issue** - If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link. (http://localhost:4321/angebote/webseite)
+28. **WCAG Compliance Issue** - Check that a change of context does not occur when this input field receives focus. (http://localhost:4321/angebote/webseite)
+29. **WCAG Compliance Issue** - The heading structure is not logically nested. This h3 element should be an h2 to be properly nested. (http://localhost:4321/angebote/webseite)
+30. **WCAG Compliance Issue** - This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.61:1. Recommendation:  change text colour to #767676. (http://localhost:4321/angebote/webseite)
 31. **WCAG Compliance Issue** - This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.61:1. Recommendation:  change text colour to #767676. (http://localhost:4321/angebote/webseite)
-32. **WCAG Compliance Issue** - This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.61:1. Recommendation:  change text colour to #767676. (http://localhost:4321/angebote/webseite)
-33. **WCAG Compliance Issue** - This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.53:1. Recommendation:  change background to #484848. (http://localhost:4321/angebote/webseite)
-34. **WCAG Compliance Issue** - If this element contains a navigation section, it is recommended that it be marked up as a list. (http://localhost:4321/angebote/webseite)
+32. **WCAG Compliance Issue** - This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.53:1. Recommendation:  change background to #484848. (http://localhost:4321/angebote/webseite)
+33. **WCAG Compliance Issue** - If this element contains a navigation section, it is recommended that it be marked up as a list. (http://localhost:4321/angebote/webseite)
+34. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/angebote/webseite)
 35. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/angebote/webseite)
-36. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/angebote/webseite)
-37. **WCAG Compliance Issue** - Anchor element found with link content, but no href, ID or name attribute has been supplied. (http://localhost:4321/angebote/webseite)
-38. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/angebote/webseite)
-39. **WCAG Compliance Issue** - This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.43:1. Recommendation:  change background to #f7f7f7. (http://localhost:4321/angebote/webseite)
-40. **WCAG Compliance Issue** - If this element contains a navigation section, it is recommended that it be marked up as a list. (http://localhost:4321/angebote/webseite)
+36. **WCAG Compliance Issue** - Anchor element found with link content, but no href, ID or name attribute has been supplied. (http://localhost:4321/angebote/webseite)
+37. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/angebote/webseite)
+38. **WCAG Compliance Issue** - This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.43:1. Recommendation:  change background to #f7f7f7. (http://localhost:4321/angebote/webseite)
+39. **WCAG Compliance Issue** - If this element contains a navigation section, it is recommended that it be marked up as a list. (http://localhost:4321/angebote/webseite)
+40. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/angebote/webseite)
 41. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/angebote/webseite)
 42. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/angebote/webseite)
 43. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/angebote/webseite)
 44. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/angebote/webseite)
 45. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/angebote/webseite)
-46. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/angebote/webseite)
-47. **WCAG Compliance Issue** - Check that the content is ordered in a meaningful sequence when linearised, such as when style sheets are disabled. (http://localhost:4321/angebote/webseite)
-48. **WCAG Compliance Issue** - Where instructions are provided for understanding the content, do not rely on sensory characteristics alone (such as shape, size or location) to describe objects. (http://localhost:4321/angebote/webseite)
-49. **WCAG Compliance Issue** - Check that content does not restrict its view and operation to a single display orientation, such as portrait or landscape, unless a specific display orientation is essential. (http://localhost:4321/angebote/webseite)
-50. **WCAG Compliance Issue** - Check that any information conveyed using colour alone is also available in text, or through other visual cues. (http://localhost:4321/angebote/webseite)
-51. **WCAG Compliance Issue** - Check that text can be resized without assistive technology up to 200 percent without loss of content or functionality. (http://localhost:4321/angebote/webseite)
-52. **WCAG Compliance Issue** - If the technologies being used can achieve the visual presentation, check that text is used to convey information rather than images of text, except when the image of text is essential to the information being conveyed, or can be visually customised to the user's requirements. (http://localhost:4321/angebote/webseite)
-53. **WCAG Compliance Issue** - Check that content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for:     Vertical scrolling content at a width equivalent to 320 CSS pixels;     Horizontal scrolling content at a height equivalent to 256 CSS pixels;     Except for parts of the content which require two-dimensional layout for usage or meaning. (http://localhost:4321/angebote/webseite)
-54. **WCAG Compliance Issue** - Check that the visual presentation of the following have a contrast ratio of at least 3:1 against adjacent color(s):     User Interface Components: Visual information required to identify user interface components and states, except for inactive components or where the appearance of the component is determined by the user agent and not modified by the author;     Graphical Objects: Parts of graphics required to understand the content, except when a particular presentation of graphics is essential to the information being conveyed. (http://localhost:4321/angebote/webseite)
-55. **WCAG Compliance Issue** - Check that no loss of content or functionality occurs by setting all of the following and by changing no other style property:              Line height (line spacing) to at least 1.5 times the font size;         Spacing following paragraphs to at least 2 times the font size;         Letter spacing (tracking) to at least 0.12 times the font size;         Word spacing to at least 0.16 times the font size. (http://localhost:4321/angebote/webseite)
-56. **WCAG Compliance Issue** - Check that where receiving and then removing pointer hover or keyboard focus triggers additional content to become visible and then hidden, the following are true:              Dismissable: A mechanism is available to dismiss the additional content without moving pointer hover or keyboard focus, unless the additional content communicates an input error or does not obscure or replace other content;         Hoverable: If pointer hover can trigger the additional content, then the pointer can be moved over the additional content without the additional content disappearing;         Persistent: The additional content remains visible until the hover or focus trigger is removed, the user dismisses it, or its information is no longer valid. (http://localhost:4321/angebote/webseite)
-57. **WCAG Compliance Issue** - Check that if a keyboard shortcut is implemented in content using only letter (including upper- and lower-case letters), punctuation, number, or symbol characters, then at least one of the following is true:              Turn off: A mechanism is available to turn the shortcut off;         Remap: A mechanism is available to remap the shortcut to use one or more non-printable keyboard characters (e.g. Ctrl, Alt, etc);         Active only on focus: The keyboard shortcut for a user interface component is only active when that component has focus.      (http://localhost:4321/angebote/webseite)
-58. **WCAG Compliance Issue** - If any part of the content moves, scrolls or blinks for more than 5 seconds, or auto-updates, check that there is a mechanism available to pause, stop, or hide the content. (http://localhost:4321/angebote/webseite)
-59. **WCAG Compliance Issue** - Check that no component of the content flashes more than three times in any 1-second period, or that the size of any flashing area is sufficiently small. (http://localhost:4321/angebote/webseite)
-60. **WCAG Compliance Issue** - Ensure that any common navigation elements can be bypassed; for instance, by use of skip links, header elements, or ARIA landmark roles. (http://localhost:4321/angebote/webseite)
-61. **WCAG Compliance Issue** - If this Web page is not part of a linear process, check that there is more than one way of locating this Web page within a set of Web pages. (http://localhost:4321/angebote/webseite)
-62. **WCAG Compliance Issue** - Check that headings and labels describe topic or purpose. (http://localhost:4321/angebote/webseite)
-63. **WCAG Compliance Issue** - Check that there is at least one mode of operation where the keyboard focus indicator can be visually located on user interface controls. (http://localhost:4321/angebote/webseite)
-64. **WCAG Compliance Issue** - Check that all functionality that uses multipoint or path-based gestures for operation can be operated with a single pointer without a path-based gesture, unless a multipoint or path-based gesture is essential. (http://localhost:4321/angebote/webseite)
-65. **WCAG Compliance Issue** - Check that for functionality that can be operated using a single pointer, at least one of the following is true:         No Down-Event: The down-event of the pointer is not used to execute any part of the function;         Abort or Undo: Completion of the function is on the up-event, and a mechanism is available to abort the function before completion or to undo the function after completion;         Up Reversal: The up-event reverses any outcome of the preceding down-event;         Essential: Completing the function on the down-event is essential. (http://localhost:4321/angebote/webseite)
-66. **WCAG Compliance Issue** - Check that for user interface components with labels that include text or images of text, the name contains the text that is presented visually. (http://localhost:4321/angebote/webseite)
-67. **WCAG Compliance Issue** - Check that functionality that can be operated by device motion or user motion can also be operated by user interface components and responding to the motion can be disabled to prevent accidental actuation, except when:              Supported Interface: The motion is used to operate functionality through an accessibility supported interface;         Essential: The motion is essential for the function and doing so would invalidate the activity.      (http://localhost:4321/angebote/webseite)
-68. **WCAG Compliance Issue** - Ensure that any change in language is marked using the lang and/or xml:lang attribute on an element, as appropriate. (http://localhost:4321/angebote/webseite)
-69. **WCAG Compliance Issue** - Check that navigational mechanisms that are repeated on multiple Web pages occur in the same relative order each time they are repeated, unless a change is initiated by the user. (http://localhost:4321/angebote/webseite)
-70. **WCAG Compliance Issue** - Check that components that have the same functionality within this Web page are identified consistently in the set of Web pages to which it belongs. (http://localhost:4321/angebote/webseite)
-71. **WCAG Compliance Issue** - Check that status messages can be programmatically determined through role or properties such that they can be presented to the user by assistive technologies without receiving focus. (http://localhost:4321/angebote/webseite)
-72. **WCAG Compliance Issue** - Main landmark should not be contained in another landmark (https://dequeuniversity.com/rules/axe/4.10/landmark-main-is-top-level?application=axeAPI) (http://localhost:4321/datenschutz)
-73. **WCAG Compliance Issue** - Document should not have more than one main landmark (https://dequeuniversity.com/rules/axe/4.10/landmark-no-duplicate-main?application=axeAPI) (http://localhost:4321/datenschutz)
-74. **WCAG Compliance Issue** - Landmarks should have a unique role or role/label/title (i.e. accessible name) combination (https://dequeuniversity.com/rules/axe/4.10/landmark-unique?application=axeAPI) (http://localhost:4321/datenschutz)
-75. **WCAG Compliance Issue** - Check that the title element describes the document. (http://localhost:4321/datenschutz)
-76. **WCAG Compliance Issue** - This element has "position: fixed". This may require scrolling in two dimensions, which is considered a failure of this Success Criterion. (http://localhost:4321/datenschutz)
-77. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/datenschutz)
-78. **WCAG Compliance Issue** - Ensure that the img element's alt text serves the same purpose and presents the same information as the image. (http://localhost:4321/datenschutz)
-79. **WCAG Compliance Issue** - If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link. (http://localhost:4321/datenschutz)
-80. **WCAG Compliance Issue** - If this element contains a navigation section, it is recommended that it be marked up as a list. (http://localhost:4321/datenschutz)
-81. **WCAG Compliance Issue** - This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1. (http://localhost:4321/datenschutz)
-82. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/datenschutz)
-83. **WCAG Compliance Issue** - This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1. (http://localhost:4321/datenschutz)
-84. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/datenschutz)
-85. **WCAG Compliance Issue** - This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1. (http://localhost:4321/datenschutz)
-86. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/datenschutz)
-87. **WCAG Compliance Issue** - Check that a change of context does not occur when this input field receives focus. (http://localhost:4321/datenschutz)
-88. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/datenschutz)
-89. **WCAG Compliance Issue** - Ensure that the img element's alt text serves the same purpose and presents the same information as the image. (http://localhost:4321/datenschutz)
-90. **WCAG Compliance Issue** - If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link. (http://localhost:4321/datenschutz)
-91. **WCAG Compliance Issue** - Check that a change of context does not occur when this input field receives focus. (http://localhost:4321/datenschutz)
-92. **WCAG Compliance Issue** - Anchor element found with link content, but no href, ID or name attribute has been supplied. (http://localhost:4321/datenschutz)
-93. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/datenschutz)
-94. **WCAG Compliance Issue** - This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.43:1. Recommendation:  change background to #f7f7f7. (http://localhost:4321/datenschutz)
-95. **WCAG Compliance Issue** - If this element contains a navigation section, it is recommended that it be marked up as a list. (http://localhost:4321/datenschutz)
-96. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/datenschutz)
-97. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/datenschutz)
-98. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/datenschutz)
-99. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/datenschutz)
-100. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/datenschutz)
-101. **WCAG Compliance Issue** - Check that the link text combined with programmatically determined link context identifies the purpose of the link. (http://localhost:4321/datenschutz)
-102. **WCAG Compliance Issue** - Check that the content is ordered in a meaningful sequence when linearised, such as when style sheets are disabled. (http://localhost:4321/datenschutz)
-103. **WCAG Compliance Issue** - Where instructions are provided for understanding the content, do not rely on sensory characteristics alone (such as shape, size or location) to describe objects. (http://localhost:4321/datenschutz)
-104. **WCAG Compliance Issue** - Check that content does not restrict its view and operation to a single display orientation, such as portrait or landscape, unless a specific display orientation is essential. (http://localhost:4321/datenschutz)
-105. **WCAG Compliance Issue** - Check that any information conveyed using colour alone is also available in text, or through other visual cues. (http://localhost:4321/datenschutz)
-106. **WCAG Compliance Issue** - Check that text can be resized without assistive technology up to 200 percent without loss of content or functionality. (http://localhost:4321/datenschutz)
-107. **WCAG Compliance Issue** - If the technologies being used can achieve the visual presentation, check that text is used to convey information rather than images of text, except when the image of text is essential to the information being conveyed, or can be visually customised to the user's requirements. (http://localhost:4321/datenschutz)
-108. **WCAG Compliance Issue** - Check that content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for:     Vertical scrolling content at a width equivalent to 320 CSS pixels;     Horizontal scrolling content at a height equivalent to 256 CSS pixels;     Except for parts of the content which require two-dimensional layout for usage or meaning. (http://localhost:4321/datenschutz)
-109. **WCAG Compliance Issue** - Check that the visual presentation of the following have a contrast ratio of at least 3:1 against adjacent color(s):     User Interface Components: Visual information required to identify user interface components and states, except for inactive components or where the appearance of the component is determined by the user agent and not modified by the author;     Graphical Objects: Parts of graphics required to understand the content, except when a particular presentation of graphics is essential to the information being conveyed. (http://localhost:4321/datenschutz)
-110. **WCAG Compliance Issue** - Check that no loss of content or functionality occurs by setting all of the following and by changing no other style property:              Line height (line spacing) to at least 1.5 times the font size;         Spacing following paragraphs to at least 2 times the font size;         Letter spacing (tracking) to at least 0.12 times the font size;         Word spacing to at least 0.16 times the font size. (http://localhost:4321/datenschutz)
-111. **WCAG Compliance Issue** - Check that where receiving and then removing pointer hover or keyboard focus triggers additional content to become visible and then hidden, the following are true:              Dismissable: A mechanism is available to dismiss the additional content without moving pointer hover or keyboard focus, unless the additional content communicates an input error or does not obscure or replace other content;         Hoverable: If pointer hover can trigger the additional content, then the pointer can be moved over the additional content without the additional content disappearing;         Persistent: The additional content remains visible until the hover or focus trigger is removed, the user dismisses it, or its information is no longer valid. (http://localhost:4321/datenschutz)
-112. **WCAG Compliance Issue** - Check that if a keyboard shortcut is implemented in content using only letter (including upper- and lower-case letters), punctuation, number, or symbol characters, then at least one of the following is true:              Turn off: A mechanism is available to turn the shortcut off;         Remap: A mechanism is available to remap the shortcut to use one or more non-printable keyboard characters (e.g. Ctrl, Alt, etc);         Active only on focus: The keyboard shortcut for a user interface component is only active when that component has focus.      (http://localhost:4321/datenschutz)
-113. **WCAG Compliance Issue** - If any part of the content moves, scrolls or blinks for more than 5 seconds, or auto-updates, check that there is a mechanism available to pause, stop, or hide the content. (http://localhost:4321/datenschutz)
-114. **WCAG Compliance Issue** - Check that no component of the content flashes more than three times in any 1-second period, or that the size of any flashing area is sufficiently small. (http://localhost:4321/datenschutz)
-115. **WCAG Compliance Issue** - Ensure that any common navigation elements can be bypassed; for instance, by use of skip links, header elements, or ARIA landmark roles. (http://localhost:4321/datenschutz)
-116. **WCAG Compliance Issue** - If this Web page is not part of a linear process, check that there is more than one way of locating this Web page within a set of Web pages. (http://localhost:4321/datenschutz)
-117. **WCAG Compliance Issue** - Check that headings and labels describe topic or purpose. (http://localhost:4321/datenschutz)
-118. **WCAG Compliance Issue** - Check that there is at least one mode of operation where the keyboard focus indicator can be visually located on user interface controls. (http://localhost:4321/datenschutz)
-119. **WCAG Compliance Issue** - Check that all functionality that uses multipoint or path-based gestures for operation can be operated with a single pointer without a path-based gesture, unless a multipoint or path-based gesture is essential. (http://localhost:4321/datenschutz)
-120. **WCAG Compliance Issue** - Check that for functionality that can be operated using a single pointer, at least one of the following is true:         No Down-Event: The down-event of the pointer is not used to execute any part of the function;         Abort or Undo: Completion of the function is on the up-event, and a mechanism is available to abort the function before completion or to undo the function after completion;         Up Reversal: The up-event reverses any outcome of the preceding down-event;         Essential: Completing the function on the down-event is essential. (http://localhost:4321/datenschutz)
-121. **WCAG Compliance Issue** - Check that for user interface components with labels that include text or images of text, the name contains the text that is presented visually. (http://localhost:4321/datenschutz)
-122. **WCAG Compliance Issue** - Check that functionality that can be operated by device motion or user motion can also be operated by user interface components and responding to the motion can be disabled to prevent accidental actuation, except when:              Supported Interface: The motion is used to operate functionality through an accessibility supported interface;         Essential: The motion is essential for the function and doing so would invalidate the activity.      (http://localhost:4321/datenschutz)
-123. **WCAG Compliance Issue** - Ensure that any change in language is marked using the lang and/or xml:lang attribute on an element, as appropriate. (http://localhost:4321/datenschutz)
-124. **WCAG Compliance Issue** - Check that navigational mechanisms that are repeated on multiple Web pages occur in the same relative order each time they are repeated, unless a change is initiated by the user. (http://localhost:4321/datenschutz)
-125. **WCAG Compliance Issue** - Check that components that have the same functionality within this Web page are identified consistently in the set of Web pages to which it belongs. (http://localhost:4321/datenschutz)
-126. **WCAG Compliance Issue** - Check that status messages can be programmatically determined through role or properties such that they can be presented to the user by assistive technologies without receiving focus. (http://localhost:4321/datenschutz)
-127. **General Accessibility Issue** - color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI) (http://localhost:4321/angebote/webseite)
-128. **General Accessibility Issue** - color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI) (http://localhost:4321/angebote/webseite)
-129. **General Accessibility Issue** - color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI) (http://localhost:4321/angebote/webseite)
-130. **General Accessibility Issue** - color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI) (http://localhost:4321/angebote/webseite)
-131. **General Accessibility Issue** - color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI) (http://localhost:4321/angebote/webseite)
-132. **General Accessibility Issue** - color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI) (http://localhost:4321/angebote/webseite)
-133. **General Accessibility Issue** - color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI) (http://localhost:4321/angebote/webseite)
-134. **General Accessibility Issue** - WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.61:1. Recommendation:  change text colour to #767676. (http://localhost:4321/angebote/webseite)
-135. **General Accessibility Issue** - WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.61:1. Recommendation:  change text colour to #767676. (http://localhost:4321/angebote/webseite)
-136. **General Accessibility Issue** - WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.53:1. Recommendation:  change background to #484848. (http://localhost:4321/angebote/webseite)
-137. **General Accessibility Issue** - WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.43:1. Recommendation:  change background to #f7f7f7. (http://localhost:4321/angebote/webseite)
-138. **General Accessibility Issue** - color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI) (http://localhost:4321/datenschutz)
-139. **General Accessibility Issue** - WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.43:1. Recommendation:  change background to #f7f7f7. (http://localhost:4321/datenschutz)
+46. **WCAG Compliance Issue** - Check that the content is ordered in a meaningful sequence when linearised, such as when style sheets are disabled. (http://localhost:4321/angebote/webseite)
+47. **WCAG Compliance Issue** - Where instructions are provided for understanding the content, do not rely on sensory characteristics alone (such as shape, size or location) to describe objects. (http://localhost:4321/angebote/webseite)
+48. **WCAG Compliance Issue** - Check that content does not restrict its view and operation to a single display orientation, such as portrait or landscape, unless a specific display orientation is essential. (http://localhost:4321/angebote/webseite)
+49. **WCAG Compliance Issue** - Check that any information conveyed using colour alone is also available in text, or through other visual cues. (http://localhost:4321/angebote/webseite)
+50. **WCAG Compliance Issue** - Check that text can be resized without assistive technology up to 200 percent without loss of content or functionality. (http://localhost:4321/angebote/webseite)
+51. **WCAG Compliance Issue** - If the technologies being used can achieve the visual presentation, check that text is used to convey information rather than images of text, except when the image of text is essential to the information being conveyed, or can be visually customised to the user's requirements. (http://localhost:4321/angebote/webseite)
+52. **WCAG Compliance Issue** - Check that content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for:     Vertical scrolling content at a width equivalent to 320 CSS pixels;     Horizontal scrolling content at a height equivalent to 256 CSS pixels;     Except for parts of the content which require two-dimensional layout for usage or meaning. (http://localhost:4321/angebote/webseite)
+53. **WCAG Compliance Issue** - Check that the visual presentation of the following have a contrast ratio of at least 3:1 against adjacent color(s):     User Interface Components: Visual information required to identify user interface components and states, except for inactive components or where the appearance of the component is determined by the user agent and not modified by the author;     Graphical Objects: Parts of graphics required to understand the content, except when a particular presentation of graphics is essential to the information being conveyed. (http://localhost:4321/angebote/webseite)
+54. **WCAG Compliance Issue** - Check that no loss of content or functionality occurs by setting all of the following and by changing no other style property:              Line height (line spacing) to at least 1.5 times the font size;         Spacing following paragraphs to at least 2 times the font size;         Letter spacing (tracking) to at least 0.12 times the font size;         Word spacing to at least 0.16 times the font size. (http://localhost:4321/angebote/webseite)
+55. **WCAG Compliance Issue** - Check that where receiving and then removing pointer hover or keyboard focus triggers additional content to become visible and then hidden, the following are true:              Dismissable: A mechanism is available to dismiss the additional content without moving pointer hover or keyboard focus, unless the additional content communicates an input error or does not obscure or replace other content;         Hoverable: If pointer hover can trigger the additional content, then the pointer can be moved over the additional content without the additional content disappearing;         Persistent: The additional content remains visible until the hover or focus trigger is removed, the user dismisses it, or its information is no longer valid. (http://localhost:4321/angebote/webseite)
+56. **WCAG Compliance Issue** - Check that if a keyboard shortcut is implemented in content using only letter (including upper- and lower-case letters), punctuation, number, or symbol characters, then at least one of the following is true:              Turn off: A mechanism is available to turn the shortcut off;         Remap: A mechanism is available to remap the shortcut to use one or more non-printable keyboard characters (e.g. Ctrl, Alt, etc);         Active only on focus: The keyboard shortcut for a user interface component is only active when that component has focus.      (http://localhost:4321/angebote/webseite)
+57. **WCAG Compliance Issue** - If any part of the content moves, scrolls or blinks for more than 5 seconds, or auto-updates, check that there is a mechanism available to pause, stop, or hide the content. (http://localhost:4321/angebote/webseite)
+58. **WCAG Compliance Issue** - Check that no component of the content flashes more than three times in any 1-second period, or that the size of any flashing area is sufficiently small. (http://localhost:4321/angebote/webseite)
+59. **WCAG Compliance Issue** - Ensure that any common navigation elements can be bypassed; for instance, by use of skip links, header elements, or ARIA landmark roles. (http://localhost:4321/angebote/webseite)
+60. **WCAG Compliance Issue** - If this Web page is not part of a linear process, check that there is more than one way of locating this Web page within a set of Web pages. (http://localhost:4321/angebote/webseite)
+61. **WCAG Compliance Issue** - Check that headings and labels describe topic or purpose. (http://localhost:4321/angebote/webseite)
+62. **WCAG Compliance Issue** - Check that there is at least one mode of operation where the keyboard focus indicator can be visually located on user interface controls. (http://localhost:4321/angebote/webseite)
+63. **WCAG Compliance Issue** - Check that all functionality that uses multipoint or path-based gestures for operation can be operated with a single pointer without a path-based gesture, unless a multipoint or path-based gesture is essential. (http://localhost:4321/angebote/webseite)
+64. **WCAG Compliance Issue** - Check that for functionality that can be operated using a single pointer, at least one of the following is true:         No Down-Event: The down-event of the pointer is not used to execute any part of the function;         Abort or Undo: Completion of the function is on the up-event, and a mechanism is available to abort the function before completion or to undo the function after completion;         Up Reversal: The up-event reverses any outcome of the preceding down-event;         Essential: Completing the function on the down-event is essential. (http://localhost:4321/angebote/webseite)
+65. **WCAG Compliance Issue** - Check that for user interface components with labels that include text or images of text, the name contains the text that is presented visually. (http://localhost:4321/angebote/webseite)
+66. **WCAG Compliance Issue** - Check that functionality that can be operated by device motion or user motion can also be operated by user interface components and responding to the motion can be disabled to prevent accidental actuation, except when:              Supported Interface: The motion is used to operate functionality through an accessibility supported interface;         Essential: The motion is essential for the function and doing so would invalidate the activity.      (http://localhost:4321/angebote/webseite)
+67. **WCAG Compliance Issue** - Ensure that any change in language is marked using the lang and/or xml:lang attribute on an element, as appropriate. (http://localhost:4321/angebote/webseite)
+68. **WCAG Compliance Issue** - Check that navigational mechanisms that are repeated on multiple Web pages occur in the same relative order each time they are repeated, unless a change is initiated by the user. (http://localhost:4321/angebote/webseite)
+69. **WCAG Compliance Issue** - Check that components that have the same functionality within this Web page are identified consistently in the set of Web pages to which it belongs. (http://localhost:4321/angebote/webseite)
+70. **WCAG Compliance Issue** - Check that status messages can be programmatically determined through role or properties such that they can be presented to the user by assistive technologies without receiving focus. (http://localhost:4321/angebote/webseite)
+71. **General Accessibility Issue** - color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI) (http://localhost:4321/angebote/webseite)
+72. **General Accessibility Issue** - color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI) (http://localhost:4321/angebote/webseite)
+73. **General Accessibility Issue** - color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI) (http://localhost:4321/angebote/webseite)
+74. **General Accessibility Issue** - color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI) (http://localhost:4321/angebote/webseite)
+75. **General Accessibility Issue** - color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI) (http://localhost:4321/angebote/webseite)
+76. **General Accessibility Issue** - color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI) (http://localhost:4321/angebote/webseite)
+77. **General Accessibility Issue** - color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI) (http://localhost:4321/angebote/webseite)
+78. **General Accessibility Issue** - WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.61:1. Recommendation:  change text colour to #767676. (http://localhost:4321/angebote/webseite)
+79. **General Accessibility Issue** - WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.61:1. Recommendation:  change text colour to #767676. (http://localhost:4321/angebote/webseite)
+80. **General Accessibility Issue** - WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.53:1. Recommendation:  change background to #484848. (http://localhost:4321/angebote/webseite)
+81. **General Accessibility Issue** - WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.43:1. Recommendation:  change background to #f7f7f7. (http://localhost:4321/angebote/webseite)
