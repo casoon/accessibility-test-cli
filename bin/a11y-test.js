@@ -50,17 +50,22 @@ program
     
     // Interactive prompts for all options if not specified
     let maxPages = options.maxPages;
-    let standard = options.standard;
+    let standard = options.standard || 'WCAG2AA'; // Default standard
     let generateDetailedReport = options.detailedReport;
     let generatePerformanceReport = options.performanceReport;
     let generateSeoReport = options.seoReport;
     
-    // Set default standard if not provided
-    if (!standard) {
-      standard = 'WCAG2AA';
-    }
+    // Set sensible defaults for all parameters if not provided
+    if (!maxPages) maxPages = 20;
+    if (generateDetailedReport === undefined) generateDetailedReport = true;
+    if (generatePerformanceReport === undefined) generatePerformanceReport = true;
+    if (generateSeoReport === undefined) generateSeoReport = true;
     
-    if (!maxPages || !generateDetailedReport || !generatePerformanceReport || !generateSeoReport) {
+    // Only show prompts if we're in interactive mode (no CLI parameters)
+    const hasCliParameters = options.maxPages || options.standard || options.detailedReport !== undefined || 
+                           options.performanceReport !== undefined || options.seoReport !== undefined;
+    
+    if (!hasCliParameters) {
       const maxPagesChoices = [
         { name: '5 pages (Quick test)', value: 5 },
         { name: '10 pages (Standard test)', value: 10 },
@@ -77,66 +82,52 @@ program
         { name: 'Section 508 (US Federal)', value: 'Section508' }
       ];
       
-      const prompts = [];
-      
-      if (!maxPages) {
-        prompts.push({
+      const prompts = [
+        {
           type: 'list',
           name: 'maxPages',
           message: 'How many pages would you like to test?',
           choices: maxPagesChoices,
           default: 20
-        });
-      }
-      
-      // Always ask for standard (since we removed the default from CLI option)
-      prompts.push({
-        type: 'list',
-        name: 'standard',
-        message: 'Which accessibility standard would you like to test against?',
-        choices: standardChoices,
-        default: standard
-      });
-      
-      if (!generateDetailedReport) {
-        prompts.push({
+        },
+        {
+          type: 'list',
+          name: 'standard',
+          message: 'Which accessibility standard would you like to test against?',
+          choices: standardChoices,
+          default: standard
+        },
+        {
           type: 'confirm',
           name: 'generateDetailedReport',
           message: 'Would you like to generate a detailed error report for automated fixes?',
           default: true
-        });
-      }
-      
-      if (!generatePerformanceReport) {
-        prompts.push({
+        },
+        {
           type: 'confirm',
           name: 'generatePerformanceReport',
           message: 'Would you like to generate a performance report with PageSpeed/Lightspeed analysis?',
           default: true
-        });
-      }
-      
-      if (!generateSeoReport) {
-        prompts.push({
+        },
+        {
           type: 'confirm',
           name: 'generateSeoReport',
           message: 'Would you like to generate an SEO report with search engine optimization analysis?',
           default: true
-        });
-      }
+        }
+      ];
       
       const answers = await inquirer.prompt(prompts);
       
-      maxPages = maxPages || answers.maxPages;
-      standard = answers.standard; // Always use the selected standard
-      generateDetailedReport = generateDetailedReport || answers.generateDetailedReport;
-      generatePerformanceReport = generatePerformanceReport || answers.generatePerformanceReport;
-      generateSeoReport = generateSeoReport || answers.generateSeoReport;
-      
-      if (maxPages) maxPages = parseInt(maxPages);
-    } else {
-      maxPages = parseInt(maxPages);
+      maxPages = answers.maxPages;
+      standard = answers.standard;
+      generateDetailedReport = answers.generateDetailedReport;
+      generatePerformanceReport = answers.generatePerformanceReport;
+      generateSeoReport = answers.generateSeoReport;
     }
+    
+    // Ensure maxPages is a number
+    maxPages = parseInt(maxPages);
     
     console.log(`🧪 Max Pages: ${maxPages}`);
     console.log(`⏱️  Timeout: ${options.timeout}ms`);
