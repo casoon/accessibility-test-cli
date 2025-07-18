@@ -3,9 +3,11 @@ import pa11y from "pa11y";
 import { AccessibilityResult, TestOptions, Pa11yIssue } from "../types";
 import * as fs from 'fs';
 import * as path from 'path';
+import { TestQueue, QueuedUrl } from './test-queue';
 
 export class AccessibilityChecker {
   private browser: Browser | null = null;
+  private testQueue: TestQueue | null = null;
 
   async initialize(): Promise<void> {
     this.browser = await chromium.launch({
@@ -207,20 +209,55 @@ export class AccessibilityChecker {
     const maxPages = options.maxPages || urls.length;
     const pagesToTest = urls.slice(0, maxPages);
 
-    console.log(`🧪 Testing ${pagesToTest.length} pages...`);
+    // TestQueue initialisieren
+    this.testQueue = new TestQueue({
+      maxRetries: 3,
+      maxConcurrent: 1,
+      saveInterval: 5000,
+      dataFile: `./test-queue-${Date.now()}.json`,
+      priorityPatterns: [
+        { pattern: '/home', priority: 1 },
+        { pattern: '/', priority: 2 },
+        { pattern: '/about', priority: 3 },
+        { pattern: '/contact', priority: 3 },
+        { pattern: '/blog', priority: 4 },
+        { pattern: '/products', priority: 4 }
+      ]
+    });
 
-    for (let i = 0; i < pagesToTest.length; i++) {
-      const url = pagesToTest[i];
-      const startTime = Date.now();
+    // URLs zur Queue hinzufügen
+    this.testQueue.addUrls(pagesToTest);
+    
+    console.log(`🧪 Testing ${pagesToTest.length} pages using queue system...`);
+    this.testQueue.showStats();
+
+    let completedCount = 0;
+    const maxAttempts = pagesToTest.length * 3; // Sicherheitsgrenze
+    let attempts = 0;
+
+    while (completedCount < pagesToTest.length && attempts < maxAttempts) {
+      attempts++;
       
-      console.log(`\n📄 Testing page ${i + 1}/${pagesToTest.length}: ${url}`);
-      console.log(`   ⏱️  Starting test...`);
+      // Nächste URL aus der Queue holen
+      const queuedUrl = this.testQueue.getNextUrl();
+      if (!queuedUrl) {
+        // Keine URLs mehr in der Queue
+        break;
+      }
+
+      const startTime = Date.now();
+      console.log(`\n📄 Testing page ${completedCount + 1}/${pagesToTest.length}: ${queuedUrl.url}`);
+      console.log(`   ⏱️  Starting test (attempt ${queuedUrl.attempts})...`);
       
       try {
-        const result = await this.testPage(url, options);
+        const result = await this.testPage(queuedUrl.url, options);
         const duration = Date.now() - startTime;
         result.duration = duration;
         results.push(result);
+        
+        // URL als abgeschlossen markieren
+        this.testQueue.markCompleted(queuedUrl.url, result);
+        completedCount++;
         
         console.log(`   ✅ Test completed in ${duration}ms`);
         
@@ -229,11 +266,22 @@ export class AccessibilityChecker {
         } else {
           console.log(`   🎯 Result: FAILED (${result.errors.length} errors, ${result.warnings.length} warnings)`);
         }
+        
+        // Status alle 5 URLs anzeigen
+        if (completedCount % 5 === 0) {
+          this.testQueue.showStats();
+        }
+        
       } catch (error) {
         const duration = Date.now() - startTime;
-        console.error(`   💥 Error testing page ${i + 1} after ${duration}ms: ${error}`);
+        console.error(`   💥 Error testing page after ${duration}ms: ${error}`);
+        
+        // URL als fehlgeschlagen markieren
+        this.testQueue.markFailed(queuedUrl.url, String(error));
+        
+        // Error-Result erstellen
         const errorResult: AccessibilityResult = {
-          url,
+          url: queuedUrl.url,
           title: "",
           imagesWithoutAlt: 0,
           buttonsWithoutLabel: 0,
@@ -244,7 +292,18 @@ export class AccessibilityChecker {
           duration,
         };
         results.push(errorResult);
+        completedCount++;
       }
+    }
+
+    // Finale Statistiken anzeigen
+    console.log('\n📊 Final Queue Statistics:');
+    this.testQueue.showStats();
+    
+    // Queue aufräumen
+    if (this.testQueue) {
+      this.testQueue.stopAutoSave();
+      this.testQueue.saveQueue();
     }
 
     return results;

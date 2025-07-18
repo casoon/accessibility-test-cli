@@ -1,0 +1,1604 @@
+{
+  "queue": [],
+  "completed": [
+    {
+      "url": "http://localhost:4321/angebote/webseite",
+      "priority": 2,
+      "status": "completed",
+      "attempts": 1,
+      "lastAttempt": "2025-07-18T19:53:57.116Z",
+      "result": {
+        "url": "http://localhost:4321/angebote/webseite",
+        "title": "Website Angebote - CASOON",
+        "imagesWithoutAlt": 0,
+        "buttonsWithoutLabel": 0,
+        "headingsCount": 10,
+        "errors": [
+          "color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)",
+          "color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)",
+          "color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)",
+          "color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)",
+          "color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)",
+          "color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)",
+          "color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)",
+          "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.61:1. Recommendation:  change text colour to #767676.",
+          "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.61:1. Recommendation:  change text colour to #767676.",
+          "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.53:1. Recommendation:  change background to #484848.",
+          "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.43:1. Recommendation:  change background to #f7f7f7."
+        ],
+        "warnings": [
+          "heading-order: Heading levels should only increase by one (https://dequeuniversity.com/rules/axe/4.10/heading-order?application=axeAPI)",
+          "landmark-main-is-top-level: Main landmark should not be contained in another landmark (https://dequeuniversity.com/rules/axe/4.10/landmark-main-is-top-level?application=axeAPI)",
+          "landmark-no-duplicate-main: Document should not have more than one main landmark (https://dequeuniversity.com/rules/axe/4.10/landmark-no-duplicate-main?application=axeAPI)",
+          "landmark-unique: Landmarks should have a unique role or role/label/title (i.e. accessible name) combination (https://dequeuniversity.com/rules/axe/4.10/landmark-unique?application=axeAPI)",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_2.H25.2: Check that the title element describes the document.",
+          "WCAG2AA.Principle1.Guideline1_4.1_4_10.C32,C31,C33,C38,SCR34,G206: This element has \"position: fixed\". This may require scrolling in two dimensions, which is considered a failure of this Success Criterion.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle1.Guideline1_1.1_1_1.G94.Image: Ensure that the img element's alt text serves the same purpose and presents the same information as the image.",
+          "Notice: WCAG2AA.Principle1.Guideline1_1.1_1_1.G73,G74: If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.",
+          "WCAG2AA.Principle1.Guideline1_3.1_3_1.H48: If this element contains a navigation section, it is recommended that it be marked up as a list.",
+          "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Abs: This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Abs: This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Abs: This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle3.Guideline3_2.3_2_1.G107: Check that a change of context does not occur when this input field receives focus.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle1.Guideline1_1.1_1_1.G94.Image: Ensure that the img element's alt text serves the same purpose and presents the same information as the image.",
+          "Notice: WCAG2AA.Principle1.Guideline1_1.1_1_1.G73,G74: If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.",
+          "Notice: WCAG2AA.Principle3.Guideline3_2.3_2_1.G107: Check that a change of context does not occur when this input field receives focus.",
+          "WCAG2AA.Principle1.Guideline1_3.1_3_1_A.G141: The heading structure is not logically nested. This h3 element should be an h2 to be properly nested.",
+          "WCAG2AA.Principle1.Guideline1_3.1_3_1.H48: If this element contains a navigation section, it is recommended that it be marked up as a list.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.Placeholder: Anchor element found with link content, but no href, ID or name attribute has been supplied.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "WCAG2AA.Principle1.Guideline1_3.1_3_1.H48: If this element contains a navigation section, it is recommended that it be marked up as a list.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle1.Guideline1_3.1_3_2.G57: Check that the content is ordered in a meaningful sequence when linearised, such as when style sheets are disabled.",
+          "Notice: WCAG2AA.Principle1.Guideline1_3.1_3_3.G96: Where instructions are provided for understanding the content, do not rely on sensory characteristics alone (such as shape, size or location) to describe objects.",
+          "Notice: WCAG2AA.Principle1.Guideline1_3.1_3_4.: Check that content does not restrict its view and operation to a single display orientation, such as portrait or landscape, unless a specific display orientation is essential.",
+          "Notice: WCAG2AA.Principle1.Guideline1_4.1_4_1.G14,G182: Check that any information conveyed using colour alone is also available in text, or through other visual cues.",
+          "Notice: WCAG2AA.Principle1.Guideline1_4.1_4_4.G142: Check that text can be resized without assistive technology up to 200 percent without loss of content or functionality.",
+          "Notice: WCAG2AA.Principle1.Guideline1_4.1_4_5.G140,C22,C30.AALevel: If the technologies being used can achieve the visual presentation, check that text is used to convey information rather than images of text, except when the image of text is essential to the information being conveyed, or can be visually customised to the user's requirements.",
+          "Notice: WCAG2AA.Principle1.Guideline1_4.1_4_10.C32,C31,C33,C38,SCR34,G206: Check that content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for:     Vertical scrolling content at a width equivalent to 320 CSS pixels;     Horizontal scrolling content at a height equivalent to 256 CSS pixels;     Except for parts of the content which require two-dimensional layout for usage or meaning.",
+          "Notice: WCAG2AA.Principle1.Guideline1_4.1_4_11.G195,G207,G18,G145,G174,F78: Check that the visual presentation of the following have a contrast ratio of at least 3:1 against adjacent color(s):     User Interface Components: Visual information required to identify user interface components and states, except for inactive components or where the appearance of the component is determined by the user agent and not modified by the author;     Graphical Objects: Parts of graphics required to understand the content, except when a particular presentation of graphics is essential to the information being conveyed.",
+          "Notice: WCAG2AA.Principle1.Guideline1_4.1_4_12.C36,C35: Check that no loss of content or functionality occurs by setting all of the following and by changing no other style property:              Line height (line spacing) to at least 1.5 times the font size;         Spacing following paragraphs to at least 2 times the font size;         Letter spacing (tracking) to at least 0.12 times the font size;         Word spacing to at least 0.16 times the font size.",
+          "Notice: WCAG2AA.Principle1.Guideline1_4.1_4_13.F95: Check that where receiving and then removing pointer hover or keyboard focus triggers additional content to become visible and then hidden, the following are true:              Dismissable: A mechanism is available to dismiss the additional content without moving pointer hover or keyboard focus, unless the additional content communicates an input error or does not obscure or replace other content;         Hoverable: If pointer hover can trigger the additional content, then the pointer can be moved over the additional content without the additional content disappearing;         Persistent: The additional content remains visible until the hover or focus trigger is removed, the user dismisses it, or its information is no longer valid.",
+          "Notice: WCAG2AA.Principle2.Guideline2_1.2_1_4.: Check that if a keyboard shortcut is implemented in content using only letter (including upper- and lower-case letters), punctuation, number, or symbol characters, then at least one of the following is true:              Turn off: A mechanism is available to turn the shortcut off;         Remap: A mechanism is available to remap the shortcut to use one or more non-printable keyboard characters (e.g. Ctrl, Alt, etc);         Active only on focus: The keyboard shortcut for a user interface component is only active when that component has focus.     ",
+          "Notice: WCAG2AA.Principle2.Guideline2_2.2_2_2.SCR33,SCR22,G187,G152,G186,G191: If any part of the content moves, scrolls or blinks for more than 5 seconds, or auto-updates, check that there is a mechanism available to pause, stop, or hide the content.",
+          "Notice: WCAG2AA.Principle2.Guideline2_3.2_3_1.G19,G176: Check that no component of the content flashes more than three times in any 1-second period, or that the size of any flashing area is sufficiently small.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_1.G1,G123,G124,H69: Ensure that any common navigation elements can be bypassed; for instance, by use of skip links, header elements, or ARIA landmark roles.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_5.G125,G64,G63,G161,G126,G185: If this Web page is not part of a linear process, check that there is more than one way of locating this Web page within a set of Web pages.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_6.G130,G131: Check that headings and labels describe topic or purpose.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_7.G149,G165,G195,C15,SCR31: Check that there is at least one mode of operation where the keyboard focus indicator can be visually located on user interface controls.",
+          "Notice: WCAG2AA.Principle2.Guideline2_5.2_5_1.: Check that all functionality that uses multipoint or path-based gestures for operation can be operated with a single pointer without a path-based gesture, unless a multipoint or path-based gesture is essential.",
+          "Notice: WCAG2AA.Principle2.Guideline2_5.2_5_2.: Check that for functionality that can be operated using a single pointer, at least one of the following is true:         No Down-Event: The down-event of the pointer is not used to execute any part of the function;         Abort or Undo: Completion of the function is on the up-event, and a mechanism is available to abort the function before completion or to undo the function after completion;         Up Reversal: The up-event reverses any outcome of the preceding down-event;         Essential: Completing the function on the down-event is essential.",
+          "Notice: WCAG2AA.Principle2.Guideline2_5.2_5_3.F96: Check that for user interface components with labels that include text or images of text, the name contains the text that is presented visually.",
+          "Notice: WCAG2AA.Principle2.Guideline2_5.2_5_4.: Check that functionality that can be operated by device motion or user motion can also be operated by user interface components and responding to the motion can be disabled to prevent accidental actuation, except when:              Supported Interface: The motion is used to operate functionality through an accessibility supported interface;         Essential: The motion is essential for the function and doing so would invalidate the activity.     ",
+          "Notice: WCAG2AA.Principle3.Guideline3_1.3_1_2.H58: Ensure that any change in language is marked using the lang and/or xml:lang attribute on an element, as appropriate.",
+          "Notice: WCAG2AA.Principle3.Guideline3_2.3_2_3.G61: Check that navigational mechanisms that are repeated on multiple Web pages occur in the same relative order each time they are repeated, unless a change is initiated by the user.",
+          "Notice: WCAG2AA.Principle3.Guideline3_2.3_2_4.G197: Check that components that have the same functionality within this Web page are identified consistently in the set of Web pages to which it belongs.",
+          "Notice: WCAG2AA.Principle4.Guideline4_1.4_1_3.: Check that status messages can be programmatically determined through role or properties such that they can be presented to the user by assistive technologies without receiving focus."
+        ],
+        "passed": false,
+        "duration": 9903,
+        "pa11yIssues": [
+          {
+            "code": "color-contrast",
+            "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)",
+            "type": "error",
+            "selector": "#site-content > main > main > section:nth-child(2) > div > div:nth-child(3) > div > div:nth-child(1) > span",
+            "context": "<span class=\"font-semibold text-secondary-700\">SavvyCal</span>"
+          },
+          {
+            "code": "color-contrast",
+            "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)",
+            "type": "error",
+            "selector": "#site-content > main > main > section:nth-child(2) > div > div:nth-child(3) > div > div:nth-child(2) > span",
+            "context": "<span class=\"font-semibold text-secondary-700\">Laravel</span>"
+          },
+          {
+            "code": "color-contrast",
+            "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)",
+            "type": "error",
+            "selector": "#site-content > main > main > section:nth-child(2) > div > div:nth-child(3) > div > div:nth-child(3) > span",
+            "context": "<span class=\"font-semibold text-secondary-700\">TUPLE</span>"
+          },
+          {
+            "code": "color-contrast",
+            "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)",
+            "type": "error",
+            "selector": "#site-content > main > main > section:nth-child(2) > div > div:nth-child(3) > div > div:nth-child(4) > span",
+            "context": "<span class=\"font-semibold text-secondary-700\">Transistor</span>"
+          },
+          {
+            "code": "color-contrast",
+            "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)",
+            "type": "error",
+            "selector": "#site-content > main > main > section:nth-child(2) > div > div:nth-child(3) > div > div:nth-child(5) > span",
+            "context": "<span class=\"font-semibold text-secondary-700\">statamic</span>"
+          },
+          {
+            "code": "color-contrast",
+            "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)",
+            "type": "error",
+            "selector": "#site-content > footer > div > p",
+            "context": "<p class=\"text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4\">© 2025 —\n<a href=\"/impressum\" c...</p>"
+          },
+          {
+            "code": "heading-order",
+            "message": "Heading levels should only increase by one (https://dequeuniversity.com/rules/axe/4.10/heading-order?application=axeAPI)",
+            "type": "warning",
+            "selector": "#site-content > main > main > section:nth-child(2) > div > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > h3",
+            "context": "<h3 class=\"text-sm font-semibold text-secondary-500 uppercase tracking-wider mb-4\">STARTER</h3>"
+          },
+          {
+            "code": "landmark-main-is-top-level",
+            "message": "Main landmark should not be contained in another landmark (https://dequeuniversity.com/rules/axe/4.10/landmark-main-is-top-level?application=axeAPI)",
+            "type": "warning",
+            "selector": "#site-content > main > main",
+            "context": "<main>   <section class=\"py-20 md:py-...</main>"
+          },
+          {
+            "code": "landmark-no-duplicate-main",
+            "message": "Document should not have more than one main landmark (https://dequeuniversity.com/rules/axe/4.10/landmark-no-duplicate-main?application=axeAPI)",
+            "type": "warning",
+            "selector": "#site-content > main",
+            "context": "<main>   <main>   <section class=\"py-...</main>"
+          },
+          {
+            "code": "landmark-unique",
+            "message": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination (https://dequeuniversity.com/rules/axe/4.10/landmark-unique?application=axeAPI)",
+            "type": "warning",
+            "selector": "#site-content > main",
+            "context": "<main>   <main>   <section class=\"py-...</main>"
+          },
+          {
+            "code": "color-contrast",
+            "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)",
+            "type": "error",
+            "selector": "#site-content > main > main > section:nth-child(2) > div > div:nth-child(3) > div > div:nth-child(2) > div > span",
+            "context": "<span class=\"text-white font-bold text-sm\">L</span>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_2.H25.2",
+            "message": "Check that the title element describes the document.",
+            "type": "notice",
+            "selector": "html > head > title",
+            "context": "<title>Website Angebote - CASOON</title>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_10.C32,C31,C33,C38,SCR34,G206",
+            "message": "This element has \"position: fixed\". This may require scrolling in two dimensions, which is considered a failure of this Success Criterion.",
+            "type": "warning",
+            "selector": "html > body > astro-island > nav",
+            "context": "<nav style=\"z-index: 100;\" class=\" fixed top-0 left-0 right-0 z-[100] mt-0 lg:mt-8\"><div class=\"hidden lg:flex just...</nav>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(1) > a",
+            "context": "<a href=\"/\" class=\"hover:opacity-80 transition-opacity\"><img alt=\"CASOON Logo\" class=\"w...</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.G94.Image",
+            "message": "Ensure that the img element's alt text serves the same purpose and presents the same information as the image.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(1) > a > img",
+            "context": "<img alt=\"CASOON Logo\" class=\"w-24 h-24\" src=\"/logo_menu.svg\">"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.G73,G74",
+            "message": "If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(1) > a > img",
+            "context": "<img alt=\"CASOON Logo\" class=\"w-24 h-24\" src=\"/logo_menu.svg\">"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_3.1_3_1.H48",
+            "message": "If this element contains a navigation section, it is recommended that it be marked up as a list.",
+            "type": "warning",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2)",
+            "context": "<div style=\"will-change: opacity, transform; z-index: 10;\" class=\"flex items-center space-x-3 absolute right-56 top-1/2 -translate-y-1/2 transition-all duration-500 opacity-0 translate-x-20 pointer-events-none\"><!----><a class=\"px-4 py-2 text...</div>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Abs",
+            "message": "This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1.",
+            "type": "warning",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(1)",
+            "context": "<a class=\"px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline\" href=\"/ueber-uns\">Über uns</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(1)",
+            "context": "<a class=\"px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline\" href=\"/ueber-uns\">Über uns</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Abs",
+            "message": "This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1.",
+            "type": "warning",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(2)",
+            "context": "<a class=\"px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline\" href=\"/leistungen\">Leistungen</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(2)",
+            "context": "<a class=\"px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline\" href=\"/leistungen\">Leistungen</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Abs",
+            "message": "This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1.",
+            "type": "warning",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(3)",
+            "context": "<a class=\"px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline\" href=\"/insights\">Insights</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(3)",
+            "context": "<a class=\"px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline\" href=\"/insights\">Insights</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle3.Guideline3_2.3_2_1.G107",
+            "message": "Check that a change of context does not occur when this input field receives focus.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > button",
+            "context": "<button class=\"ml-auto mr-8 flex items-center justify-center w-12 h-12 bg-transparent transition-colors focus:outline-none relative\" style=\"z-index: 20;\" aria-label=\"Menü öffnen\"><svg width=\"32\" height=\"32\" vie...</button>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(2) > div > a",
+            "context": "<a href=\"/\" class=\"hover:opacity-80 transition-opacity\"><img alt=\"CASOON Logo\" class=\"w...</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.G94.Image",
+            "message": "Ensure that the img element's alt text serves the same purpose and presents the same information as the image.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(2) > div > a > img",
+            "context": "<img alt=\"CASOON Logo\" class=\"w-32 h-32\" src=\"/logo.svg\">"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.G73,G74",
+            "message": "If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(2) > div > a > img",
+            "context": "<img alt=\"CASOON Logo\" class=\"w-32 h-32\" src=\"/logo.svg\">"
+          },
+          {
+            "code": "WCAG2AA.Principle3.Guideline3_2.3_2_1.G107",
+            "message": "Check that a change of context does not occur when this input field receives focus.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(2) > button",
+            "context": "<button class=\"px-4 py-2 text-sm font-medium text-secondary-700 bg-white/30 rounded-full border border-secondary-300 hover:bg-white/60 transition-all\" aria-label=\"Mobilmenü öffnen\">Menü</button>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_3.1_3_1_A.G141",
+            "message": "The heading structure is not logically nested. This h3 element should be an h2 to be properly nested.",
+            "type": "warning",
+            "selector": "#site-content > main > main > section:nth-child(2) > div > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > h3",
+            "context": "<h3 class=\"text-sm font-semibold text-secondary-500 uppercase tracking-wider mb-4\">STARTER</h3>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+            "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.61:1. Recommendation:  change text colour to #767676.",
+            "type": "error",
+            "selector": "#site-content > main > main > section:nth-child(2) > div > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(4) > span:nth-child(1)",
+            "context": "<span class=\"w-5 h-5 text-secondary-300 mr-3 mt-0.5\">+</span>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+            "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.61:1. Recommendation:  change text colour to #767676.",
+            "type": "error",
+            "selector": "#site-content > main > main > section:nth-child(2) > div > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(5) > span:nth-child(1)",
+            "context": "<span class=\"w-5 h-5 text-secondary-300 mr-3 mt-0.5\">+</span>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+            "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.53:1. Recommendation:  change background to #484848.",
+            "type": "error",
+            "selector": "#site-content > main > main > section:nth-child(2) > div > div:nth-child(3) > div > div:nth-child(4) > div > span",
+            "context": "<span class=\"text-white font-bold text-sm\">+</span>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_3.1_3_1.H48",
+            "message": "If this element contains a navigation section, it is recommended that it be marked up as a list.",
+            "type": "warning",
+            "selector": "#site-content > main > main > section:nth-child(4) > div > div > div",
+            "context": "<div class=\"flex flex-col sm:flex-row gap-4 justify-center\"> <a href=\"/kontakt\" class=\"btn-...</div>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "#site-content > main > main > section:nth-child(4) > div > div > div > a:nth-child(1)",
+            "context": "<a href=\"/kontakt\" class=\"btn-primary\">\nKostenlose Beratung vereinbare...</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "#site-content > main > main > section:nth-child(4) > div > div > div > a:nth-child(2)",
+            "context": "<a href=\"/\" class=\"btn-secondary\">\nZurück zur Startseite\n</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.Placeholder",
+            "message": "Anchor element found with link content, but no href, ID or name attribute has been supplied.",
+            "type": "warning",
+            "selector": "#site-content > footer > div > a",
+            "context": "<a class=\"flex title-font font-medium items-center md:justify-start justify-center text-gray-900\"> <span class=\"ml-3 text-xl\">CAS...</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "#site-content > footer > div > a",
+            "context": "<a class=\"flex title-font font-medium items-center md:justify-start justify-center text-gray-900\"> <span class=\"ml-3 text-xl\">CAS...</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+            "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.43:1. Recommendation:  change background to #f7f7f7.",
+            "type": "error",
+            "selector": "#site-content > footer > div > p",
+            "context": "<p class=\"text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4\">© 2025 —\n<a href=\"/impressum\" c...</p>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_3.1_3_1.H48",
+            "message": "If this element contains a navigation section, it is recommended that it be marked up as a list.",
+            "type": "warning",
+            "selector": "#site-content > footer > div > p",
+            "context": "<p class=\"text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4\">© 2025 —\n<a href=\"/impressum\" c...</p>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "#site-content > footer > div > p > a:nth-child(1)",
+            "context": "<a href=\"/impressum\" class=\"text-gray-600 ml-1\">\nImpressum\n</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "#site-content > footer > div > p > a:nth-child(2)",
+            "context": "<a href=\"/datenschutz\" class=\"text-gray-600 ml-1\">\nDatenschutz\n</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "#site-content > footer > div > span > a:nth-child(1)",
+            "context": "<a class=\"text-gray-500\" href=\"#\" aria-label=\"Facebook\"> <svg fill=\"currentColor\" strok...</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "#site-content > footer > div > span > a:nth-child(2)",
+            "context": "<a class=\"ml-3 text-gray-500\" href=\"#\" aria-label=\"Twitter\"> <svg fill=\"currentColor\" strok...</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "#site-content > footer > div > span > a:nth-child(3)",
+            "context": "<a class=\"ml-3 text-gray-500\" href=\"#\" aria-label=\"Instagram\"> <svg fill=\"none\" stroke=\"curre...</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "#site-content > footer > div > span > a:nth-child(4)",
+            "context": "<a class=\"ml-3 text-gray-500\" href=\"#\" aria-label=\"LinkedIn\"> <svg fill=\"currentColor\" strok...</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_3.1_3_2.G57",
+            "message": "Check that the content is ordered in a meaningful sequence when linearised, such as when style sheets are disabled.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_3.1_3_3.G96",
+            "message": "Where instructions are provided for understanding the content, do not rely on sensory characteristics alone (such as shape, size or location) to describe objects.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_3.1_3_4.",
+            "message": "Check that content does not restrict its view and operation to a single display orientation, such as portrait or landscape, unless a specific display orientation is essential.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_1.G14,G182",
+            "message": "Check that any information conveyed using colour alone is also available in text, or through other visual cues.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_4.G142",
+            "message": "Check that text can be resized without assistive technology up to 200 percent without loss of content or functionality.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_5.G140,C22,C30.AALevel",
+            "message": "If the technologies being used can achieve the visual presentation, check that text is used to convey information rather than images of text, except when the image of text is essential to the information being conveyed, or can be visually customised to the user's requirements.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_10.C32,C31,C33,C38,SCR34,G206",
+            "message": "Check that content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for:     Vertical scrolling content at a width equivalent to 320 CSS pixels;     Horizontal scrolling content at a height equivalent to 256 CSS pixels;     Except for parts of the content which require two-dimensional layout for usage or meaning.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_11.G195,G207,G18,G145,G174,F78",
+            "message": "Check that the visual presentation of the following have a contrast ratio of at least 3:1 against adjacent color(s):     User Interface Components: Visual information required to identify user interface components and states, except for inactive components or where the appearance of the component is determined by the user agent and not modified by the author;     Graphical Objects: Parts of graphics required to understand the content, except when a particular presentation of graphics is essential to the information being conveyed.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_12.C36,C35",
+            "message": "Check that no loss of content or functionality occurs by setting all of the following and by changing no other style property:              Line height (line spacing) to at least 1.5 times the font size;         Spacing following paragraphs to at least 2 times the font size;         Letter spacing (tracking) to at least 0.12 times the font size;         Word spacing to at least 0.16 times the font size.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_13.F95",
+            "message": "Check that where receiving and then removing pointer hover or keyboard focus triggers additional content to become visible and then hidden, the following are true:              Dismissable: A mechanism is available to dismiss the additional content without moving pointer hover or keyboard focus, unless the additional content communicates an input error or does not obscure or replace other content;         Hoverable: If pointer hover can trigger the additional content, then the pointer can be moved over the additional content without the additional content disappearing;         Persistent: The additional content remains visible until the hover or focus trigger is removed, the user dismisses it, or its information is no longer valid.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_1.2_1_4.",
+            "message": "Check that if a keyboard shortcut is implemented in content using only letter (including upper- and lower-case letters), punctuation, number, or symbol characters, then at least one of the following is true:              Turn off: A mechanism is available to turn the shortcut off;         Remap: A mechanism is available to remap the shortcut to use one or more non-printable keyboard characters (e.g. Ctrl, Alt, etc);         Active only on focus: The keyboard shortcut for a user interface component is only active when that component has focus.     ",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_2.2_2_2.SCR33,SCR22,G187,G152,G186,G191",
+            "message": "If any part of the content moves, scrolls or blinks for more than 5 seconds, or auto-updates, check that there is a mechanism available to pause, stop, or hide the content.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_3.2_3_1.G19,G176",
+            "message": "Check that no component of the content flashes more than three times in any 1-second period, or that the size of any flashing area is sufficiently small.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.G1,G123,G124,H69",
+            "message": "Ensure that any common navigation elements can be bypassed; for instance, by use of skip links, header elements, or ARIA landmark roles.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_5.G125,G64,G63,G161,G126,G185",
+            "message": "If this Web page is not part of a linear process, check that there is more than one way of locating this Web page within a set of Web pages.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_6.G130,G131",
+            "message": "Check that headings and labels describe topic or purpose.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_7.G149,G165,G195,C15,SCR31",
+            "message": "Check that there is at least one mode of operation where the keyboard focus indicator can be visually located on user interface controls.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_5.2_5_1.",
+            "message": "Check that all functionality that uses multipoint or path-based gestures for operation can be operated with a single pointer without a path-based gesture, unless a multipoint or path-based gesture is essential.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_5.2_5_2.",
+            "message": "Check that for functionality that can be operated using a single pointer, at least one of the following is true:         No Down-Event: The down-event of the pointer is not used to execute any part of the function;         Abort or Undo: Completion of the function is on the up-event, and a mechanism is available to abort the function before completion or to undo the function after completion;         Up Reversal: The up-event reverses any outcome of the preceding down-event;         Essential: Completing the function on the down-event is essential.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_5.2_5_3.F96",
+            "message": "Check that for user interface components with labels that include text or images of text, the name contains the text that is presented visually.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_5.2_5_4.",
+            "message": "Check that functionality that can be operated by device motion or user motion can also be operated by user interface components and responding to the motion can be disabled to prevent accidental actuation, except when:              Supported Interface: The motion is used to operate functionality through an accessibility supported interface;         Essential: The motion is essential for the function and doing so would invalidate the activity.     ",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle3.Guideline3_1.3_1_2.H58",
+            "message": "Ensure that any change in language is marked using the lang and/or xml:lang attribute on an element, as appropriate.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle3.Guideline3_2.3_2_3.G61",
+            "message": "Check that navigational mechanisms that are repeated on multiple Web pages occur in the same relative order each time they are repeated, unless a change is initiated by the user.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle3.Guideline3_2.3_2_4.G197",
+            "message": "Check that components that have the same functionality within this Web page are identified consistently in the set of Web pages to which it belongs.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle4.Guideline4_1.4_1_3.",
+            "message": "Check that status messages can be programmatically determined through role or properties such that they can be presented to the user by assistive technologies without receiving focus.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          }
+        ],
+        "pa11yScore": 0
+      }
+    },
+    {
+      "url": "http://localhost:4321/datenschutz",
+      "priority": 2,
+      "status": "completed",
+      "attempts": 1,
+      "lastAttempt": "2025-07-18T19:54:07.019Z",
+      "result": {
+        "url": "http://localhost:4321/datenschutz",
+        "title": "Datenschutz",
+        "imagesWithoutAlt": 0,
+        "buttonsWithoutLabel": 0,
+        "headingsCount": 8,
+        "errors": [
+          "color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)",
+          "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.43:1. Recommendation:  change background to #f7f7f7."
+        ],
+        "warnings": [
+          "landmark-main-is-top-level: Main landmark should not be contained in another landmark (https://dequeuniversity.com/rules/axe/4.10/landmark-main-is-top-level?application=axeAPI)",
+          "landmark-no-duplicate-main: Document should not have more than one main landmark (https://dequeuniversity.com/rules/axe/4.10/landmark-no-duplicate-main?application=axeAPI)",
+          "landmark-unique: Landmarks should have a unique role or role/label/title (i.e. accessible name) combination (https://dequeuniversity.com/rules/axe/4.10/landmark-unique?application=axeAPI)",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_2.H25.2: Check that the title element describes the document.",
+          "WCAG2AA.Principle1.Guideline1_4.1_4_10.C32,C31,C33,C38,SCR34,G206: This element has \"position: fixed\". This may require scrolling in two dimensions, which is considered a failure of this Success Criterion.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle1.Guideline1_1.1_1_1.G94.Image: Ensure that the img element's alt text serves the same purpose and presents the same information as the image.",
+          "Notice: WCAG2AA.Principle1.Guideline1_1.1_1_1.G73,G74: If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.",
+          "WCAG2AA.Principle1.Guideline1_3.1_3_1.H48: If this element contains a navigation section, it is recommended that it be marked up as a list.",
+          "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Abs: This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Abs: This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Abs: This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle3.Guideline3_2.3_2_1.G107: Check that a change of context does not occur when this input field receives focus.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle1.Guideline1_1.1_1_1.G94.Image: Ensure that the img element's alt text serves the same purpose and presents the same information as the image.",
+          "Notice: WCAG2AA.Principle1.Guideline1_1.1_1_1.G73,G74: If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.",
+          "Notice: WCAG2AA.Principle3.Guideline3_2.3_2_1.G107: Check that a change of context does not occur when this input field receives focus.",
+          "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.Placeholder: Anchor element found with link content, but no href, ID or name attribute has been supplied.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "WCAG2AA.Principle1.Guideline1_3.1_3_1.H48: If this element contains a navigation section, it is recommended that it be marked up as a list.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle1.Guideline1_3.1_3_2.G57: Check that the content is ordered in a meaningful sequence when linearised, such as when style sheets are disabled.",
+          "Notice: WCAG2AA.Principle1.Guideline1_3.1_3_3.G96: Where instructions are provided for understanding the content, do not rely on sensory characteristics alone (such as shape, size or location) to describe objects.",
+          "Notice: WCAG2AA.Principle1.Guideline1_3.1_3_4.: Check that content does not restrict its view and operation to a single display orientation, such as portrait or landscape, unless a specific display orientation is essential.",
+          "Notice: WCAG2AA.Principle1.Guideline1_4.1_4_1.G14,G182: Check that any information conveyed using colour alone is also available in text, or through other visual cues.",
+          "Notice: WCAG2AA.Principle1.Guideline1_4.1_4_4.G142: Check that text can be resized without assistive technology up to 200 percent without loss of content or functionality.",
+          "Notice: WCAG2AA.Principle1.Guideline1_4.1_4_5.G140,C22,C30.AALevel: If the technologies being used can achieve the visual presentation, check that text is used to convey information rather than images of text, except when the image of text is essential to the information being conveyed, or can be visually customised to the user's requirements.",
+          "Notice: WCAG2AA.Principle1.Guideline1_4.1_4_10.C32,C31,C33,C38,SCR34,G206: Check that content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for:     Vertical scrolling content at a width equivalent to 320 CSS pixels;     Horizontal scrolling content at a height equivalent to 256 CSS pixels;     Except for parts of the content which require two-dimensional layout for usage or meaning.",
+          "Notice: WCAG2AA.Principle1.Guideline1_4.1_4_11.G195,G207,G18,G145,G174,F78: Check that the visual presentation of the following have a contrast ratio of at least 3:1 against adjacent color(s):     User Interface Components: Visual information required to identify user interface components and states, except for inactive components or where the appearance of the component is determined by the user agent and not modified by the author;     Graphical Objects: Parts of graphics required to understand the content, except when a particular presentation of graphics is essential to the information being conveyed.",
+          "Notice: WCAG2AA.Principle1.Guideline1_4.1_4_12.C36,C35: Check that no loss of content or functionality occurs by setting all of the following and by changing no other style property:              Line height (line spacing) to at least 1.5 times the font size;         Spacing following paragraphs to at least 2 times the font size;         Letter spacing (tracking) to at least 0.12 times the font size;         Word spacing to at least 0.16 times the font size.",
+          "Notice: WCAG2AA.Principle1.Guideline1_4.1_4_13.F95: Check that where receiving and then removing pointer hover or keyboard focus triggers additional content to become visible and then hidden, the following are true:              Dismissable: A mechanism is available to dismiss the additional content without moving pointer hover or keyboard focus, unless the additional content communicates an input error or does not obscure or replace other content;         Hoverable: If pointer hover can trigger the additional content, then the pointer can be moved over the additional content without the additional content disappearing;         Persistent: The additional content remains visible until the hover or focus trigger is removed, the user dismisses it, or its information is no longer valid.",
+          "Notice: WCAG2AA.Principle2.Guideline2_1.2_1_4.: Check that if a keyboard shortcut is implemented in content using only letter (including upper- and lower-case letters), punctuation, number, or symbol characters, then at least one of the following is true:              Turn off: A mechanism is available to turn the shortcut off;         Remap: A mechanism is available to remap the shortcut to use one or more non-printable keyboard characters (e.g. Ctrl, Alt, etc);         Active only on focus: The keyboard shortcut for a user interface component is only active when that component has focus.     ",
+          "Notice: WCAG2AA.Principle2.Guideline2_2.2_2_2.SCR33,SCR22,G187,G152,G186,G191: If any part of the content moves, scrolls or blinks for more than 5 seconds, or auto-updates, check that there is a mechanism available to pause, stop, or hide the content.",
+          "Notice: WCAG2AA.Principle2.Guideline2_3.2_3_1.G19,G176: Check that no component of the content flashes more than three times in any 1-second period, or that the size of any flashing area is sufficiently small.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_1.G1,G123,G124,H69: Ensure that any common navigation elements can be bypassed; for instance, by use of skip links, header elements, or ARIA landmark roles.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_5.G125,G64,G63,G161,G126,G185: If this Web page is not part of a linear process, check that there is more than one way of locating this Web page within a set of Web pages.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_6.G130,G131: Check that headings and labels describe topic or purpose.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_7.G149,G165,G195,C15,SCR31: Check that there is at least one mode of operation where the keyboard focus indicator can be visually located on user interface controls.",
+          "Notice: WCAG2AA.Principle2.Guideline2_5.2_5_1.: Check that all functionality that uses multipoint or path-based gestures for operation can be operated with a single pointer without a path-based gesture, unless a multipoint or path-based gesture is essential.",
+          "Notice: WCAG2AA.Principle2.Guideline2_5.2_5_2.: Check that for functionality that can be operated using a single pointer, at least one of the following is true:         No Down-Event: The down-event of the pointer is not used to execute any part of the function;         Abort or Undo: Completion of the function is on the up-event, and a mechanism is available to abort the function before completion or to undo the function after completion;         Up Reversal: The up-event reverses any outcome of the preceding down-event;         Essential: Completing the function on the down-event is essential.",
+          "Notice: WCAG2AA.Principle2.Guideline2_5.2_5_3.F96: Check that for user interface components with labels that include text or images of text, the name contains the text that is presented visually.",
+          "Notice: WCAG2AA.Principle2.Guideline2_5.2_5_4.: Check that functionality that can be operated by device motion or user motion can also be operated by user interface components and responding to the motion can be disabled to prevent accidental actuation, except when:              Supported Interface: The motion is used to operate functionality through an accessibility supported interface;         Essential: The motion is essential for the function and doing so would invalidate the activity.     ",
+          "Notice: WCAG2AA.Principle3.Guideline3_1.3_1_2.H58: Ensure that any change in language is marked using the lang and/or xml:lang attribute on an element, as appropriate.",
+          "Notice: WCAG2AA.Principle3.Guideline3_2.3_2_3.G61: Check that navigational mechanisms that are repeated on multiple Web pages occur in the same relative order each time they are repeated, unless a change is initiated by the user.",
+          "Notice: WCAG2AA.Principle3.Guideline3_2.3_2_4.G197: Check that components that have the same functionality within this Web page are identified consistently in the set of Web pages to which it belongs.",
+          "Notice: WCAG2AA.Principle4.Guideline4_1.4_1_3.: Check that status messages can be programmatically determined through role or properties such that they can be presented to the user by assistive technologies without receiving focus."
+        ],
+        "passed": false,
+        "duration": 6628,
+        "pa11yIssues": [
+          {
+            "code": "color-contrast",
+            "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)",
+            "type": "error",
+            "selector": "#site-content > footer > div > p",
+            "context": "<p class=\"text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4\">© 2025 —\n<a href=\"/impressum\" c...</p>"
+          },
+          {
+            "code": "landmark-main-is-top-level",
+            "message": "Main landmark should not be contained in another landmark (https://dequeuniversity.com/rules/axe/4.10/landmark-main-is-top-level?application=axeAPI)",
+            "type": "warning",
+            "selector": "#site-content > main > main",
+            "context": "<main>  <section class=\"section-paddi...</main>"
+          },
+          {
+            "code": "landmark-no-duplicate-main",
+            "message": "Document should not have more than one main landmark (https://dequeuniversity.com/rules/axe/4.10/landmark-no-duplicate-main?application=axeAPI)",
+            "type": "warning",
+            "selector": "#site-content > main",
+            "context": "<main>   <main>  <section class=\"sect...</main>"
+          },
+          {
+            "code": "landmark-unique",
+            "message": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination (https://dequeuniversity.com/rules/axe/4.10/landmark-unique?application=axeAPI)",
+            "type": "warning",
+            "selector": "#site-content > main",
+            "context": "<main>   <main>  <section class=\"sect...</main>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_2.H25.2",
+            "message": "Check that the title element describes the document.",
+            "type": "notice",
+            "selector": "html > head > title",
+            "context": "<title>Datenschutz</title>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_10.C32,C31,C33,C38,SCR34,G206",
+            "message": "This element has \"position: fixed\". This may require scrolling in two dimensions, which is considered a failure of this Success Criterion.",
+            "type": "warning",
+            "selector": "html > body > astro-island > nav",
+            "context": "<nav style=\"z-index: 100;\" class=\" fixed top-0 left-0 right-0 z-[100] mt-0 lg:mt-8\"><div class=\"hidden lg:flex just...</nav>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(1) > a",
+            "context": "<a href=\"/\" class=\"hover:opacity-80 transition-opacity\"><img alt=\"CASOON Logo\" class=\"w...</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.G94.Image",
+            "message": "Ensure that the img element's alt text serves the same purpose and presents the same information as the image.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(1) > a > img",
+            "context": "<img alt=\"CASOON Logo\" class=\"w-24 h-24\" src=\"/logo_menu.svg\">"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.G73,G74",
+            "message": "If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(1) > a > img",
+            "context": "<img alt=\"CASOON Logo\" class=\"w-24 h-24\" src=\"/logo_menu.svg\">"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_3.1_3_1.H48",
+            "message": "If this element contains a navigation section, it is recommended that it be marked up as a list.",
+            "type": "warning",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2)",
+            "context": "<div style=\"will-change: opacity, transform; z-index: 10;\" class=\"flex items-center space-x-3 absolute right-56 top-1/2 -translate-y-1/2 transition-all duration-500 opacity-0 translate-x-20 pointer-events-none\"><!----><a class=\"px-4 py-2 text...</div>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Abs",
+            "message": "This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1.",
+            "type": "warning",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(1)",
+            "context": "<a class=\"px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline\" href=\"/ueber-uns\">Über uns</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(1)",
+            "context": "<a class=\"px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline\" href=\"/ueber-uns\">Über uns</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Abs",
+            "message": "This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1.",
+            "type": "warning",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(2)",
+            "context": "<a class=\"px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline\" href=\"/leistungen\">Leistungen</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(2)",
+            "context": "<a class=\"px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline\" href=\"/leistungen\">Leistungen</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Abs",
+            "message": "This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1.",
+            "type": "warning",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(3)",
+            "context": "<a class=\"px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline\" href=\"/insights\">Insights</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(3)",
+            "context": "<a class=\"px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline\" href=\"/insights\">Insights</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle3.Guideline3_2.3_2_1.G107",
+            "message": "Check that a change of context does not occur when this input field receives focus.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > button",
+            "context": "<button class=\"ml-auto mr-8 flex items-center justify-center w-12 h-12 bg-transparent transition-colors focus:outline-none relative\" style=\"z-index: 20;\" aria-label=\"Menü öffnen\"><svg width=\"32\" height=\"32\" vie...</button>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(2) > div > a",
+            "context": "<a href=\"/\" class=\"hover:opacity-80 transition-opacity\"><img alt=\"CASOON Logo\" class=\"w...</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.G94.Image",
+            "message": "Ensure that the img element's alt text serves the same purpose and presents the same information as the image.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(2) > div > a > img",
+            "context": "<img alt=\"CASOON Logo\" class=\"w-32 h-32\" src=\"/logo.svg\">"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.G73,G74",
+            "message": "If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(2) > div > a > img",
+            "context": "<img alt=\"CASOON Logo\" class=\"w-32 h-32\" src=\"/logo.svg\">"
+          },
+          {
+            "code": "WCAG2AA.Principle3.Guideline3_2.3_2_1.G107",
+            "message": "Check that a change of context does not occur when this input field receives focus.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(2) > button",
+            "context": "<button class=\"px-4 py-2 text-sm font-medium text-secondary-700 bg-white/30 rounded-full border border-secondary-300 hover:bg-white/60 transition-all\" aria-label=\"Mobilmenü öffnen\">Menü</button>"
+          },
+          {
+            "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.Placeholder",
+            "message": "Anchor element found with link content, but no href, ID or name attribute has been supplied.",
+            "type": "warning",
+            "selector": "#site-content > footer > div > a",
+            "context": "<a class=\"flex title-font font-medium items-center md:justify-start justify-center text-gray-900\"> <span class=\"ml-3 text-xl\">CAS...</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "#site-content > footer > div > a",
+            "context": "<a class=\"flex title-font font-medium items-center md:justify-start justify-center text-gray-900\"> <span class=\"ml-3 text-xl\">CAS...</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+            "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.43:1. Recommendation:  change background to #f7f7f7.",
+            "type": "error",
+            "selector": "#site-content > footer > div > p",
+            "context": "<p class=\"text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4\">© 2025 —\n<a href=\"/impressum\" c...</p>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_3.1_3_1.H48",
+            "message": "If this element contains a navigation section, it is recommended that it be marked up as a list.",
+            "type": "warning",
+            "selector": "#site-content > footer > div > p",
+            "context": "<p class=\"text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4\">© 2025 —\n<a href=\"/impressum\" c...</p>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "#site-content > footer > div > p > a:nth-child(1)",
+            "context": "<a href=\"/impressum\" class=\"text-gray-600 ml-1\">\nImpressum\n</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "#site-content > footer > div > p > a:nth-child(2)",
+            "context": "<a href=\"/datenschutz\" class=\"text-gray-600 ml-1\">\nDatenschutz\n</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "#site-content > footer > div > span > a:nth-child(1)",
+            "context": "<a class=\"text-gray-500\" href=\"#\" aria-label=\"Facebook\"> <svg fill=\"currentColor\" strok...</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "#site-content > footer > div > span > a:nth-child(2)",
+            "context": "<a class=\"ml-3 text-gray-500\" href=\"#\" aria-label=\"Twitter\"> <svg fill=\"currentColor\" strok...</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "#site-content > footer > div > span > a:nth-child(3)",
+            "context": "<a class=\"ml-3 text-gray-500\" href=\"#\" aria-label=\"Instagram\"> <svg fill=\"none\" stroke=\"curre...</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "#site-content > footer > div > span > a:nth-child(4)",
+            "context": "<a class=\"ml-3 text-gray-500\" href=\"#\" aria-label=\"LinkedIn\"> <svg fill=\"currentColor\" strok...</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_3.1_3_2.G57",
+            "message": "Check that the content is ordered in a meaningful sequence when linearised, such as when style sheets are disabled.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_3.1_3_3.G96",
+            "message": "Where instructions are provided for understanding the content, do not rely on sensory characteristics alone (such as shape, size or location) to describe objects.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_3.1_3_4.",
+            "message": "Check that content does not restrict its view and operation to a single display orientation, such as portrait or landscape, unless a specific display orientation is essential.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_1.G14,G182",
+            "message": "Check that any information conveyed using colour alone is also available in text, or through other visual cues.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_4.G142",
+            "message": "Check that text can be resized without assistive technology up to 200 percent without loss of content or functionality.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_5.G140,C22,C30.AALevel",
+            "message": "If the technologies being used can achieve the visual presentation, check that text is used to convey information rather than images of text, except when the image of text is essential to the information being conveyed, or can be visually customised to the user's requirements.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_10.C32,C31,C33,C38,SCR34,G206",
+            "message": "Check that content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for:     Vertical scrolling content at a width equivalent to 320 CSS pixels;     Horizontal scrolling content at a height equivalent to 256 CSS pixels;     Except for parts of the content which require two-dimensional layout for usage or meaning.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_11.G195,G207,G18,G145,G174,F78",
+            "message": "Check that the visual presentation of the following have a contrast ratio of at least 3:1 against adjacent color(s):     User Interface Components: Visual information required to identify user interface components and states, except for inactive components or where the appearance of the component is determined by the user agent and not modified by the author;     Graphical Objects: Parts of graphics required to understand the content, except when a particular presentation of graphics is essential to the information being conveyed.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_12.C36,C35",
+            "message": "Check that no loss of content or functionality occurs by setting all of the following and by changing no other style property:              Line height (line spacing) to at least 1.5 times the font size;         Spacing following paragraphs to at least 2 times the font size;         Letter spacing (tracking) to at least 0.12 times the font size;         Word spacing to at least 0.16 times the font size.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_13.F95",
+            "message": "Check that where receiving and then removing pointer hover or keyboard focus triggers additional content to become visible and then hidden, the following are true:              Dismissable: A mechanism is available to dismiss the additional content without moving pointer hover or keyboard focus, unless the additional content communicates an input error or does not obscure or replace other content;         Hoverable: If pointer hover can trigger the additional content, then the pointer can be moved over the additional content without the additional content disappearing;         Persistent: The additional content remains visible until the hover or focus trigger is removed, the user dismisses it, or its information is no longer valid.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_1.2_1_4.",
+            "message": "Check that if a keyboard shortcut is implemented in content using only letter (including upper- and lower-case letters), punctuation, number, or symbol characters, then at least one of the following is true:              Turn off: A mechanism is available to turn the shortcut off;         Remap: A mechanism is available to remap the shortcut to use one or more non-printable keyboard characters (e.g. Ctrl, Alt, etc);         Active only on focus: The keyboard shortcut for a user interface component is only active when that component has focus.     ",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_2.2_2_2.SCR33,SCR22,G187,G152,G186,G191",
+            "message": "If any part of the content moves, scrolls or blinks for more than 5 seconds, or auto-updates, check that there is a mechanism available to pause, stop, or hide the content.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_3.2_3_1.G19,G176",
+            "message": "Check that no component of the content flashes more than three times in any 1-second period, or that the size of any flashing area is sufficiently small.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.G1,G123,G124,H69",
+            "message": "Ensure that any common navigation elements can be bypassed; for instance, by use of skip links, header elements, or ARIA landmark roles.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_5.G125,G64,G63,G161,G126,G185",
+            "message": "If this Web page is not part of a linear process, check that there is more than one way of locating this Web page within a set of Web pages.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_6.G130,G131",
+            "message": "Check that headings and labels describe topic or purpose.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_7.G149,G165,G195,C15,SCR31",
+            "message": "Check that there is at least one mode of operation where the keyboard focus indicator can be visually located on user interface controls.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_5.2_5_1.",
+            "message": "Check that all functionality that uses multipoint or path-based gestures for operation can be operated with a single pointer without a path-based gesture, unless a multipoint or path-based gesture is essential.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_5.2_5_2.",
+            "message": "Check that for functionality that can be operated using a single pointer, at least one of the following is true:         No Down-Event: The down-event of the pointer is not used to execute any part of the function;         Abort or Undo: Completion of the function is on the up-event, and a mechanism is available to abort the function before completion or to undo the function after completion;         Up Reversal: The up-event reverses any outcome of the preceding down-event;         Essential: Completing the function on the down-event is essential.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_5.2_5_3.F96",
+            "message": "Check that for user interface components with labels that include text or images of text, the name contains the text that is presented visually.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_5.2_5_4.",
+            "message": "Check that functionality that can be operated by device motion or user motion can also be operated by user interface components and responding to the motion can be disabled to prevent accidental actuation, except when:              Supported Interface: The motion is used to operate functionality through an accessibility supported interface;         Essential: The motion is essential for the function and doing so would invalidate the activity.     ",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle3.Guideline3_1.3_1_2.H58",
+            "message": "Ensure that any change in language is marked using the lang and/or xml:lang attribute on an element, as appropriate.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle3.Guideline3_2.3_2_3.G61",
+            "message": "Check that navigational mechanisms that are repeated on multiple Web pages occur in the same relative order each time they are repeated, unless a change is initiated by the user.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle3.Guideline3_2.3_2_4.G197",
+            "message": "Check that components that have the same functionality within this Web page are identified consistently in the set of Web pages to which it belongs.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle4.Guideline4_1.4_1_3.",
+            "message": "Check that status messages can be programmatically determined through role or properties such that they can be presented to the user by assistive technologies without receiving focus.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          }
+        ],
+        "pa11yScore": 0
+      }
+    },
+    {
+      "url": "http://localhost:4321/headline-demo",
+      "priority": 2,
+      "status": "completed",
+      "attempts": 1,
+      "lastAttempt": "2025-07-18T19:54:13.647Z",
+      "result": {
+        "url": "http://localhost:4321/headline-demo",
+        "title": "Headline Component Demo",
+        "imagesWithoutAlt": 0,
+        "buttonsWithoutLabel": 0,
+        "headingsCount": 10,
+        "errors": [
+          "color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)",
+          "color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)",
+          "color-contrast: Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)",
+          "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.25:1. Recommendation:  change background to #fff.",
+          "WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 2.74:1. Recommendation:  change background to #00a3b7.",
+          "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.43:1. Recommendation:  change background to #f7f7f7."
+        ],
+        "warnings": [
+          "heading-order: Heading levels should only increase by one (https://dequeuniversity.com/rules/axe/4.10/heading-order?application=axeAPI)",
+          "heading-order: Heading levels should only increase by one (https://dequeuniversity.com/rules/axe/4.10/heading-order?application=axeAPI)",
+          "landmark-main-is-top-level: Main landmark should not be contained in another landmark (https://dequeuniversity.com/rules/axe/4.10/landmark-main-is-top-level?application=axeAPI)",
+          "landmark-no-duplicate-main: Document should not have more than one main landmark (https://dequeuniversity.com/rules/axe/4.10/landmark-no-duplicate-main?application=axeAPI)",
+          "landmark-unique: Landmarks should have a unique role or role/label/title (i.e. accessible name) combination (https://dequeuniversity.com/rules/axe/4.10/landmark-unique?application=axeAPI)",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_2.H25.2: Check that the title element describes the document.",
+          "WCAG2AA.Principle1.Guideline1_4.1_4_10.C32,C31,C33,C38,SCR34,G206: This element has \"position: fixed\". This may require scrolling in two dimensions, which is considered a failure of this Success Criterion.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle1.Guideline1_1.1_1_1.G94.Image: Ensure that the img element's alt text serves the same purpose and presents the same information as the image.",
+          "Notice: WCAG2AA.Principle1.Guideline1_1.1_1_1.G73,G74: If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.",
+          "WCAG2AA.Principle1.Guideline1_3.1_3_1.H48: If this element contains a navigation section, it is recommended that it be marked up as a list.",
+          "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Abs: This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Abs: This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Abs: This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle3.Guideline3_2.3_2_1.G107: Check that a change of context does not occur when this input field receives focus.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle1.Guideline1_1.1_1_1.G94.Image: Ensure that the img element's alt text serves the same purpose and presents the same information as the image.",
+          "Notice: WCAG2AA.Principle1.Guideline1_1.1_1_1.G73,G74: If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.",
+          "Notice: WCAG2AA.Principle3.Guideline3_2.3_2_1.G107: Check that a change of context does not occur when this input field receives focus.",
+          "WCAG2AA.Principle1.Guideline1_3.1_3_1_A.G141: The heading structure is not logically nested. This h3 element should be an h2 to be properly nested.",
+          "WCAG2AA.Principle1.Guideline1_3.1_3_1_A.G141: The heading structure is not logically nested. This h3 element should be an h2 to be properly nested.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.Placeholder: Anchor element found with link content, but no href, ID or name attribute has been supplied.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "WCAG2AA.Principle1.Guideline1_3.1_3_1.H48: If this element contains a navigation section, it is recommended that it be marked up as a list.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81: Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+          "Notice: WCAG2AA.Principle1.Guideline1_3.1_3_2.G57: Check that the content is ordered in a meaningful sequence when linearised, such as when style sheets are disabled.",
+          "Notice: WCAG2AA.Principle1.Guideline1_3.1_3_3.G96: Where instructions are provided for understanding the content, do not rely on sensory characteristics alone (such as shape, size or location) to describe objects.",
+          "Notice: WCAG2AA.Principle1.Guideline1_3.1_3_4.: Check that content does not restrict its view and operation to a single display orientation, such as portrait or landscape, unless a specific display orientation is essential.",
+          "Notice: WCAG2AA.Principle1.Guideline1_4.1_4_1.G14,G182: Check that any information conveyed using colour alone is also available in text, or through other visual cues.",
+          "Notice: WCAG2AA.Principle1.Guideline1_4.1_4_4.G142: Check that text can be resized without assistive technology up to 200 percent without loss of content or functionality.",
+          "Notice: WCAG2AA.Principle1.Guideline1_4.1_4_5.G140,C22,C30.AALevel: If the technologies being used can achieve the visual presentation, check that text is used to convey information rather than images of text, except when the image of text is essential to the information being conveyed, or can be visually customised to the user's requirements.",
+          "Notice: WCAG2AA.Principle1.Guideline1_4.1_4_10.C32,C31,C33,C38,SCR34,G206: Check that content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for:     Vertical scrolling content at a width equivalent to 320 CSS pixels;     Horizontal scrolling content at a height equivalent to 256 CSS pixels;     Except for parts of the content which require two-dimensional layout for usage or meaning.",
+          "Notice: WCAG2AA.Principle1.Guideline1_4.1_4_11.G195,G207,G18,G145,G174,F78: Check that the visual presentation of the following have a contrast ratio of at least 3:1 against adjacent color(s):     User Interface Components: Visual information required to identify user interface components and states, except for inactive components or where the appearance of the component is determined by the user agent and not modified by the author;     Graphical Objects: Parts of graphics required to understand the content, except when a particular presentation of graphics is essential to the information being conveyed.",
+          "Notice: WCAG2AA.Principle1.Guideline1_4.1_4_12.C36,C35: Check that no loss of content or functionality occurs by setting all of the following and by changing no other style property:              Line height (line spacing) to at least 1.5 times the font size;         Spacing following paragraphs to at least 2 times the font size;         Letter spacing (tracking) to at least 0.12 times the font size;         Word spacing to at least 0.16 times the font size.",
+          "Notice: WCAG2AA.Principle1.Guideline1_4.1_4_13.F95: Check that where receiving and then removing pointer hover or keyboard focus triggers additional content to become visible and then hidden, the following are true:              Dismissable: A mechanism is available to dismiss the additional content without moving pointer hover or keyboard focus, unless the additional content communicates an input error or does not obscure or replace other content;         Hoverable: If pointer hover can trigger the additional content, then the pointer can be moved over the additional content without the additional content disappearing;         Persistent: The additional content remains visible until the hover or focus trigger is removed, the user dismisses it, or its information is no longer valid.",
+          "Notice: WCAG2AA.Principle2.Guideline2_1.2_1_4.: Check that if a keyboard shortcut is implemented in content using only letter (including upper- and lower-case letters), punctuation, number, or symbol characters, then at least one of the following is true:              Turn off: A mechanism is available to turn the shortcut off;         Remap: A mechanism is available to remap the shortcut to use one or more non-printable keyboard characters (e.g. Ctrl, Alt, etc);         Active only on focus: The keyboard shortcut for a user interface component is only active when that component has focus.     ",
+          "Notice: WCAG2AA.Principle2.Guideline2_2.2_2_2.SCR33,SCR22,G187,G152,G186,G191: If any part of the content moves, scrolls or blinks for more than 5 seconds, or auto-updates, check that there is a mechanism available to pause, stop, or hide the content.",
+          "Notice: WCAG2AA.Principle2.Guideline2_3.2_3_1.G19,G176: Check that no component of the content flashes more than three times in any 1-second period, or that the size of any flashing area is sufficiently small.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_1.G1,G123,G124,H69: Ensure that any common navigation elements can be bypassed; for instance, by use of skip links, header elements, or ARIA landmark roles.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_5.G125,G64,G63,G161,G126,G185: If this Web page is not part of a linear process, check that there is more than one way of locating this Web page within a set of Web pages.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_6.G130,G131: Check that headings and labels describe topic or purpose.",
+          "Notice: WCAG2AA.Principle2.Guideline2_4.2_4_7.G149,G165,G195,C15,SCR31: Check that there is at least one mode of operation where the keyboard focus indicator can be visually located on user interface controls.",
+          "Notice: WCAG2AA.Principle2.Guideline2_5.2_5_1.: Check that all functionality that uses multipoint or path-based gestures for operation can be operated with a single pointer without a path-based gesture, unless a multipoint or path-based gesture is essential.",
+          "Notice: WCAG2AA.Principle2.Guideline2_5.2_5_2.: Check that for functionality that can be operated using a single pointer, at least one of the following is true:         No Down-Event: The down-event of the pointer is not used to execute any part of the function;         Abort or Undo: Completion of the function is on the up-event, and a mechanism is available to abort the function before completion or to undo the function after completion;         Up Reversal: The up-event reverses any outcome of the preceding down-event;         Essential: Completing the function on the down-event is essential.",
+          "Notice: WCAG2AA.Principle2.Guideline2_5.2_5_3.F96: Check that for user interface components with labels that include text or images of text, the name contains the text that is presented visually.",
+          "Notice: WCAG2AA.Principle2.Guideline2_5.2_5_4.: Check that functionality that can be operated by device motion or user motion can also be operated by user interface components and responding to the motion can be disabled to prevent accidental actuation, except when:              Supported Interface: The motion is used to operate functionality through an accessibility supported interface;         Essential: The motion is essential for the function and doing so would invalidate the activity.     ",
+          "Notice: WCAG2AA.Principle3.Guideline3_1.3_1_2.H58: Ensure that any change in language is marked using the lang and/or xml:lang attribute on an element, as appropriate.",
+          "Notice: WCAG2AA.Principle3.Guideline3_2.3_2_3.G61: Check that navigational mechanisms that are repeated on multiple Web pages occur in the same relative order each time they are repeated, unless a change is initiated by the user.",
+          "Notice: WCAG2AA.Principle3.Guideline3_2.3_2_4.G197: Check that components that have the same functionality within this Web page are identified consistently in the set of Web pages to which it belongs.",
+          "Notice: WCAG2AA.Principle4.Guideline4_1.4_1_3.: Check that status messages can be programmatically determined through role or properties such that they can be presented to the user by assistive technologies without receiving focus."
+        ],
+        "passed": false,
+        "duration": 6770,
+        "pa11yIssues": [
+          {
+            "code": "color-contrast",
+            "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)",
+            "type": "error",
+            "selector": "#site-content > main > main > section:nth-child(2) > div > div:nth-child(1) > div > div:nth-child(1) > p",
+            "context": "<p class=\"sub-headline\" data-astro-cid-72b57o7r=\"\">Wir entwickeln digitale Lösunge...</p>"
+          },
+          {
+            "code": "color-contrast",
+            "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)",
+            "type": "error",
+            "selector": "#site-content > main > main > section:nth-child(4) > div > div:nth-child(1) > div > div:nth-child(2) > h1",
+            "context": "<h1 class=\"main-headline\" data-astro-cid-72b57o7r=\"\">Innovation trifft Design</h1>"
+          },
+          {
+            "code": "color-contrast",
+            "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI)",
+            "type": "error",
+            "selector": "#site-content > footer > div > p",
+            "context": "<p class=\"text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4\">© 2025 —\n<a href=\"/impressum\" c...</p>"
+          },
+          {
+            "code": "heading-order",
+            "message": "Heading levels should only increase by one (https://dequeuniversity.com/rules/axe/4.10/heading-order?application=axeAPI)",
+            "type": "warning",
+            "selector": "#site-content > main > main > section:nth-child(1) > div > div:nth-child(2) > div > div:nth-child(1) > h3",
+            "context": "<h3 class=\"column-title\" data-astro-cid-p5rl6mxl=\"\">AI, at your service</h3>"
+          },
+          {
+            "code": "heading-order",
+            "message": "Heading levels should only increase by one (https://dequeuniversity.com/rules/axe/4.10/heading-order?application=axeAPI)",
+            "type": "warning",
+            "selector": "#site-content > main > main > section:nth-child(3) > div > div:nth-child(2) > div > div:nth-child(1) > h3",
+            "context": "<h3 class=\"column-title\" data-astro-cid-p5rl6mxl=\"\">Digitale Transformation</h3>"
+          },
+          {
+            "code": "landmark-main-is-top-level",
+            "message": "Main landmark should not be contained in another landmark (https://dequeuniversity.com/rules/axe/4.10/landmark-main-is-top-level?application=axeAPI)",
+            "type": "warning",
+            "selector": "#site-content > main > main",
+            "context": "<main> <!-- Beispiel 1: Mit 3-Spalten...</main>"
+          },
+          {
+            "code": "landmark-no-duplicate-main",
+            "message": "Document should not have more than one main landmark (https://dequeuniversity.com/rules/axe/4.10/landmark-no-duplicate-main?application=axeAPI)",
+            "type": "warning",
+            "selector": "#site-content > main",
+            "context": "<main>  <main> <!-- Beispiel 1: Mit 3...</main>"
+          },
+          {
+            "code": "landmark-unique",
+            "message": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination (https://dequeuniversity.com/rules/axe/4.10/landmark-unique?application=axeAPI)",
+            "type": "warning",
+            "selector": "#site-content > main",
+            "context": "<main>  <main> <!-- Beispiel 1: Mit 3...</main>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_2.H25.2",
+            "message": "Check that the title element describes the document.",
+            "type": "notice",
+            "selector": "html > head > title",
+            "context": "<title>Headline Component Demo</title>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_10.C32,C31,C33,C38,SCR34,G206",
+            "message": "This element has \"position: fixed\". This may require scrolling in two dimensions, which is considered a failure of this Success Criterion.",
+            "type": "warning",
+            "selector": "html > body > astro-island > nav",
+            "context": "<nav style=\"z-index: 100;\" class=\" fixed top-0 left-0 right-0 z-[100] mt-0 lg:mt-8\"><div class=\"hidden lg:flex just...</nav>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(1) > a",
+            "context": "<a href=\"/\" class=\"hover:opacity-80 transition-opacity\"><img alt=\"CASOON Logo\" class=\"w...</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.G94.Image",
+            "message": "Ensure that the img element's alt text serves the same purpose and presents the same information as the image.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(1) > a > img",
+            "context": "<img alt=\"CASOON Logo\" class=\"w-24 h-24\" src=\"/logo_menu.svg\">"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.G73,G74",
+            "message": "If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(1) > a > img",
+            "context": "<img alt=\"CASOON Logo\" class=\"w-24 h-24\" src=\"/logo_menu.svg\">"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_3.1_3_1.H48",
+            "message": "If this element contains a navigation section, it is recommended that it be marked up as a list.",
+            "type": "warning",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2)",
+            "context": "<div style=\"will-change: opacity, transform; z-index: 10;\" class=\"flex items-center space-x-3 absolute right-56 top-1/2 -translate-y-1/2 transition-all duration-500 opacity-0 translate-x-20 pointer-events-none\"><!----><a class=\"px-4 py-2 text...</div>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Abs",
+            "message": "This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1.",
+            "type": "warning",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(1)",
+            "context": "<a class=\"px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline\" href=\"/ueber-uns\">Über uns</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(1)",
+            "context": "<a class=\"px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline\" href=\"/ueber-uns\">Über uns</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Abs",
+            "message": "This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1.",
+            "type": "warning",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(2)",
+            "context": "<a class=\"px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline\" href=\"/leistungen\">Leistungen</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(2)",
+            "context": "<a class=\"px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline\" href=\"/leistungen\">Leistungen</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Abs",
+            "message": "This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1.",
+            "type": "warning",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(3)",
+            "context": "<a class=\"px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline\" href=\"/insights\">Insights</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > div:nth-child(2) > a:nth-child(3)",
+            "context": "<a class=\"px-4 py-2 text-lg font-medium text-secondary-700 rounded-full border border-transparent hover:underline\" href=\"/insights\">Insights</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle3.Guideline3_2.3_2_1.G107",
+            "message": "Check that a change of context does not occur when this input field receives focus.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(1) > button",
+            "context": "<button class=\"ml-auto mr-8 flex items-center justify-center w-12 h-12 bg-transparent transition-colors focus:outline-none relative\" style=\"z-index: 20;\" aria-label=\"Menü öffnen\"><svg width=\"32\" height=\"32\" vie...</button>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(2) > div > a",
+            "context": "<a href=\"/\" class=\"hover:opacity-80 transition-opacity\"><img alt=\"CASOON Logo\" class=\"w...</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.G94.Image",
+            "message": "Ensure that the img element's alt text serves the same purpose and presents the same information as the image.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(2) > div > a > img",
+            "context": "<img alt=\"CASOON Logo\" class=\"w-32 h-32\" src=\"/logo.svg\">"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.G73,G74",
+            "message": "If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(2) > div > a > img",
+            "context": "<img alt=\"CASOON Logo\" class=\"w-32 h-32\" src=\"/logo.svg\">"
+          },
+          {
+            "code": "WCAG2AA.Principle3.Guideline3_2.3_2_1.G107",
+            "message": "Check that a change of context does not occur when this input field receives focus.",
+            "type": "notice",
+            "selector": "html > body > astro-island > nav > div:nth-child(2) > button",
+            "context": "<button class=\"px-4 py-2 text-sm font-medium text-secondary-700 bg-white/30 rounded-full border border-secondary-300 hover:bg-white/60 transition-all\" aria-label=\"Mobilmenü öffnen\">Menü</button>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_3.1_3_1_A.G141",
+            "message": "The heading structure is not logically nested. This h3 element should be an h2 to be properly nested.",
+            "type": "warning",
+            "selector": "#site-content > main > main > section:nth-child(1) > div > div:nth-child(2) > div > div:nth-child(1) > h3",
+            "context": "<h3 class=\"column-title\" data-astro-cid-p5rl6mxl=\"\">AI, at your service</h3>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+            "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.25:1. Recommendation:  change background to #fff.",
+            "type": "error",
+            "selector": "#site-content > main > main > section:nth-child(2) > div > div:nth-child(1) > div > div:nth-child(1) > p",
+            "context": "<p class=\"sub-headline\" data-astro-cid-72b57o7r=\"\">Wir entwickeln digitale Lösunge...</p>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_3.1_3_1_A.G141",
+            "message": "The heading structure is not logically nested. This h3 element should be an h2 to be properly nested.",
+            "type": "warning",
+            "selector": "#site-content > main > main > section:nth-child(3) > div > div:nth-child(2) > div > div:nth-child(1) > h3",
+            "context": "<h3 class=\"column-title\" data-astro-cid-p5rl6mxl=\"\">Digitale Transformation</h3>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail",
+            "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 2.74:1. Recommendation:  change background to #00a3b7.",
+            "type": "error",
+            "selector": "#site-content > main > main > section:nth-child(4) > div > div:nth-child(1) > div > div:nth-child(2) > h1",
+            "context": "<h1 class=\"main-headline\" data-astro-cid-72b57o7r=\"\">Innovation trifft Design</h1>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "#site-content > main > main > section:nth-child(5) > a",
+            "context": "<a href=\"/\" class=\"inline-block bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors\">\nZurück zur Startseite\n</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.Placeholder",
+            "message": "Anchor element found with link content, but no href, ID or name attribute has been supplied.",
+            "type": "warning",
+            "selector": "#site-content > footer > div > a",
+            "context": "<a class=\"flex title-font font-medium items-center md:justify-start justify-center text-gray-900\"> <span class=\"ml-3 text-xl\">CAS...</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "#site-content > footer > div > a",
+            "context": "<a class=\"flex title-font font-medium items-center md:justify-start justify-center text-gray-900\"> <span class=\"ml-3 text-xl\">CAS...</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+            "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.43:1. Recommendation:  change background to #f7f7f7.",
+            "type": "error",
+            "selector": "#site-content > footer > div > p",
+            "context": "<p class=\"text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4\">© 2025 —\n<a href=\"/impressum\" c...</p>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_3.1_3_1.H48",
+            "message": "If this element contains a navigation section, it is recommended that it be marked up as a list.",
+            "type": "warning",
+            "selector": "#site-content > footer > div > p",
+            "context": "<p class=\"text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4\">© 2025 —\n<a href=\"/impressum\" c...</p>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "#site-content > footer > div > p > a:nth-child(1)",
+            "context": "<a href=\"/impressum\" class=\"text-gray-600 ml-1\">\nImpressum\n</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "#site-content > footer > div > p > a:nth-child(2)",
+            "context": "<a href=\"/datenschutz\" class=\"text-gray-600 ml-1\">\nDatenschutz\n</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "#site-content > footer > div > span > a:nth-child(1)",
+            "context": "<a class=\"text-gray-500\" href=\"#\" aria-label=\"Facebook\"> <svg fill=\"currentColor\" strok...</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "#site-content > footer > div > span > a:nth-child(2)",
+            "context": "<a class=\"ml-3 text-gray-500\" href=\"#\" aria-label=\"Twitter\"> <svg fill=\"currentColor\" strok...</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "#site-content > footer > div > span > a:nth-child(3)",
+            "context": "<a class=\"ml-3 text-gray-500\" href=\"#\" aria-label=\"Instagram\"> <svg fill=\"none\" stroke=\"curre...</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
+            "message": "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
+            "type": "notice",
+            "selector": "#site-content > footer > div > span > a:nth-child(4)",
+            "context": "<a class=\"ml-3 text-gray-500\" href=\"#\" aria-label=\"LinkedIn\"> <svg fill=\"currentColor\" strok...</a>"
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_3.1_3_2.G57",
+            "message": "Check that the content is ordered in a meaningful sequence when linearised, such as when style sheets are disabled.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_3.1_3_3.G96",
+            "message": "Where instructions are provided for understanding the content, do not rely on sensory characteristics alone (such as shape, size or location) to describe objects.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_3.1_3_4.",
+            "message": "Check that content does not restrict its view and operation to a single display orientation, such as portrait or landscape, unless a specific display orientation is essential.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_1.G14,G182",
+            "message": "Check that any information conveyed using colour alone is also available in text, or through other visual cues.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_4.G142",
+            "message": "Check that text can be resized without assistive technology up to 200 percent without loss of content or functionality.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_5.G140,C22,C30.AALevel",
+            "message": "If the technologies being used can achieve the visual presentation, check that text is used to convey information rather than images of text, except when the image of text is essential to the information being conveyed, or can be visually customised to the user's requirements.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_10.C32,C31,C33,C38,SCR34,G206",
+            "message": "Check that content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for:     Vertical scrolling content at a width equivalent to 320 CSS pixels;     Horizontal scrolling content at a height equivalent to 256 CSS pixels;     Except for parts of the content which require two-dimensional layout for usage or meaning.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_11.G195,G207,G18,G145,G174,F78",
+            "message": "Check that the visual presentation of the following have a contrast ratio of at least 3:1 against adjacent color(s):     User Interface Components: Visual information required to identify user interface components and states, except for inactive components or where the appearance of the component is determined by the user agent and not modified by the author;     Graphical Objects: Parts of graphics required to understand the content, except when a particular presentation of graphics is essential to the information being conveyed.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_12.C36,C35",
+            "message": "Check that no loss of content or functionality occurs by setting all of the following and by changing no other style property:              Line height (line spacing) to at least 1.5 times the font size;         Spacing following paragraphs to at least 2 times the font size;         Letter spacing (tracking) to at least 0.12 times the font size;         Word spacing to at least 0.16 times the font size.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_13.F95",
+            "message": "Check that where receiving and then removing pointer hover or keyboard focus triggers additional content to become visible and then hidden, the following are true:              Dismissable: A mechanism is available to dismiss the additional content without moving pointer hover or keyboard focus, unless the additional content communicates an input error or does not obscure or replace other content;         Hoverable: If pointer hover can trigger the additional content, then the pointer can be moved over the additional content without the additional content disappearing;         Persistent: The additional content remains visible until the hover or focus trigger is removed, the user dismisses it, or its information is no longer valid.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_1.2_1_4.",
+            "message": "Check that if a keyboard shortcut is implemented in content using only letter (including upper- and lower-case letters), punctuation, number, or symbol characters, then at least one of the following is true:              Turn off: A mechanism is available to turn the shortcut off;         Remap: A mechanism is available to remap the shortcut to use one or more non-printable keyboard characters (e.g. Ctrl, Alt, etc);         Active only on focus: The keyboard shortcut for a user interface component is only active when that component has focus.     ",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_2.2_2_2.SCR33,SCR22,G187,G152,G186,G191",
+            "message": "If any part of the content moves, scrolls or blinks for more than 5 seconds, or auto-updates, check that there is a mechanism available to pause, stop, or hide the content.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_3.2_3_1.G19,G176",
+            "message": "Check that no component of the content flashes more than three times in any 1-second period, or that the size of any flashing area is sufficiently small.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.G1,G123,G124,H69",
+            "message": "Ensure that any common navigation elements can be bypassed; for instance, by use of skip links, header elements, or ARIA landmark roles.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_5.G125,G64,G63,G161,G126,G185",
+            "message": "If this Web page is not part of a linear process, check that there is more than one way of locating this Web page within a set of Web pages.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_6.G130,G131",
+            "message": "Check that headings and labels describe topic or purpose.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_4.2_4_7.G149,G165,G195,C15,SCR31",
+            "message": "Check that there is at least one mode of operation where the keyboard focus indicator can be visually located on user interface controls.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_5.2_5_1.",
+            "message": "Check that all functionality that uses multipoint or path-based gestures for operation can be operated with a single pointer without a path-based gesture, unless a multipoint or path-based gesture is essential.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_5.2_5_2.",
+            "message": "Check that for functionality that can be operated using a single pointer, at least one of the following is true:         No Down-Event: The down-event of the pointer is not used to execute any part of the function;         Abort or Undo: Completion of the function is on the up-event, and a mechanism is available to abort the function before completion or to undo the function after completion;         Up Reversal: The up-event reverses any outcome of the preceding down-event;         Essential: Completing the function on the down-event is essential.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_5.2_5_3.F96",
+            "message": "Check that for user interface components with labels that include text or images of text, the name contains the text that is presented visually.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle2.Guideline2_5.2_5_4.",
+            "message": "Check that functionality that can be operated by device motion or user motion can also be operated by user interface components and responding to the motion can be disabled to prevent accidental actuation, except when:              Supported Interface: The motion is used to operate functionality through an accessibility supported interface;         Essential: The motion is essential for the function and doing so would invalidate the activity.     ",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle3.Guideline3_1.3_1_2.H58",
+            "message": "Ensure that any change in language is marked using the lang and/or xml:lang attribute on an element, as appropriate.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle3.Guideline3_2.3_2_3.G61",
+            "message": "Check that navigational mechanisms that are repeated on multiple Web pages occur in the same relative order each time they are repeated, unless a change is initiated by the user.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle3.Guideline3_2.3_2_4.G197",
+            "message": "Check that components that have the same functionality within this Web page are identified consistently in the set of Web pages to which it belongs.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          },
+          {
+            "code": "WCAG2AA.Principle4.Guideline4_1.4_1_3.",
+            "message": "Check that status messages can be programmatically determined through role or properties such that they can be presented to the user by assistive technologies without receiving focus.",
+            "type": "notice",
+            "selector": "",
+            "context": null
+          }
+        ],
+        "pa11yScore": 0
+      }
+    }
+  ],
+  "failed": [],
+  "timestamp": "2025-07-18T19:54:20.418Z"
+}
