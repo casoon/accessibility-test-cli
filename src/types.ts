@@ -67,6 +67,16 @@ export interface TestOptions {
   viewportSize?: { width: number; height: number };
   userAgent?: string;
 
+  // 🚀 Parallele Test-Optionen
+  maxConcurrent?: number;              // Anzahl paralleler Worker (Default: 3)
+  maxRetries?: number;                 // Max. Retry-Versuche (Default: 3)
+  retryDelay?: number;                 // Retry-Delay in ms (Default: 2000)
+  enableProgressBar?: boolean;         // Progress-Bar aktivieren (Default: true)
+  progressUpdateInterval?: number;     // Progress-Update-Interval in ms (Default: 1000)
+  enableResourceMonitoring?: boolean;  // Resource-Monitoring aktivieren (Default: true)
+  maxMemoryUsage?: number;             // Max. Memory-Verbrauch in MB (Default: 512)
+  maxCpuUsage?: number;                // Max. CPU-Verbrauch in % (Default: 80)
+  useParallelTesting?: boolean;        // Parallele Tests aktivieren (Default: false)
 }
 
 export interface SitemapUrl {

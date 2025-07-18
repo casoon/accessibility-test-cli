@@ -2,7 +2,7 @@ import { SitemapParser } from '../parsers';
 import { AccessibilityChecker } from './accessibility-checker';
 import { OutputGenerator } from '../generators';
 import { DetailedReportGenerator, PerformanceReportGenerator, SeoReportGenerator } from '../reports';
-import { TestOptions, TestSummary } from '../types';
+import { TestOptions, TestSummary, AccessibilityResult } from '../types';
 import * as path from 'path';
 
 export interface StandardPipelineOptions {
@@ -31,6 +31,16 @@ export interface StandardPipelineOptions {
   mobileEmulation?: boolean;
   viewportSize?: { width: number; height: number };
   userAgent?: string;
+  // 🚀 Parallele Test-Optionen
+  useParallelTesting?: boolean;
+  maxConcurrent?: number;
+  maxRetries?: number;
+  retryDelay?: number;
+  enableProgressBar?: boolean;
+  progressUpdateInterval?: number;
+  enableResourceMonitoring?: boolean;
+  maxMemoryUsage?: number;
+  maxCpuUsage?: number;
 }
 
 export class StandardPipeline {
@@ -71,6 +81,12 @@ export class StandardPipeline {
     console.log(`   ⌨️  Testing keyboard navigation: ${options.testKeyboardNavigation ? 'Yes' : 'No'}`);
     console.log(`   🎨 Testing color contrast: ${options.testColorContrast ? 'Yes' : 'No'}`);
     console.log(`   🎯 Testing focus management: ${options.testFocusManagement ? 'Yes' : 'No'}`);
+    console.log(`   🚀 Parallel testing: ${options.useParallelTesting ? 'Yes' : 'No'}`);
+    if (options.useParallelTesting) {
+      console.log(`   🔧 Parallel workers: ${options.maxConcurrent || 3}`);
+      console.log(`   🔄 Max retries: ${options.maxRetries || 3}`);
+      console.log(`   ⏱️  Retry delay: ${options.retryDelay || 2000}ms`);
+    }
     
     // Tests ausführen
     const testOptions: TestOptions = {
@@ -92,13 +108,34 @@ export class StandardPipeline {
       blockCSS: options.blockCSS,
       mobileEmulation: options.mobileEmulation,
       viewportSize: options.viewportSize,
-      userAgent: options.userAgent
+      userAgent: options.userAgent,
+      // 🚀 Parallele Test-Optionen
+      useParallelTesting: options.useParallelTesting,
+      maxConcurrent: options.maxConcurrent,
+      maxRetries: options.maxRetries,
+      retryDelay: options.retryDelay,
+      enableProgressBar: options.enableProgressBar,
+      progressUpdateInterval: options.progressUpdateInterval,
+      enableResourceMonitoring: options.enableResourceMonitoring,
+      maxMemoryUsage: options.maxMemoryUsage,
+      maxCpuUsage: options.maxCpuUsage
     };
     
-    const results = await checker.testMultiplePages(
-      localUrls.map(url => url.loc),
-      testOptions
-    );
+    // Wähle zwischen sequenzieller und paralleler Test-Ausführung
+    let results: AccessibilityResult[];
+    if (options.useParallelTesting) {
+      console.log('🚀 Using parallel testing with Event-Driven Queue...');
+      results = await checker.testMultiplePagesParallel(
+        localUrls.map(url => url.loc),
+        testOptions
+      );
+    } else {
+      console.log('📋 Using sequential testing with Simple Queue...');
+      results = await checker.testMultiplePages(
+        localUrls.map(url => url.loc),
+        testOptions
+      );
+    }
     
     console.log('\n📋 Creating test summary...');
     

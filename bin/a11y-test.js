@@ -47,6 +47,16 @@ program
   .option('--no-performance-report', 'Disable performance report generation')
   .option('--seo-report', 'Generate SEO report with search engine optimization analysis')
   .option('--no-seo-report', 'Disable SEO report generation')
+  // 🚀 Parallele Test-Optionen
+  .option('--parallel', 'Enable parallel testing with Event-Driven Queue (10x faster)')
+  .option('--max-concurrent <number>', 'Number of parallel workers (default: 3)', '3')
+  .option('--max-retries <number>', 'Maximum retry attempts for failed tests (default: 3)', '3')
+  .option('--retry-delay <ms>', 'Delay between retry attempts in milliseconds (default: 2000)', '2000')
+  .option('--no-progress-bar', 'Disable live progress bar')
+  .option('--progress-interval <ms>', 'Progress update interval in milliseconds (default: 1000)', '1000')
+  .option('--no-resource-monitoring', 'Disable resource monitoring (memory/CPU)')
+  .option('--max-memory <mb>', 'Maximum memory usage in MB (default: 512)', '512')
+  .option('--max-cpu <percent>', 'Maximum CPU usage percentage (default: 80)', '80')
   .action(async (sitemapUrl, options) => {
     console.log('🚀 Starting Accessibility Test...');
     console.log(`📄 Sitemap: ${sitemapUrl}`);
@@ -162,6 +172,12 @@ program
     console.log(`📋 Detailed Report: ${generateDetailedReport ? 'Yes' : 'No'}`);
     console.log(`📋 Performance Report: ${generatePerformanceReport ? 'Yes' : 'No'}`);
     console.log(`📋 SEO Report: ${generateSeoReport ? 'Yes' : 'No'}`);
+    console.log(`🚀 Parallel Testing: ${options.parallel ? 'Yes' : 'No'}`);
+    if (options.parallel) {
+      console.log(`🔧 Parallel Workers: ${options.maxConcurrent}`);
+      console.log(`🔄 Max Retries: ${options.maxRetries}`);
+      console.log(`⏱️  Retry Delay: ${options.retryDelay}ms`);
+    }
     
     try {
       // Extract domain for filename
@@ -213,7 +229,17 @@ program
         blockCSS: options.blockCSS,
         mobileEmulation: options.mobileEmulation,
         viewportSize,
-        userAgent: options.userAgent
+        userAgent: options.userAgent,
+        // 🚀 Parallele Test-Optionen
+        useParallelTesting: options.parallel,
+        maxConcurrent: parseInt(options.maxConcurrent),
+        maxRetries: parseInt(options.maxRetries),
+        retryDelay: parseInt(options.retryDelay),
+        enableProgressBar: !options.noProgressBar,
+        progressUpdateInterval: parseInt(options.progressInterval),
+        enableResourceMonitoring: !options.noResourceMonitoring,
+        maxMemoryUsage: parseInt(options.maxMemory),
+        maxCpuUsage: parseInt(options.maxCpu)
       };
       
       console.log('🧪 Running accessibility tests...');

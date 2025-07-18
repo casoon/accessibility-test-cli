@@ -3,12 +3,14 @@ import pa11y from "pa11y";
 import { AccessibilityResult, TestOptions, Pa11yIssue } from "../types";
 
 import { SimpleQueue, QueuedUrl } from './simple-queue';
+import { ParallelTestManager, ParallelTestManagerOptions, ParallelTestResult } from './parallel-test-manager';
 import * as fs from 'fs';
 import * as path from 'path';
 
 export class AccessibilityChecker {
   private browser: Browser | null = null;
   private testQueue: SimpleQueue | null = null;
+  private parallelTestManager: ParallelTestManager | null = null;
 
   async initialize(): Promise<void> {
     this.browser = await chromium.launch({
@@ -300,6 +302,123 @@ export class AccessibilityChecker {
     this.testQueue.showStats();
 
     return results;
+  }
+
+  /**
+   * 🚀 Parallele Accessibility-Tests mit Event-Driven Queue
+   * 
+   * Diese Methode verwendet das Event-Driven Queue System für parallele Tests
+   * mit Echtzeit-Status-Reporting und Resource-Monitoring.
+   */
+  async testMultiplePagesParallel(
+    urls: string[],
+    options: TestOptions = {},
+  ): Promise<AccessibilityResult[]> {
+    const maxPages = options.maxPages || urls.length;
+    const pagesToTest = urls.slice(0, maxPages);
+    
+    // Parallele Test-Optionen
+    const parallelOptions: ParallelTestManagerOptions = {
+      maxConcurrent: options.maxConcurrent || 3,
+      maxRetries: options.maxRetries || 3,
+      retryDelay: options.retryDelay || 2000,
+      enableProgressBar: options.enableProgressBar !== false,
+      progressUpdateInterval: options.progressUpdateInterval || 1000,
+      enableResourceMonitoring: options.enableResourceMonitoring !== false,
+      maxMemoryUsage: options.maxMemoryUsage || 512,
+      maxCpuUsage: options.maxCpuUsage || 80,
+      testOptions: options,
+      eventCallbacks: {
+        onUrlStarted: (url: string) => {
+          if (options.verbose) {
+            console.log(`🚀 Starting parallel test: ${url}`);
+          }
+        },
+        onUrlCompleted: (url: string, result: AccessibilityResult, duration: number) => {
+          const status = result.passed ? '✅ PASSED' : '❌ FAILED';
+          console.log(`${status} ${url} (${duration}ms) - ${result.errors.length} errors, ${result.warnings.length} warnings`);
+        },
+        onUrlFailed: (url: string, error: string, attempts: number) => {
+          console.error(`💥 Error testing ${url} (attempt ${attempts}): ${error}`);
+        },
+        onProgressUpdate: (stats) => {
+          if (options.verbose) {
+            console.log(`📊 Progress: ${stats.progress.toFixed(1)}% | Workers: ${stats.activeWorkers}/${options.maxConcurrent || 3} | Memory: ${stats.memoryUsage}MB`);
+          }
+        },
+        onQueueEmpty: () => {
+          console.log('🎉 All parallel tests completed!');
+        }
+      }
+    };
+
+    // Parallel Test Manager initialisieren
+    this.parallelTestManager = new ParallelTestManager(parallelOptions);
+    
+    try {
+      console.log(`🚀 Starting parallel accessibility tests for ${pagesToTest.length} pages with ${parallelOptions.maxConcurrent} workers`);
+      console.log(`⚙️  Configuration: maxRetries=${parallelOptions.maxRetries}, retryDelay=${parallelOptions.retryDelay}ms`);
+      
+      // Manager initialisieren
+      await this.parallelTestManager.initialize();
+      
+      // Tests ausführen
+      const startTime = Date.now();
+      const result: ParallelTestResult = await this.parallelTestManager.runTests(pagesToTest);
+      const totalDuration = Date.now() - startTime;
+      
+      // Ergebnisse ausgeben
+      console.log('\n📋 Parallel Test Results Summary:');
+      console.log('==================================');
+      console.log(`⏱️  Total Duration: ${totalDuration}ms`);
+      console.log(`📄 URLs Tested: ${result.results.length}`);
+      console.log(`✅ Successful: ${result.results.filter(r => r.passed).length}`);
+      console.log(`❌ Failed: ${result.results.filter(r => !r.passed).length}`);
+      console.log(`💥 Errors: ${result.errors.length}`);
+      
+      // Performance-Metriken
+      const avgTimePerUrl = totalDuration / pagesToTest.length;
+      const speedup = avgTimePerUrl > 0 ? (avgTimePerUrl * pagesToTest.length) / totalDuration : 0;
+      
+      console.log('\n🚀 Performance Metrics:');
+      console.log('======================');
+      console.log(`Average time per URL: ${avgTimePerUrl.toFixed(0)}ms`);
+      console.log(`Speedup factor: ${speedup.toFixed(1)}x`);
+      console.log(`Throughput: ${(pagesToTest.length / (totalDuration / 1000)).toFixed(1)} URLs/second`);
+      
+      // Detaillierte Statistiken
+      console.log('\n📊 Queue Statistics:');
+      console.log('===================');
+      console.log(`Total: ${result.stats.total}`);
+      console.log(`Completed: ${result.stats.completed}`);
+      console.log(`Failed: ${result.stats.failed}`);
+      console.log(`Retrying: ${result.stats.retrying}`);
+      console.log(`Progress: ${result.stats.progress.toFixed(1)}%`);
+      console.log(`Average Duration: ${result.stats.averageDuration}ms`);
+      console.log(`Memory Usage: ${result.stats.memoryUsage}MB`);
+      console.log(`CPU Usage: ${result.stats.cpuUsage}s`);
+      
+      // Fehler-Details
+      if (result.errors.length > 0) {
+        console.log('\n❌ Failed URLs:');
+        console.log('===============');
+        result.errors.forEach((error, index) => {
+          console.log(`${index + 1}. ${error.url} (${error.attempts} attempts): ${error.error}`);
+        });
+      }
+      
+      return result.results;
+      
+    } catch (error) {
+      console.error('❌ Parallel test execution failed:', error);
+      throw error;
+    } finally {
+      // Cleanup
+      if (this.parallelTestManager) {
+        await this.parallelTestManager.cleanup();
+        this.parallelTestManager = null;
+      }
+    }
   }
 
 
