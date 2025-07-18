@@ -17,6 +17,18 @@ export { SemanticHtmlTest } from './semantic/semantic-html-test';
 // Media tests
 export { MediaAccessibilityTest } from './media/media-accessibility-test';
 
+// Performance tests
+export { PerformanceLoadingTest } from './performance/performance-loading-test';
+export { PerformanceMemoryTest } from './performance/performance-memory-test';
+
+// Validation tests
+export { ValidationErrorHandlingTest } from './validation/validation-error-handling-test';
+export { ValidationFormValidationTest } from './validation/validation-form-validation-test';
+
+// Language tests
+export { LanguageI18nTest } from './language/language-i18n-test';
+export { LanguageTextDirectionTest } from './language/language-text-direction-test';
+
 // Test categories
 export const TEST_CATEGORIES = {
   FORM: 'form',

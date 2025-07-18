@@ -5,6 +5,12 @@ import { KeyboardNavigationTest } from './keyboard/keyboard-navigation-test';
 import { AriaLandmarksTest } from './aria/aria-landmarks-test';
 import { SemanticHtmlTest } from './semantic/semantic-html-test';
 import { MediaAccessibilityTest } from './media/media-accessibility-test';
+import { PerformanceLoadingTest } from './performance/performance-loading-test';
+import { PerformanceMemoryTest } from './performance/performance-memory-test';
+import { ValidationErrorHandlingTest } from './validation/validation-error-handling-test';
+import { ValidationFormValidationTest } from './validation/validation-form-validation-test';
+import { LanguageI18nTest } from './language/language-i18n-test';
+import { LanguageTextDirectionTest } from './language/language-text-direction-test';
 
 export interface TestSuiteResult {
   totalTests: number;
@@ -29,7 +35,13 @@ export class TestManager {
       new KeyboardNavigationTest(),
       new AriaLandmarksTest(),
       new SemanticHtmlTest(),
-      new MediaAccessibilityTest()
+      new MediaAccessibilityTest(),
+      new PerformanceLoadingTest(),
+      new PerformanceMemoryTest(),
+      new ValidationErrorHandlingTest(),
+      new ValidationFormValidationTest(),
+      new LanguageI18nTest(),
+      new LanguageTextDirectionTest()
     ];
   }
 

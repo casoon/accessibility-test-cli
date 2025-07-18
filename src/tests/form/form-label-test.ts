@@ -2,7 +2,7 @@ import { BaseAccessibilityTest, TestContext, TestResult } from '../base-test';
 
 export class FormLabelTest extends BaseAccessibilityTest {
   name = 'Form Label Association';
-  description = 'Check if form controls have proper label associations';
+  description = 'Check form controls for proper label associations and accessibility (labels, aria-label, aria-labelledby, aria-describedby)';
   category = 'form';
   priority = 'critical';
   standards = ['WCAG 2.1 AA', 'WCAG 2.2 AA', 'Section 508'];
@@ -16,7 +16,7 @@ export class FormLabelTest extends BaseAccessibilityTest {
         const warnings: string[] = [];
         let totalIssues = 0;
 
-        // Check inputs without labels
+        // Check inputs without labels (focus on label associations only)
         const inputs = document.querySelectorAll('input:not([type="hidden"]):not([type="submit"]):not([type="button"]):not([type="image"])');
         inputs.forEach((input: Element) => {
           const inputElement = input as HTMLInputElement;
@@ -31,7 +31,7 @@ export class FormLabelTest extends BaseAccessibilityTest {
           }
         });
 
-        // Check labels without for attribute
+        // Check labels without for attribute or nested controls
         const labels = document.querySelectorAll('label');
         labels.forEach((label: Element) => {
           const labelElement = label as HTMLLabelElement;
@@ -67,6 +67,35 @@ export class FormLabelTest extends BaseAccessibilityTest {
           if (!hasLabel && !hasAriaLabel && !hasAriaLabelledBy && !hasPlaceholder) {
             totalIssues++;
             issues.push(`Textarea without label: ${textareaElement.outerHTML}`);
+          }
+        });
+
+        // Check for proper label associations (accessibility focus)
+        const formControls = document.querySelectorAll('input, select, textarea');
+        formControls.forEach(control => {
+          const controlElement = control as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+          
+          // Check if control has proper ID for label association
+          if (controlElement.id) {
+            const associatedLabel = document.querySelector(`label[for="${controlElement.id}"]`);
+            if (associatedLabel) {
+              // Check if label text is descriptive
+              const labelText = associatedLabel.textContent?.trim();
+              if (!labelText || labelText.length < 2) {
+                warnings.push(`Label for "${controlElement.id}" has insufficient text: "${labelText}"`);
+              }
+            }
+          }
+          
+          // Check for aria-describedby associations
+          if (controlElement.hasAttribute('aria-describedby')) {
+            const describedBy = controlElement.getAttribute('aria-describedby');
+            if (describedBy) {
+              const describedElement = document.getElementById(describedBy);
+              if (!describedElement) {
+                issues.push(`aria-describedby references non-existent element: ${describedBy}`);
+              }
+            }
           }
         });
 

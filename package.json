@@ -1,6 +1,6 @@
 {
   "name": "@casoon/accessibility-test-cli",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "CLI tool for automated accessibility tests based on sitemap.xml",
   "main": "dist/index.js",
   "bin": {

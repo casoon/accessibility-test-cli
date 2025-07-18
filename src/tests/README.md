@@ -20,9 +20,15 @@ src/tests/
 │   └── semantic-html-test.ts
 ├── media/                    # Media accessibility tests
 │   └── media-accessibility-test.ts
-├── language/                 # Language & i18n tests (planned)
-├── performance/              # Performance tests (planned)
-└── validation/               # Validation tests (planned)
+├── language/                 # Language & i18n tests
+│   ├── language-i18n-test.ts
+│   └── language-text-direction-test.ts
+├── performance/              # Performance tests
+│   ├── performance-loading-test.ts
+│   └── performance-memory-test.ts
+└── validation/               # Validation tests
+    ├── validation-error-handling-test.ts
+    └── validation-form-validation-test.ts
 ```
 
 ## 🧪 Available Tests
@@ -65,6 +71,57 @@ src/tests/
   - Videos with captions
   - Audio with transcripts
   - Iframes with titles
+
+### Performance Tests
+- **PerformanceLoadingTest**: Checks page loading performance and metrics
+  - **Standards**: WCAG 2.1 AA, WCAG 2.2 AA
+  - Page load times
+  - DOM content loaded times
+  - Large images detection
+  - External resources
+  - Render-blocking resources
+
+- **PerformanceMemoryTest**: Checks memory usage and potential memory leaks
+  - **Standards**: WCAG 2.1 AA, WCAG 2.2 AA
+  - Memory usage monitoring
+  - DOM node count
+  - Event listener patterns
+  - Large media elements
+  - WebGL contexts
+
+### Validation Tests
+- **ValidationErrorHandlingTest**: Checks error handling and validation patterns
+  - **Standards**: WCAG 2.1 AA, WCAG 2.2 AA, Section 508
+  - Error message accessibility
+  - Required field indicators
+  - Validation feedback
+  - Error recovery mechanisms
+  - Error message clarity
+
+- **ValidationFormValidationTest**: Checks form validation patterns and accessibility
+  - **Standards**: WCAG 2.1 AA, WCAG 2.2 AA, Section 508
+  - Input type validation
+  - Form validation attributes
+  - Validation messages
+  - Real-time validation
+  - Validation consistency
+
+### Language Tests
+- **LanguageI18nTest**: Checks internationalization and language attributes
+  - **Standards**: WCAG 2.1 AA, WCAG 2.2 AA, Section 508
+  - Language attributes
+  - Multiple language detection
+  - Language codes validation
+  - Translation placeholders
+  - Date/time formatting
+
+- **LanguageTextDirectionTest**: Checks text direction and RTL support
+  - **Standards**: WCAG 2.1 AA, WCAG 2.2 AA, Section 508
+  - RTL language detection
+  - Text direction attributes
+  - Form element direction
+  - Table and list direction
+  - CSS direction properties
 
 ## 🚀 Usage
 
