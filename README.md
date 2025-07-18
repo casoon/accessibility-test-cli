@@ -1,139 +1,139 @@
 # Accessibility Test CLI
 
-Ein CLI-Tool für automatische Accessibility-Tests basierend auf Sitemap-URLs.
+A CLI tool for automated accessibility tests based on sitemap URLs.
 
 ## 🚀 Installation
 
 ```bash
-# Dependencies installieren
+# Install dependencies
 npm install
 
-# TypeScript kompilieren
+# Compile TypeScript
 npm run build
 
-# CLI global installieren (optional)
+# (Optional) Install CLI globally
 npm link
 ```
 
-## 📖 Verwendung
+## 📖 Usage
 
-### Grundlegende Verwendung
+### Basic Usage
 
 ```bash
-# Teste alle Seiten aus der Sitemap
+# Test all pages from the sitemap
 a11y-test https://example.com/sitemap.xml
 
-# Oder mit npm
+# Or with npm
 npm start -- https://example.com/sitemap.xml
 ```
 
-### Erweiterte Optionen
+### Advanced Options
 
 ```bash
-# Maximale Anzahl zu testender Seiten
+# Set maximum number of pages to test
 a11y-test https://example.com/sitemap.xml --max-pages 10
 
-# Timeout anpassen
+# Adjust timeout
 a11y-test https://example.com/sitemap.xml --timeout 15000
 
-# Detaillierte Ausgabe
+# Verbose output
 a11y-test https://example.com/sitemap.xml --verbose
 
-# URL-Muster filtern
+# Filter URL patterns
 a11y-test https://example.com/sitemap.xml \
   --filter "demo,test,admin" \
-  --include "blog,leistungen"
+  --include "blog,services"
 ```
 
-## ⚙️ Optionen
+## ⚙️ Options
 
-| Option | Beschreibung | Standard |
-|--------|-------------|----------|
-| `-m, --max-pages <number>` | Maximale Anzahl zu testender Seiten | `5` |
-| `-t, --timeout <number>` | Timeout in Millisekunden | `10000` |
-| `-w, --wait-until <string>` | Warten bis (domcontentloaded\|load\|networkidle) | `domcontentloaded` |
-| `-f, --filter <patterns>` | Auszuschließende URL-Muster (kommagetrennt) | `[...slug],[category],/demo/` |
-| `-i, --include <patterns>` | Einzuschließende URL-Muster (kommagetrennt) | - |
-| `-v, --verbose` | Detaillierte Ausgabe | `false` |
-| `-o, --output <format>` | Ausgabeformat (console\|json\|html) | `console` |
-| `--output-file <file>` | Ausgabedatei | - |
+| Option | Description | Default |
+|--------|-------------|---------|
+| `-m, --max-pages <number>` | Maximum number of pages to test | `5` |
+| `-t, --timeout <number>` | Timeout in milliseconds | `10000` |
+| `-w, --wait-until <string>` | Wait until (domcontentloaded\|load\|networkidle) | `domcontentloaded` |
+| `-f, --filter <patterns>` | Exclude URL patterns (comma-separated) | `[...slug],[category],/demo/` |
+| `-i, --include <patterns>` | Include URL patterns (comma-separated) | - |
+| `-v, --verbose` | Verbose output | `false` |
+| `-o, --output <format>` | Output format (console\|json\|html) | `console` |
+| `--output-file <file>` | Output file | - |
 
-## 🧪 Accessibility-Checks
+## 🧪 Accessibility Checks
 
-Das Tool führt folgende Accessibility-Tests durch:
+The tool performs the following accessibility checks:
 
-- **Seitentitel**: Prüft ob ein Titel vorhanden ist
-- **Alt-Attribute**: Zählt Bilder ohne alt-Attribut
-- **Button-Labels**: Zählt Buttons ohne aria-label
-- **Überschriften-Hierarchie**: Prüft ob Überschriften vorhanden sind
+- **Page Title**: Checks if a title is present
+- **Alt Attributes**: Counts images without alt attribute
+- **Button Labels**: Counts buttons without aria-label
+- **Heading Hierarchy**: Checks if headings are present
 
-## 📊 Ausgabe
+## 📊 Output
 
-### Console-Ausgabe
+### Console Output
 ```
-🎯 Accessibility Test Zusammenfassung
+🎯 Accessibility Test Summary
 ──────────────────────────────────────────────────
-📄 Gesamtseiten: 113
-🧪 Getestete Seiten: 5
-✅ Bestanden: 4
-❌ Fehlgeschlagen: 1
-⚠️  Warnungen: 3
-⏱️  Gesamtdauer: 2345ms
+📄 Total pages: 113
+🧪 Pages tested: 5
+✅ Passed: 4
+❌ Failed: 1
+⚠️  Warnings: 3
+⏱️  Total duration: 2345ms
 ```
 
-### Detaillierte Ausgabe (--verbose)
+### Verbose Output (--verbose)
 ```
-📋 Detaillierte Ergebnisse:
+📋 Detailed Results:
 ✅ https://example.com/
-   Titel: Homepage
-   Dauer: 456ms
+   Title: Homepage
+   Duration: 456ms
    ⚠️  2 buttons without aria-label
 
 ❌ https://example.com/error-page
-   Titel: Error Page
-   Dauer: 123ms
+   Title: Error Page
+   Duration: 123ms
    ❌ No headings found
 ```
 
-## 🔧 Entwicklung
+## 🔧 Development
 
 ```bash
-# Entwicklungsserver starten
+# Start development server
 npm run dev
 
-# TypeScript kompilieren
+# Compile TypeScript
 npm run build
 
-# Code formatieren
+# Format code
 npm run format
 
 # Linting
 npm run lint
 ```
 
-## 📁 Projektstruktur
+## 📁 Project Structure
 
 ```
 accessibility-test-cli/
 ├── src/
-│   ├── index.ts              # Haupt-Einstiegspunkt
-│   ├── sitemap-parser.ts     # Sitemap-Parsing-Logik
-│   ├── accessibility-checker.ts # Playwright-Tests
-│   └── types.ts              # TypeScript-Typen
+│   ├── index.ts              # Main entry point
+│   ├── sitemap-parser.ts     # Sitemap parsing logic
+│   ├── accessibility-checker.ts # Playwright tests
+│   └── types.ts              # TypeScript types
 ├── bin/
-│   └── a11y-test.js          # CLI-Einstiegspunkt
-├── dist/                     # Kompilierte Dateien
+│   └── a11y-test.js          # CLI entry point
+├── dist/                     # Compiled files
 └── package.json
 ```
 
-## 🤝 Beitragen
+## 🤝 Contributing
 
-1. Fork erstellen
-2. Feature-Branch erstellen (`git checkout -b feature/amazing-feature`)
-3. Änderungen committen (`git commit -m 'Add amazing feature'`)
-4. Branch pushen (`git push origin feature/amazing-feature`)
-5. Pull Request erstellen
+1. Create a fork
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push the branch (`git push origin feature/amazing-feature`)
+5. Create a pull request
 
-## 📄 Lizenz
+## 📄 License
 
-MIT License - siehe [LICENSE](LICENSE) Datei für Details. 
+MIT License - see [LICENSE](LICENSE) file for details. 

@@ -1,7 +1,7 @@
 {
   "name": "@casoon/accessibility-test-cli",
-  "version": "1.0.0",
-  "description": "CLI-Tool für automatische Accessibility-Tests basierend auf Sitemap",
+  "version": "1.0.1",
+  "description": "CLI tool for automated accessibility tests based on sitemap.xml",
   "main": "dist/index.js",
   "bin": {
     "a11y-test": "./bin/a11y-test.js"
