@@ -41,9 +41,12 @@ program
   .option('--no-markdown', 'Disable automatic markdown output')
   .option('--output-dir <dir>', 'Output directory for markdown file', './reports')
 
-  .option('--detailed-report', 'Generate detailed error report for automated fixes')
-  .option('--performance-report', 'Generate performance report with PageSpeed/Lightspeed analysis')
-  .option('--seo-report', 'Generate SEO report with search engine optimization analysis')
+  .option('--detailed-report', 'Generate detailed error report for automated fixes', false)
+  .option('--no-detailed-report', 'Disable detailed error report generation', false)
+  .option('--performance-report', 'Generate performance report with PageSpeed/Lightspeed analysis', false)
+  .option('--no-performance-report', 'Disable performance report generation', false)
+  .option('--seo-report', 'Generate SEO report with search engine optimization analysis', false)
+  .option('--no-seo-report', 'Disable SEO report generation', false)
   .action(async (sitemapUrl, options) => {
     console.log('🚀 Starting Accessibility Test...');
     console.log(`📄 Sitemap: ${sitemapUrl}`);
@@ -55,6 +58,11 @@ program
     let generatePerformanceReport = options.performanceReport;
     let generateSeoReport = options.seoReport;
     
+    // Handle negative flags (--no-* options)
+    if (options.noDetailedReport) generateDetailedReport = false;
+    if (options.noPerformanceReport) generatePerformanceReport = false;
+    if (options.noSeoReport) generateSeoReport = false;
+    
     // Set sensible defaults for all parameters if not provided
     if (!maxPages) maxPages = 20;
     if (generateDetailedReport === undefined) generateDetailedReport = true;
@@ -62,8 +70,10 @@ program
     if (generateSeoReport === undefined) generateSeoReport = true;
     
     // Only show prompts if we're in interactive mode (no CLI parameters)
-    const hasCliParameters = options.maxPages || options.standard || options.detailedReport !== undefined || 
-                           options.performanceReport !== undefined || options.seoReport !== undefined;
+    const hasCliParameters = options.maxPages || options.standard || 
+                           options.detailedReport !== undefined || options.noDetailedReport ||
+                           options.performanceReport !== undefined || options.noPerformanceReport ||
+                           options.seoReport !== undefined || options.noSeoReport;
     
     if (!hasCliParameters) {
       const maxPagesChoices = [
