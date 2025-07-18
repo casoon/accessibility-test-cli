@@ -20,7 +20,7 @@ program
   .option('-f, --filter <patterns>', 'Exclude URL patterns (comma-separated)', '[...slug],[category],/demo/')
   .option('-i, --include <patterns>', 'Include URL patterns (comma-separated)')
   .option('-v, --verbose', 'Verbose output')
-  .option('--pa11y-standard <standard>', 'pa11y Standard (WCAG2A|WCAG2AA|WCAG2AAA|Section508)', 'WCAG2AA')
+  .option('--standard <standard>', 'Accessibility standard (WCAG2A|WCAG2AA|WCAG2AAA|Section508)', 'WCAG2AA')
   .option('--include-details', 'Include detailed information in output')
   .option('--include-pa11y', 'Include pa11y issues in output')
   .option('--no-markdown', 'Disable automatic markdown output')
@@ -58,7 +58,7 @@ program
     
     console.log(`🧪 Max Pages: ${maxPages}`);
     console.log(`⏱️  Timeout: ${options.timeout}ms`);
-    console.log(`📋 pa11y Standard: ${options.pa11yStandard}`);
+    console.log(`📋 Standard: ${options.standard}`);
     
     try {
       // Extract domain for filename
@@ -80,7 +80,7 @@ program
         sitemapUrl,
         maxPages: maxPages,
         timeout: parseInt(options.timeout),
-        pa11yStandard: options.pa11yStandard,
+        pa11yStandard: options.standard,
         outputDir: options.outputDir,
         includeDetails: options.includeDetails,
         includePa11yIssues: options.includePa11y

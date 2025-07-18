@@ -42,8 +42,8 @@ program
   .option("-v, --verbose", "Detaillierte Ausgabe")
 
   .option(
-    "--pa11y-standard <standard>",
-    "pa11y Standard (WCAG2A|WCAG2AA|WCAG2AAA|Section508)",
+    "--standard <standard>",
+    "Accessibility Standard (WCAG2A|WCAG2AA|WCAG2AAA|Section508)",
     "WCAG2AA"
   )
   .option("--include-details", "Detaillierte Informationen in Output-Datei")
@@ -91,7 +91,7 @@ program
         timeout: parseInt(options.timeout),
         waitUntil: options.waitUntil,
         verbose: options.verbose,
-        pa11yStandard: options.pa11yStandard,
+        pa11yStandard: options.standard,
       };
 
       const results = await checker.testMultiplePages(

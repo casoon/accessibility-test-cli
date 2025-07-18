@@ -24,7 +24,7 @@ npm link
 a11y-test https://example.com/sitemap.xml
 
 # With custom options (bypasses interactive prompt)
-a11y-test https://example.com/sitemap.xml --max-pages 50 --pa11y-standard WCAG2AAA
+a11y-test https://example.com/sitemap.xml --max-pages 50 --standard WCAG2AAA
 
 # With custom output directory
 a11y-test https://example.com/sitemap.xml --output-dir ./my-reports
@@ -75,8 +75,8 @@ a11y-test https://example.com/sitemap.xml \
   --filter "demo,test,admin" \
   --include "blog,services"
 
-# Different pa11y standards
-a11y-test https://example.com/sitemap.xml --pa11y-standard WCAG2AAA
+# Different accessibility standards
+a11y-test https://example.com/sitemap.xml --standard WCAG2AAA
 ```
 
 ### Advanced Options
@@ -112,7 +112,7 @@ a11y-test https://example.com/sitemap.xml --pa11y-standard WCAG2AAA
 | `-v, --verbose` | Verbose output | `false` |
 
 
-| `--pa11y-standard <standard>` | pa11y Standard (WCAG2A\|WCAG2AA\|WCAG2AAA\|Section508) | `WCAG2AA` |
+| `--standard <standard>` | Accessibility standard (WCAG2A\|WCAG2AA\|WCAG2AAA\|Section508) | `WCAG2AA` |
 | `--output-dir <dir>` | Output directory for markdown file | `./reports` |
 
 ## 🧪 Accessibility Checks
