@@ -20,10 +20,10 @@ npm link
 ### Simple Command (Recommended)
 
 ```bash
-# Test with automatic markdown output
+# Test with interactive page selection
 a11y-test https://example.com/sitemap.xml
 
-# With custom options
+# With custom options (bypasses interactive prompt)
 a11y-test https://example.com/sitemap.xml --max-pages 50 --pa11y-standard WCAG2AAA
 
 # With custom output directory
@@ -33,10 +33,35 @@ a11y-test https://example.com/sitemap.xml --output-dir ./my-reports
 a11y-test https://example.com/sitemap.xml --no-markdown
 ```
 
+### Interactive Mode
+
+When you run the command without specifying `--max-pages`, you'll see an interactive dropdown:
+
+```
+🚀 Starting Accessibility Test...
+📄 Sitemap: https://example.com/sitemap.xml
+
+? How many pages would you like to test? (Use arrow keys)
+❯ 20 pages (Comprehensive test)
+  5 pages (Quick test)
+  10 pages (Standard test)
+  50 pages (Full audit)
+  100 pages (Complete analysis)
+  All pages (Maximum coverage)
+```
+
+**Options:**
+- **5 pages**: Quick test for basic validation
+- **10 pages**: Standard test for most use cases
+- **20 pages**: Comprehensive test (default)
+- **50 pages**: Full audit for important sites
+- **100 pages**: Complete analysis for large sites
+- **All pages**: Maximum coverage (up to 1000 pages)
+
 ### Advanced Options
 
 ```bash
-# Maximum number of pages to test
+# Maximum number of pages to test (bypasses interactive prompt)
 a11y-test https://example.com/sitemap.xml --max-pages 10
 
 # Adjust timeout
