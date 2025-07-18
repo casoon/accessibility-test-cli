@@ -4,6 +4,9 @@ export interface Pa11yIssue {
   type: 'error' | 'warning' | 'notice';
   selector?: string;
   context?: string;
+  impact?: string;
+  help?: string;
+  helpUrl?: string;
 }
 
 export interface AccessibilityResult {
@@ -30,6 +33,13 @@ export interface TestOptions {
   output?: "console" | "json" | "html";
   outputFile?: string;
   pa11yStandard?: 'WCAG2A' | 'WCAG2AA' | 'WCAG2AAA' | 'Section508';
+  hideElements?: string;
+  includeNotices?: boolean;
+  includeWarnings?: boolean;
+  includePasses?: boolean;
+  runners?: string[];
+  wait?: number;
+  chromeLaunchConfig?: any;
 }
 
 export interface SitemapUrl {

@@ -23,6 +23,11 @@ program
   .option('--standard <standard>', 'Accessibility standard (WCAG2A|WCAG2AA|WCAG2AAA|Section508)', 'WCAG2AA')
   .option('--include-details', 'Include detailed information in output')
   .option('--include-pa11y', 'Include pa11y issues in output')
+  .option('--pa11y-standard <standard>', 'Pa11y standard (WCAG2A|WCAG2AA|WCAG2AAA|Section508)', 'WCAG2AA')
+  .option('--hide-elements <selectors>', 'CSS selectors to hide from pa11y tests')
+  .option('--include-notices', 'Include pa11y notices in output')
+  .option('--include-warnings', 'Include pa11y warnings in output', true)
+  .option('--pa11y-wait <ms>', 'Wait time after page load for pa11y tests', '1000')
   .option('--no-markdown', 'Disable automatic markdown output')
   .option('--output-dir <dir>', 'Output directory for markdown file', './reports')
   .option('--detailed-report', 'Generate detailed error report for automated fixes')
@@ -108,7 +113,11 @@ program
         outputDir: options.outputDir,
         includeDetails: options.includeDetails,
         includePa11yIssues: options.includePa11y,
-        generateDetailedReport: options.detailedReport
+        generateDetailedReport: options.detailedReport,
+        hideElements: options.hideElements,
+        includeNotices: options.includeNotices,
+        includeWarnings: options.includeWarnings,
+        wait: parseInt(options.pa11yWait)
       };
       
       console.log('🧪 Running accessibility tests...');

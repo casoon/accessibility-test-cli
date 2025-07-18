@@ -14,6 +14,10 @@ export interface StandardPipelineOptions {
   includeDetails?: boolean;
   includePa11yIssues?: boolean;
   generateDetailedReport?: boolean;
+  hideElements?: string;
+  includeNotices?: boolean;
+  includeWarnings?: boolean;
+  wait?: number;
 }
 
 export class StandardPipeline {
@@ -55,7 +59,11 @@ export class StandardPipeline {
       maxPages: options.maxPages || 20,
       timeout: options.timeout || 10000,
       waitUntil: 'domcontentloaded',
-      pa11yStandard: options.pa11yStandard || 'WCAG2AA'
+      pa11yStandard: options.pa11yStandard || 'WCAG2AA',
+      hideElements: options.hideElements,
+      includeNotices: options.includeNotices,
+      includeWarnings: options.includeWarnings,
+      wait: options.wait
     };
     
     const results = await checker.testMultiplePages(
@@ -140,7 +148,11 @@ export class StandardPipeline {
       maxPages: options.maxPages || 10,
       timeout: options.timeout || 10000,
       waitUntil: 'domcontentloaded',
-      pa11yStandard: options.pa11yStandard || 'WCAG2AA'
+      pa11yStandard: options.pa11yStandard || 'WCAG2AA',
+      hideElements: options.hideElements,
+      includeNotices: options.includeNotices,
+      includeWarnings: options.includeWarnings,
+      wait: options.wait
     };
     
     const results = await checker.testMultiplePages(

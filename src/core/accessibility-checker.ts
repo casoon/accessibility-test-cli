@@ -1,6 +1,6 @@
 import { chromium, Browser, Page } from "playwright";
 import pa11y from "pa11y";
-import { AccessibilityResult, TestOptions } from "../types";
+import { AccessibilityResult, TestOptions, Pa11yIssue } from "../types";
 
 export class AccessibilityChecker {
   private browser: Browser | null = null;
@@ -77,17 +77,36 @@ export class AccessibilityChecker {
       try {
         const pa11yResult = await pa11y(url, {
           timeout: options.timeout || 10000,
-          wait: 1000, // Warten nach dem Laden
-          standard: 'WCAG2AA', // WCAG 2.0 Level AA
-          hideElements: 'iframe[src*="google-analytics"], iframe[src*="doubleclick"]', // Tracking-Iframes ausblenden
-          includeNotices: true,
-          includeWarnings: true,
+          wait: options.wait || 1000,
+          standard: options.pa11yStandard || 'WCAG2AA',
+          hideElements: options.hideElements || 'iframe[src*="google-analytics"], iframe[src*="doubleclick"]',
+          includeNotices: options.includeNotices !== false,
+          includeWarnings: options.includeWarnings !== false,
+          // includePasses: options.includePasses || false, // Not supported in current pa11y version
+          runners: options.runners || ['axe', 'htmlcs'],
+          chromeLaunchConfig: options.chromeLaunchConfig,
+          log: options.verbose ? console : undefined,
         });
 
         // pa11y-Ergebnisse in unser Format konvertieren
         pa11yResult.issues.forEach((issue) => {
-          const message = `${issue.code}: ${issue.message}`;
+          // Detaillierte Issue-Informationen speichern
+          const detailedIssue: Pa11yIssue = {
+            code: issue.code,
+            message: issue.message,
+            type: issue.type as 'error' | 'warning' | 'notice',
+            selector: issue.selector,
+            context: issue.context,
+            impact: (issue as any).impact,
+            help: (issue as any).help,
+            helpUrl: (issue as any).helpUrl
+          };
           
+          result.pa11yIssues = result.pa11yIssues || [];
+          result.pa11yIssues.push(detailedIssue);
+          
+          // Für Kompatibilität auch in errors/warnings
+          const message = `${issue.code}: ${issue.message}`;
           if (issue.type === 'error') {
             result.errors.push(message);
           } else if (issue.type === 'warning') {
@@ -100,6 +119,15 @@ export class AccessibilityChecker {
         // Zusätzliche pa11y-Metriken
         if (pa11yResult.documentTitle) {
           result.title = pa11yResult.documentTitle;
+        }
+
+        // pa11y Score berechnen
+        if (pa11yResult.issues.length > 0) {
+          const totalIssues = pa11yResult.issues.length;
+          const errorIssues = pa11yResult.issues.filter(issue => issue.type === 'error').length;
+          result.pa11yScore = Math.max(0, 100 - (errorIssues * 10) - (totalIssues - errorIssues) * 2);
+        } else {
+          result.pa11yScore = 100;
         }
 
       } catch (pa11yError) {

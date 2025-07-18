@@ -110,6 +110,15 @@ a11y-test https://example.com/sitemap.xml \
 
 # Use different pa11y standard
 a11y-test https://example.com/sitemap.xml --pa11y-standard WCAG2AAA
+
+# Hide specific elements from testing
+a11y-test https://example.com/sitemap.xml --hide-elements "iframe[src*='analytics'], .ads"
+
+# Include detailed pa11y information
+a11y-test https://example.com/sitemap.xml --include-pa11y --include-details
+
+# Custom wait time for dynamic content
+a11y-test https://example.com/sitemap.xml --pa11y-wait 2000
 ```
 
 ## ⚙️ Options
@@ -128,6 +137,11 @@ a11y-test https://example.com/sitemap.xml --pa11y-standard WCAG2AAA
 | `--output-dir <dir>` | Output directory for markdown file | `./reports` |
 | `--include-details` | Include detailed information in output | `false` |
 | `--include-pa11y` | Include pa11y issues in output | `false` |
+| `--pa11y-standard <standard>` | Pa11y standard (WCAG2A\|WCAG2AA\|WCAG2AAA\|Section508) | `WCAG2AA` |
+| `--hide-elements <selectors>` | CSS selectors to hide from pa11y tests | - |
+| `--include-notices` | Include pa11y notices in output | `false` |
+| `--include-warnings` | Include pa11y warnings in output | `true` |
+| `--pa11y-wait <ms>` | Wait time after page load for pa11y tests | `1000` |
 | `--detailed-report` | Generate detailed error report for automated fixes | `false` |
 
 ## 🧪 Accessibility Checks
@@ -145,6 +159,9 @@ The tool performs comprehensive accessibility checks using both Playwright and p
 - **Section 508**: US federal accessibility standards
 - **Detailed Issues**: Specific error codes and recommendations
 - **Context Information**: Element selectors and context for each issue
+- **Impact Assessment**: Issue severity and impact levels
+- **Help Information**: Detailed help text and external resources
+- **Configurable Testing**: Custom selectors, wait times, and standards
 
 ## 📊 Output
 

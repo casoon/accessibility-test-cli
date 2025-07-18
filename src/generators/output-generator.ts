@@ -83,7 +83,8 @@ export class OutputGenerator {
           imagesWithoutAlt: result.imagesWithoutAlt,
           buttonsWithoutLabel: result.buttonsWithoutLabel,
           headingsCount: result.headingsCount,
-          pa11yIssues: options.includePa11yIssues ? result.pa11yIssues : undefined
+          pa11yIssues: options.includePa11yIssues ? result.pa11yIssues : undefined,
+          pa11yScore: result.pa11yScore
         } : undefined,
         errorDetails: options.includeDetails ? result.errors : undefined,
         warningDetails: options.includeDetails ? result.warnings : undefined
@@ -100,7 +101,7 @@ export class OutputGenerator {
     const lines: string[] = [];
     
     // Header
-    lines.push('URL,Title,Status,LoadTime,Errors,Warnings,ImagesWithoutAlt,ButtonsWithoutLabel,HeadingsCount');
+    lines.push('URL,Title,Status,LoadTime,Errors,Warnings,ImagesWithoutAlt,ButtonsWithoutLabel,HeadingsCount,Pa11yScore');
     
     // Data rows
     data.pages.forEach((page: any) => {
@@ -114,7 +115,8 @@ export class OutputGenerator {
         page.warnings,
         issues.imagesWithoutAlt || 0,
         issues.buttonsWithoutLabel || 0,
-        issues.headingsCount || 0
+        issues.headingsCount || 0,
+        issues.pa11yScore || 'N/A'
       ].join(','));
     });
     
@@ -137,19 +139,59 @@ export class OutputGenerator {
     lines.push(`- **Critical Issues**: ${data.summary.criticalIssues}`);
     lines.push(`- **Warnings**: ${data.summary.warnings}`);
     lines.push(`- **Average Load Time**: ${data.summary.averageLoadTime}ms`);
+    
+    // Pa11y Score if available
+    const pagesWithPa11yScore = data.pages.filter((page: any) => page.issues?.pa11yScore && page.issues.pa11yScore !== 'N/A');
+    if (pagesWithPa11yScore.length > 0) {
+      const avgPa11yScore = pagesWithPa11yScore.reduce((sum: number, page: any) => sum + page.issues.pa11yScore, 0) / pagesWithPa11yScore.length;
+      lines.push(`- **Average Pa11y Score**: ${Math.round(avgPa11yScore)}/100`);
+    }
     lines.push('');
     
     // Pages
     if (data.pages.length > 0) {
       lines.push('## Page Results');
       lines.push('');
-      lines.push('| URL | Title | Status | Load Time | Errors | Warnings |');
-      lines.push('|-----|-------|--------|-----------|--------|----------|');
+      lines.push('| URL | Title | Status | Load Time | Errors | Warnings | Pa11y Score |');
+      lines.push('|-----|-------|--------|-----------|--------|----------|-------------|');
       
       data.pages.forEach((page: any) => {
-        lines.push(`| ${page.url} | ${page.title} | ${page.status} | ${page.loadTime}ms | ${page.errors} | ${page.warnings} |`);
+        const pa11yScore = page.issues?.pa11yScore || 'N/A';
+        lines.push(`| ${page.url} | ${page.title} | ${page.status} | ${page.loadTime}ms | ${page.errors} | ${page.warnings} | ${pa11yScore} |`);
       });
       lines.push('');
+    }
+    
+    // Detailed Pa11y Issues
+    const pagesWithPa11yIssues = data.pages.filter((page: any) => page.issues?.pa11yIssues && page.issues.pa11yIssues.length > 0);
+    if (pagesWithPa11yIssues.length > 0) {
+      lines.push('## Detailed Pa11y Issues');
+      lines.push('');
+      
+      pagesWithPa11yIssues.forEach((page: any) => {
+        lines.push(`### ${page.title} (${page.url})`);
+        lines.push('');
+        
+        page.issues.pa11yIssues.forEach((issue: any) => {
+          lines.push(`#### ${issue.code}`);
+          lines.push(`- **Type**: ${issue.type}`);
+          lines.push(`- **Impact**: ${issue.impact || 'Unknown'}`);
+          lines.push(`- **Message**: ${issue.message}`);
+          if (issue.selector) {
+            lines.push(`- **Element**: \`${issue.selector}\``);
+          }
+          if (issue.context) {
+            lines.push(`- **Context**: \`${issue.context}\``);
+          }
+          if (issue.help) {
+            lines.push(`- **Help**: ${issue.help}`);
+          }
+          if (issue.helpUrl) {
+            lines.push(`- **More Info**: ${issue.helpUrl}`);
+          }
+          lines.push('');
+        });
+      });
     }
     
     // Recommendations
