@@ -17,30 +17,41 @@ npm link
 
 ## 📖 Usage
 
-### Standard Pipeline (Empfohlen)
+### Simple Command (Empfohlen)
 
 ```bash
-# Vollständige Pipeline mit Markdown-Output
-node bin/standard-pipeline.js https://example.com/sitemap.xml
-
-# Schnelle Pipeline nur mit Markdown-Output
-node bin/standard-pipeline.js https://example.com/sitemap.xml --quick
-
-# Mit benutzerdefinierten Optionen
-node bin/standard-pipeline.js https://example.com/sitemap.xml \
-  --max-pages 50 \
-  --pa11y-standard WCAG2AAA \
-  --output-dir ./reports
-```
-
-### Basic CLI Usage
-
-```bash
-# Test all pages from the sitemap
+# Test mit automatischem Markdown-Output
 a11y-test https://example.com/sitemap.xml
 
-# Or with npm
-npm start -- https://example.com/sitemap.xml
+# Mit benutzerdefinierten Optionen
+a11y-test https://example.com/sitemap.xml --max-pages 50 --pa11y-standard WCAG2AAA
+
+# Mit benutzerdefiniertem Output-Verzeichnis
+a11y-test https://example.com/sitemap.xml --output-dir ./my-reports
+
+# Ohne Markdown-Output (nur Console)
+a11y-test https://example.com/sitemap.xml --no-markdown
+```
+
+### Advanced Options
+
+```bash
+# Maximale Anzahl zu testender Seiten
+a11y-test https://example.com/sitemap.xml --max-pages 10
+
+# Timeout anpassen
+a11y-test https://example.com/sitemap.xml --timeout 15000
+
+# Detaillierte Ausgabe
+a11y-test https://example.com/sitemap.xml --verbose
+
+# URL-Muster filtern
+a11y-test https://example.com/sitemap.xml \
+  --filter "demo,test,admin" \
+  --include "blog,services"
+
+# Verschiedene pa11y-Standards
+a11y-test https://example.com/sitemap.xml --pa11y-standard WCAG2AAA
 ```
 
 ### Advanced Options
@@ -96,9 +107,9 @@ The tool performs comprehensive accessibility checks using both Playwright and p
 
 ## 📊 Output
 
-### Standard Pipeline Output
+### Automatic Markdown Output
 
-Die Standard-Pipeline generiert automatisch **Markdown-Output-Dateien**:
+Der Befehl generiert automatisch **Markdown-Output-Dateien** mit Domain-basierten Namen:
 
 #### **Markdown (Für Menschen)**
 ```markdown
@@ -125,7 +136,17 @@ Generated: 2024-01-15T10:30:00.000Z
 - Address 12 accessibility warnings to improve user experience.
 ```
 
+**Dateiname-Format:**
+```
+{domain}-accessibility-report-{YYYY-MM-DD}.md
+```
+
+**Beispiele:**
+- `example-com-accessibility-report-2024-01-15.md`
+- `mywebsite-de-accessibility-report-2024-01-15.md`
+
 **Vorteile:**
+- Automatische Domain-basierte Namensgebung
 - Strukturierte Berichte mit Tabellen
 - Zusammenfassung und Empfehlungen
 - Einfach lesbar und teilbar
