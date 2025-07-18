@@ -17,7 +17,23 @@ npm link
 
 ## 📖 Usage
 
-### Basic Usage
+### Standard Pipeline (Empfohlen)
+
+```bash
+# Vollständige Pipeline mit allen Output-Formaten
+node bin/standard-pipeline.js https://example.com/sitemap.xml
+
+# Schnelle Pipeline nur mit JSON-Output für KI
+node bin/standard-pipeline.js https://example.com/sitemap.xml --quick
+
+# Mit benutzerdefinierten Optionen
+node bin/standard-pipeline.js https://example.com/sitemap.xml \
+  --max-pages 50 \
+  --pa11y-standard WCAG2AAA \
+  --output-dir ./reports
+```
+
+### Basic CLI Usage
 
 ```bash
 # Test all pages from the sitemap
@@ -79,6 +95,65 @@ The tool performs comprehensive accessibility checks using both Playwright and p
 - **Context Information**: Element selectors and context for each issue
 
 ## 📊 Output
+
+### Standard Pipeline Output
+
+Die Standard-Pipeline generiert automatisch **KI-freundliche Output-Dateien**:
+
+#### **JSON (Für KI-Verarbeitung)**
+```json
+{
+  "metadata": {
+    "timestamp": "2024-01-15T10:30:00.000Z",
+    "tool": "@casoon/accessibility-test-cli",
+    "version": "1.0.1",
+    "totalPages": 113,
+    "testedPages": 20,
+    "passedPages": 18,
+    "failedPages": 2,
+    "successRate": "90.00%"
+  },
+  "summary": {
+    "overall": "FAILED",
+    "score": 90,
+    "criticalIssues": 5,
+    "warnings": 12,
+    "averageLoadTime": 1200
+  },
+  "pages": [
+    {
+      "url": "https://example.com/",
+      "title": "Homepage",
+      "status": "PASSED",
+      "loadTime": 1200,
+      "errors": 0,
+      "warnings": 2,
+      "issues": {
+        "imagesWithoutAlt": 1,
+        "buttonsWithoutLabel": 1,
+        "headingsCount": 5
+      }
+    }
+  ],
+  "recommendations": [
+    "Fix 5 critical accessibility errors to meet WCAG standards.",
+    "Address 12 accessibility warnings to improve user experience."
+  ]
+}
+```
+
+#### **Markdown (Für Menschen)**
+- Strukturierte Berichte mit Tabellen
+- Zusammenfassung und Empfehlungen
+- Einfach lesbar und teilbar
+
+#### **CSV (Für Tabellenkalkulation)**
+- Tabellarische Daten für Excel/Google Sheets
+- Einfache Filterung und Analyse
+
+#### **HTML (Für Browser)**
+- Interaktive Berichte mit Styling
+- Direkte Anzeige im Browser
 
 ### Console Output
 ```

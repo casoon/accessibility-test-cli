@@ -5,6 +5,7 @@ import chalk from "chalk";
 import ora from "ora";
 import { SitemapParser } from "./sitemap-parser";
 import { AccessibilityChecker } from "./accessibility-checker";
+import { OutputGenerator } from "./output-generator";
 import { TestOptions, TestSummary } from "./types";
 
 const program = new Command();
@@ -50,6 +51,9 @@ program
     "pa11y Standard (WCAG2A|WCAG2AA|WCAG2AAA|Section508)",
     "WCAG2AA"
   )
+  .option("--include-details", "Detaillierte Informationen in Output-Datei")
+  .option("--include-pa11y", "pa11y-Issues in Output-Datei einschließen")
+  .option("--summary-only", "Nur Zusammenfassung ohne Seiten-Details")
   .action(async (sitemapUrl: string, options: any) => {
     const spinner = ora("Initialisiere Accessibility-Tests...").start();
 
@@ -116,6 +120,27 @@ program
 
       // Ergebnisse ausgeben
       spinner.succeed("Tests abgeschlossen!");
+      
+      // Output-Datei generieren falls gewünscht
+      if (options.output && options.output !== 'console') {
+        spinner.text = 'Generiere Output-Datei...';
+        const outputGenerator = new OutputGenerator();
+        const outputOptions = {
+          format: options.output as 'json' | 'csv' | 'markdown' | 'html',
+          outputFile: options.outputFile,
+          includeDetails: options.includeDetails,
+          includePa11yIssues: options.includePa11y,
+          summaryOnly: options.summaryOnly
+        };
+        
+        try {
+          const outputPath = await outputGenerator.generateOutput(summary, outputOptions);
+          spinner.succeed(`Output-Datei erstellt: ${outputPath}`);
+        } catch (error) {
+          spinner.warn(`Fehler beim Erstellen der Output-Datei: ${error}`);
+        }
+      }
+      
       displayResults(summary, options);
     } catch (error) {
       spinner.fail(`Fehler: ${error}`);
