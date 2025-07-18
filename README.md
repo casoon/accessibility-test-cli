@@ -242,8 +242,14 @@ a11y-test https://example.com/sitemap.xml --user-agent "Custom-Bot/1.0"
 | `--block-css` | Block CSS for faster testing | `false` |
 | `--mobile-emulation` | Enable mobile emulation | `false` |
 | `--viewport <size>` | Set viewport size (e.g., 1920x1080) | `1920x1080` |
-| `--user-agent <agent>` | Set custom user agent | - |
+| `--user-agent <agent>` | Set custom user agent | `a11y-test/1.0` |
 | `--detailed-report` | Generate detailed error report for automated fixes | `false` |
+
+## 🤖 User Agent
+
+The tool identifies itself as `a11y-test/1.0 (+https://github.com/casoon/accessibility-test-cli)` when accessing websites. This helps website owners understand that the requests are coming from an accessibility testing tool and not a regular browser.
+
+You can customize the user agent using the `--user-agent` option if needed.
 
 ## 🧪 Accessibility Checks
 

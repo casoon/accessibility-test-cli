@@ -1,5 +1,5 @@
 # Accessibility Test Report
-Generated: 2025-07-18T19:41:32.999Z
+Generated: 2025-07-18T19:44:47.408Z
 
 ## Summary
 - **Overall Status**: FAILED
@@ -7,14 +7,14 @@ Generated: 2025-07-18T19:41:32.999Z
 - **Score**: 0/100
 - **Critical Issues**: 11
 - **Warnings**: 59
-- **Average Load Time**: 9861ms
+- **Average Load Time**: 9356ms
 - **Average Load Time**: 0ms
 
 ## Page Results
 
 | URL | Title | Status | Load Time | Errors | Warnings | Pa11y Score | Performance | Keyboard | Contrast | Focus |
 |-----|-------|--------|-----------|--------|----------|-------------|-------------|----------|----------|-------|
-| http://localhost:4321/angebote/webseite | Website Angebote - CASOON | FAILED | 9861ms | 11 | 59 | N/A | N/A | 0 | 0 | 0 |
+| http://localhost:4321/angebote/webseite | Website Angebote - CASOON | FAILED | 9356ms | 11 | 59 | N/A | N/A | 0 | 0 | 0 |
 
 ## Detailed Playwright Test Results
 
@@ -22,9 +22,9 @@ Generated: 2025-07-18T19:41:32.999Z
 
 #### Performance Metrics
 - **Load Time**: 0ms
-- **DOM Content Loaded**: 2ms
-- **First Paint**: 128ms
-- **First Contentful Paint**: 300ms
+- **DOM Content Loaded**: 7ms
+- **First Paint**: 200ms
+- **First Contentful Paint**: 200ms
 - **Largest Contentful Paint**: 0ms
 
 ## Recommendations

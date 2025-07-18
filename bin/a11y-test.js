@@ -37,7 +37,7 @@ program
   .option('--block-css', 'Block CSS for faster testing')
   .option('--mobile-emulation', 'Enable mobile emulation')
   .option('--viewport <size>', 'Set viewport size (e.g., 1920x1080)')
-  .option('--user-agent <agent>', 'Set custom user agent')
+  .option('--user-agent <agent>', 'Set custom user agent (default: a11y-test/1.0)')
   .option('--no-markdown', 'Disable automatic markdown output')
   .option('--output-dir <dir>', 'Output directory for markdown file', './reports')
   .option('--detailed-report', 'Generate detailed error report for automated fixes')

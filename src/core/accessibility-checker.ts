@@ -208,12 +208,11 @@ export class AccessibilityChecker {
     const viewportSize = options.viewportSize || { width: 1920, height: 1080 };
     await page.setViewportSize(viewportSize);
 
-    // User-Agent setzen
-    if (options.userAgent) {
-      await page.setExtraHTTPHeaders({
-        'User-Agent': options.userAgent
-      });
-    }
+    // User-Agent setzen (Standard: a11y-test)
+    const userAgent = options.userAgent || 'a11y-test/1.0 (+https://github.com/casoon/accessibility-test-cli)';
+    await page.setExtraHTTPHeaders({
+      'User-Agent': userAgent
+    });
 
     // Network-Interception für Performance
     if (options.blockImages) {
