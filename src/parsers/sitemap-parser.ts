@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import fetch from "node-fetch";
 import { XMLParser } from "fast-xml-parser";
-import { SitemapUrl } from "./types";
+import { SitemapUrl } from "../types";
 
 export class SitemapParser {
   private parser: XMLParser;

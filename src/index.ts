@@ -3,9 +3,9 @@
 import { Command } from "commander";
 import chalk from "chalk";
 import ora from "ora";
-import { SitemapParser } from "./sitemap-parser";
-import { AccessibilityChecker } from "./accessibility-checker";
-import { OutputGenerator } from "./output-generator";
+import { SitemapParser } from "./parsers";
+import { AccessibilityChecker } from "./core";
+import { OutputGenerator } from "./generators";
 import { TestOptions, TestSummary } from "./types";
 
 const program = new Command();

@@ -1,8 +1,8 @@
-import { SitemapParser } from './sitemap-parser';
+import { SitemapParser } from '../parsers';
 import { AccessibilityChecker } from './accessibility-checker';
-import { OutputGenerator } from './output-generator';
-import { DetailedReportGenerator } from './detailed-report';
-import { TestOptions, TestSummary } from './types';
+import { OutputGenerator } from '../generators';
+import { DetailedReportGenerator } from '../reports';
+import { TestOptions, TestSummary } from '../types';
 import * as path from 'path';
 
 export interface StandardPipelineOptions {

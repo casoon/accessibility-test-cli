@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const { Command } = require('commander');
-const { StandardPipeline } = require('../dist/standard-pipeline');
+const { StandardPipeline } = require('../dist/core/standard-pipeline');
 const inquirer = require('inquirer').default;
 const path = require('path');
 

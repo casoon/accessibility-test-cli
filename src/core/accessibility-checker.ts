@@ -1,6 +1,6 @@
 import { chromium, Browser, Page } from "playwright";
 import pa11y from "pa11y";
-import { AccessibilityResult, TestOptions } from "./types";
+import { AccessibilityResult, TestOptions } from "../types";
 
 export class AccessibilityChecker {
   private browser: Browser | null = null;
