@@ -2,6 +2,70 @@
 
 A CLI tool for automated accessibility tests based on sitemap URLs.
 
+## 🇩🇪 Barrierefreiheit & Gesetzeskonformität
+
+Dieses Tool unterstützt die Einhaltung des **neuen Barrierefreiheitsgesetzes (BFSG)** und der **EU-Richtlinie 2019/882** für digitale Barrierefreiheit. Es bietet umfassende Tests für statische Websites und ermöglicht die automatisierte Verbesserung der Accessibility-Compliance.
+
+### 🎯 Umfang der Barrierefreiheits-Tests
+
+Das Tool führt **umfassende Accessibility-Audits** durch, die alle wichtigen Aspekte der digitalen Barrierefreiheit abdecken:
+
+#### **Grundlegende Barrierefreiheit (WCAG 2.1 AA)**
+- **Text-Alternativen**: Prüfung von Alt-Attributen für Bilder
+- **Strukturierte Inhalte**: Heading-Hierarchie und semantische HTML-Struktur
+- **Tastaturnavigation**: Vollständige Bedienbarkeit ohne Maus
+- **Fokus-Management**: Sichtbare und logische Fokus-Indikatoren
+- **Farbkontraste**: Mindestkontrastverhältnisse für Text und Hintergrund
+
+#### **Erweiterte Accessibility-Features**
+- **ARIA-Labels**: Korrekte Beschriftung interaktiver Elemente
+- **Formular-Zugänglichkeit**: Labels, Fehlermeldungen und Validierung
+- **Multimedia-Zugänglichkeit**: Untertitel und Transkripte
+- **Responsive Design**: Mobile und Desktop-Kompatibilität
+- **Performance**: Ladezeiten und Core Web Vitals
+
+### 🤖 KI-gestützte Verbesserung für statische Websites
+
+Für **statische Websites** bietet das Tool eine **revolutionäre KI-Integration**:
+
+#### **Detailed Error Report**
+```bash
+# Generiert strukturierte Fehlerberichte für KI-Verarbeitung
+a11y-test https://example.com/sitemap.xml --detailed-report
+```
+
+#### **KI-optimierte Ausgabe**
+Der **Detailed Error Report** enthält:
+- **Element-Selektoren**: Präzise CSS-Selectors für problematische Elemente
+- **Kontext-Informationen**: HTML-Kontext für besseres Verständnis
+- **Code-Beispiele**: Korrekte HTML-Strukturen als Vorlagen
+- **Prioritäts-Reihenfolge**: Sortierung nach Wichtigkeit und Fix-Komplexität
+- **Automatisierte Fix-Vorschläge**: Spezifische Empfehlungen für jede Fehlerart
+
+#### **KI-Verarbeitung**
+Der strukturierte Report kann von **KI-Tools** automatisch verarbeitet werden:
+1. **Parsing**: Automatische Erkennung von Fehlertypen und Elementen
+2. **Code-Generierung**: Automatische Erstellung korrigierter HTML/CSS
+3. **Validierung**: Automatische Überprüfung der Korrekturen
+4. **Deployment**: Integration in CI/CD-Pipelines für statische Sites
+
+### 📋 Gesetzeskonformität
+
+Das Tool unterstützt die Einhaltung folgender Standards:
+- **WCAG 2.1 AA**: Internationaler Standard für digitale Barrierefreiheit
+- **WCAG 2.2 AA**: Neueste Accessibility-Richtlinien
+- **Section 508**: US-Bundesstandards für Barrierefreiheit
+- **EU-Richtlinie 2019/882**: Europäische Vorgaben für digitale Barrierefreiheit
+- **BFSG**: Deutsches Barrierefreiheitsgesetz
+
+### 🚀 Vorteile für statische Websites
+
+- **Automatisierte Compliance**: Regelmäßige Tests ohne manuellen Aufwand
+- **KI-gestützte Fixes**: Automatische Verbesserung von Accessibility-Problemen
+- **Dokumentation**: Vollständige Audit-Berichte für Compliance-Nachweise
+- **Skalierbarkeit**: Tests für hunderte von Seiten in Minuten
+- **Integration**: Nahtlose Einbindung in bestehende Workflows
+
 ## 🚀 Installation
 
 ```bash
