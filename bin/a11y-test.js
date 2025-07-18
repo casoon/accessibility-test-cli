@@ -41,12 +41,13 @@ program
   .option('--no-markdown', 'Disable automatic markdown output')
   .option('--output-dir <dir>', 'Output directory for markdown file', './reports')
 
-  .option('--detailed-report', 'Generate detailed error report for automated fixes', false)
-  .option('--no-detailed-report', 'Disable detailed error report generation', false)
-  .option('--performance-report', 'Generate performance report with PageSpeed/Lightspeed analysis', false)
-  .option('--no-performance-report', 'Disable performance report generation', false)
-  .option('--seo-report', 'Generate SEO report with search engine optimization analysis', false)
-  .option('--no-seo-report', 'Disable SEO report generation', false)
+  .option('--detailed-report', 'Generate detailed error report for automated fixes')
+  .option('--no-detailed-report', 'Disable detailed error report generation')
+  .option('--performance-report', 'Generate performance report with PageSpeed/Lightspeed analysis')
+  .option('--no-performance-report', 'Disable performance report generation')
+  .option('--seo-report', 'Generate SEO report with search engine optimization analysis')
+  .option('--no-seo-report', 'Disable SEO report generation')
+  .option('--interactive', 'Show interactive prompts for configuration')
   .action(async (sitemapUrl, options) => {
     console.log('🚀 Starting Accessibility Test...');
     console.log(`📄 Sitemap: ${sitemapUrl}`);
@@ -69,13 +70,11 @@ program
     if (generatePerformanceReport === undefined) generatePerformanceReport = true;
     if (generateSeoReport === undefined) generateSeoReport = true;
     
-    // Only show prompts if we're in interactive mode (no CLI parameters)
-    const hasCliParameters = options.maxPages || options.standard || 
-                           options.detailedReport !== undefined || options.noDetailedReport ||
-                           options.performanceReport !== undefined || options.noPerformanceReport ||
-                           options.seoReport !== undefined || options.noSeoReport;
+    // Only show prompts if user explicitly wants interactive mode
+    // Since we have sensible defaults, we only show prompts if --interactive flag is set
+    const wantsInteractive = options.interactive;
     
-    if (!hasCliParameters) {
+    if (wantsInteractive) {
       const maxPagesChoices = [
         { name: '5 pages (Quick test)', value: 5 },
         { name: '10 pages (Standard test)', value: 10 },
