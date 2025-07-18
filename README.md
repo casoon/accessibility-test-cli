@@ -110,9 +110,10 @@ a11y-test https://example.com/sitemap.xml --pa11y-standard WCAG2AAA
 | `-f, --filter <patterns>` | Exclude URL patterns (comma-separated) | `[...slug],[category],/demo/` |
 | `-i, --include <patterns>` | Include URL patterns (comma-separated) | - |
 | `-v, --verbose` | Verbose output | `false` |
-| `-o, --output <format>` | Output format (console\|json\|html) | `console` |
-| `--output-file <file>` | Output file | - |
+
+
 | `--pa11y-standard <standard>` | pa11y Standard (WCAG2A\|WCAG2AA\|WCAG2AAA\|Section508) | `WCAG2AA` |
+| `--output-dir <dir>` | Output directory for markdown file | `./reports` |
 
 ## 🧪 Accessibility Checks
 

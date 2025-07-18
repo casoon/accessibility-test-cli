@@ -40,12 +40,7 @@ program
     "Einzuschließende URL-Muster (kommagetrennt)",
   )
   .option("-v, --verbose", "Detaillierte Ausgabe")
-  .option(
-    "-o, --output <format>",
-    "Ausgabeformat (console|json|html)",
-    "console",
-  )
-  .option("--output-file <file>", "Ausgabedatei")
+
   .option(
     "--pa11y-standard <standard>",
     "pa11y Standard (WCAG2A|WCAG2AA|WCAG2AAA|Section508)",
