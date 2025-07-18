@@ -1,6 +1,7 @@
 import { SitemapParser } from './sitemap-parser';
 import { AccessibilityChecker } from './accessibility-checker';
 import { OutputGenerator } from './output-generator';
+import { DetailedReportGenerator } from './detailed-report';
 import { TestOptions, TestSummary } from './types';
 import * as path from 'path';
 
@@ -12,6 +13,7 @@ export interface StandardPipelineOptions {
   outputDir?: string;
   includeDetails?: boolean;
   includePa11yIssues?: boolean;
+  generateDetailedReport?: boolean;
 }
 
 export class StandardPipeline {
@@ -89,6 +91,19 @@ export class StandardPipeline {
       summaryOnly: false
     });
     outputFiles.push(mdOutputPath);
+    
+    // Detailed-Report generieren (falls gewünscht)
+    if (options.generateDetailedReport !== false && summary.totalErrors > 0) {
+      const detailedReportGenerator = new DetailedReportGenerator();
+      const detailedReportPath = await detailedReportGenerator.generateDetailedReport(summary, {
+        outputDir: options.outputDir,
+        includeContext: true,
+        includeRecommendations: true,
+        groupByType: true,
+        includeCodeExamples: true
+      });
+      outputFiles.push(detailedReportPath);
+    }
     
     return { summary, outputFiles };
   }

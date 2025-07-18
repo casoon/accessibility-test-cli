@@ -2,7 +2,7 @@
 
 const { Command } = require('commander');
 const { StandardPipeline } = require('../dist/standard-pipeline');
-const inquirer = require('inquirer');
+const inquirer = require('inquirer').default;
 const path = require('path');
 
 const program = new Command();
@@ -25,6 +25,7 @@ program
   .option('--include-pa11y', 'Include pa11y issues in output')
   .option('--no-markdown', 'Disable automatic markdown output')
   .option('--output-dir <dir>', 'Output directory for markdown file', './reports')
+  .option('--detailed-report', 'Generate detailed error report for automated fixes')
   .action(async (sitemapUrl, options) => {
     console.log('🚀 Starting Accessibility Test...');
     console.log(`📄 Sitemap: ${sitemapUrl}`);
@@ -56,9 +57,32 @@ program
       maxPages = parseInt(maxPages);
     }
     
+    // Interactive prompt for accessibility standard if not specified
+    let standard = options.standard;
+    if (!standard) {
+      const standardChoices = [
+        { name: 'WCAG 2.0 Level A (Basic)', value: 'WCAG2A' },
+        { name: 'WCAG 2.0 Level AA (Recommended)', value: 'WCAG2AA' },
+        { name: 'WCAG 2.0 Level AAA (Strict)', value: 'WCAG2AAA' },
+        { name: 'Section 508 (US Federal)', value: 'Section508' }
+      ];
+      
+      const standardAnswer = await inquirer.prompt([
+        {
+          type: 'list',
+          name: 'standard',
+          message: 'Which accessibility standard would you like to test against?',
+          choices: standardChoices,
+          default: 'WCAG2AA'
+        }
+      ]);
+      
+      standard = standardAnswer.standard;
+    }
+    
     console.log(`🧪 Max Pages: ${maxPages}`);
     console.log(`⏱️  Timeout: ${options.timeout}ms`);
-    console.log(`📋 Standard: ${options.standard}`);
+    console.log(`📋 Standard: ${standard}`);
     
     try {
       // Extract domain for filename
@@ -80,10 +104,11 @@ program
         sitemapUrl,
         maxPages: maxPages,
         timeout: parseInt(options.timeout),
-        pa11yStandard: options.standard,
+        pa11yStandard: standard,
         outputDir: options.outputDir,
         includeDetails: options.includeDetails,
-        includePa11yIssues: options.includePa11y
+        includePa11yIssues: options.includePa11y,
+        generateDetailedReport: options.detailedReport
       };
       
       console.log('🧪 Running accessibility tests...');
@@ -105,6 +130,53 @@ program
         console.log(`   - Success rate: ${summary.testedPages > 0 ? (summary.passedPages / summary.testedPages * 100).toFixed(1) : 0}%`);
         console.log(`📄 Markdown report: ${outputPath}`);
         
+        // Interaktive Abfrage für Detailed Report wenn Fehler gefunden wurden
+        if (summary.totalErrors > 0 && !options.detailedReport) {
+          console.log('');
+          console.log(`🔍 ${summary.totalErrors} accessibility errors found.`);
+          
+          const detailedReportAnswer = await inquirer.prompt([
+            {
+              type: 'confirm',
+              name: 'generateDetailedReport',
+              message: 'Would you like to generate a detailed error report for automated fixes?',
+              default: true
+            }
+          ]);
+          
+          if (detailedReportAnswer.generateDetailedReport) {
+            console.log('📋 Generating detailed error report...');
+            
+            // Detailed Report generieren
+            const detailedPipelineOptions = {
+              ...pipelineOptions,
+              generateDetailedReport: true
+            };
+            
+            const { outputFiles: detailedOutputFiles } = await pipeline.run(detailedPipelineOptions);
+            
+            // Nur die neue Detailed Report Datei anzeigen
+            const detailedReportFile = detailedOutputFiles.find(file => 
+              path.basename(file).includes('detailed-errors')
+            );
+            
+            if (detailedReportFile) {
+              console.log(`📋 Detailed Error Report: ${detailedReportFile}`);
+            }
+          }
+        } else if (options.detailedReport) {
+          // Wenn Detailed Report bereits generiert wurde
+          console.log(`📁 Generated files:`);
+          outputFiles.forEach(file => {
+            const filename = path.basename(file);
+            if (filename.includes('detailed-errors')) {
+              console.log(`   📋 Detailed Error Report: ${file}`);
+            } else {
+              console.log(`   📄 Markdown Report: ${file}`);
+            }
+          });
+        }
+        
         if (summary.failedPages > 0) {
           console.log(`⚠️  ${summary.failedPages} pages failed accessibility tests`);
           process.exit(1);
@@ -118,6 +190,51 @@ program
         console.log(`   - Failed: ${summary.failedPages}`);
         console.log(`   - Errors: ${summary.totalErrors}`);
         console.log(`   - Warnings: ${summary.totalWarnings}`);
+        
+        // Interaktive Abfrage für Detailed Report wenn Fehler gefunden wurden (auch ohne Markdown)
+        if (summary.totalErrors > 0 && !options.detailedReport) {
+          console.log('');
+          console.log(`🔍 ${summary.totalErrors} accessibility errors found.`);
+          
+          const detailedReportAnswer = await inquirer.prompt([
+            {
+              type: 'confirm',
+              name: 'generateDetailedReport',
+              message: 'Would you like to generate a detailed error report for automated fixes?',
+              default: true
+            }
+          ]);
+          
+          if (detailedReportAnswer.generateDetailedReport) {
+            console.log('📋 Generating detailed error report...');
+            
+            // Detailed Report generieren
+            const detailedPipelineOptions = {
+              ...pipelineOptions,
+              generateDetailedReport: true
+            };
+            
+            const { outputFiles: detailedOutputFiles } = await pipeline.run(detailedPipelineOptions);
+            
+            // Nur die neue Detailed Report Datei anzeigen
+            const detailedReportFile = detailedOutputFiles.find(file => 
+              path.basename(file).includes('detailed-errors')
+            );
+            
+            if (detailedReportFile) {
+              console.log(`📋 Detailed Error Report: ${detailedReportFile}`);
+            }
+          }
+        } else if (options.detailedReport && outputFiles.length > 0) {
+          // Wenn Detailed Report bereits generiert wurde
+          console.log(`📁 Generated files:`);
+          outputFiles.forEach(file => {
+            const filename = path.basename(file);
+            if (filename.includes('detailed-errors')) {
+              console.log(`   📋 Detailed Error Report: ${file}`);
+            }
+          });
+        }
       }
       
     } catch (error) {

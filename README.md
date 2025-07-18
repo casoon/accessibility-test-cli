@@ -48,9 +48,15 @@ When you run the command without specifying `--max-pages`, you'll see an interac
   50 pages (Full audit)
   100 pages (Complete analysis)
   All pages (Maximum coverage)
+
+? Which accessibility standard would you like to test against? (Use arrow keys)
+❯ WCAG 2.0 Level AA (Recommended)
+  WCAG 2.0 Level A (Basic)
+  WCAG 2.0 Level AAA (Strict)
+  Section 508 (US Federal)
 ```
 
-**Options:**
+**Page Count Options:**
 - **5 pages**: Quick test for basic validation
 - **10 pages**: Standard test for most use cases
 - **20 pages**: Comprehensive test (default)
@@ -58,11 +64,20 @@ When you run the command without specifying `--max-pages`, you'll see an interac
 - **100 pages**: Complete analysis for large sites
 - **All pages**: Maximum coverage (up to 1000 pages)
 
+**Accessibility Standards:**
+- **WCAG 2.0 Level A**: Basic accessibility requirements
+- **WCAG 2.0 Level AA**: Recommended standard for most websites (default)
+- **WCAG 2.0 Level AAA**: Strictest accessibility requirements
+- **Section 508**: US federal accessibility standards
+
 ### Advanced Options
 
 ```bash
 # Maximum number of pages to test (bypasses interactive prompt)
 a11y-test https://example.com/sitemap.xml --max-pages 10
+
+# Accessibility standard (bypasses interactive prompt)
+a11y-test https://example.com/sitemap.xml --standard WCAG2AAA
 
 # Adjust timeout
 a11y-test https://example.com/sitemap.xml --timeout 15000
@@ -74,9 +89,6 @@ a11y-test https://example.com/sitemap.xml --verbose
 a11y-test https://example.com/sitemap.xml \
   --filter "demo,test,admin" \
   --include "blog,services"
-
-# Different accessibility standards
-a11y-test https://example.com/sitemap.xml --standard WCAG2AAA
 ```
 
 ### Advanced Options
@@ -114,6 +126,9 @@ a11y-test https://example.com/sitemap.xml --pa11y-standard WCAG2AAA
 
 | `--standard <standard>` | Accessibility standard (WCAG2A\|WCAG2AA\|WCAG2AAA\|Section508) | `WCAG2AA` |
 | `--output-dir <dir>` | Output directory for markdown file | `./reports` |
+| `--include-details` | Include detailed information in output | `false` |
+| `--include-pa11y` | Include pa11y issues in output | `false` |
+| `--detailed-report` | Generate detailed error report for automated fixes | `false` |
 
 ## 🧪 Accessibility Checks
 
@@ -177,6 +192,83 @@ Generated: 2024-01-15T10:30:00.000Z
 - Summary and recommendations
 - Easy to read and share
 - Perfect for documentation and reports
+
+#### **Detailed Error Report (For Automated Fixes)**
+```bash
+# Generate detailed error report (automatic prompt when errors found)
+a11y-test https://example.com/sitemap.xml
+
+# Force detailed error report generation
+a11y-test https://example.com/sitemap.xml --detailed-report
+```
+
+**Filename Format:**
+```
+{domain}-detailed-errors-{YYYY-MM-DD}.md
+```
+
+**Features:**
+- **Interactive Prompt**: Automatically asks if you want a detailed report when errors are found
+- **Structured for Automated Processing**: Optimized format for automated tools
+- **Error Categorization**: Grouped by error type (alt attributes, ARIA, contrast, etc.)
+- **Code Examples**: HTML examples for each error type
+- **Recommendations**: Specific fix suggestions for each error
+- **Priority Ordering**: Errors sorted by impact and fix complexity
+- **Context Information**: Element selectors and surrounding context
+- **Processing Instructions**: Step-by-step guide for automated tools
+
+**Example Detailed Report Structure:**
+```markdown
+# Detailed Accessibility Error Report
+
+## Executive Summary
+- Critical Issues: 5 errors requiring immediate attention
+- Pages with Issues: 3 out of 10 tested
+- Success Rate: 70.0%
+
+## Errors Grouped by Type
+
+### Missing Alt Attributes (3 occurrences)
+#### Error 1: Homepage
+- **URL**: https://example.com/
+- **Error**: Images missing alt attributes
+- **Element**: `img.product-image`
+- **Recommendation**: Add descriptive alt text to all images that convey information
+
+### Color Contrast Issues (2 occurrences)
+#### Error 1: About Page
+- **URL**: https://example.com/about
+- **Error**: Insufficient color contrast
+- **Element**: `.text-content`
+- **Recommendation**: Increase color contrast ratio to at least 4.5:1
+
+## Processing Instructions
+1. Parse each error using the structured format above
+2. Identify the element using the provided selector
+3. Apply the recommended fix based on the error type
+4. Test the fix to ensure it resolves the issue
+5. Update the code with the corrected version
+```
+
+### Interactive Detailed Report Generation
+
+When accessibility errors are found, the tool automatically prompts you to generate a detailed report:
+
+```
+✅ Test completed successfully!
+📊 Results:
+   - Pages tested: 5
+   - Passed: 3
+   - Failed: 2
+   - Errors: 8
+   - Warnings: 12
+   - Success rate: 60.0%
+📄 Markdown report: ./reports/example-com-accessibility-report-2024-01-15.md
+
+🔍 8 accessibility errors found.
+
+? Would you like to generate a detailed error report for automated fixes? (Y/n)
+```
 
 ### Console Output
 ```
