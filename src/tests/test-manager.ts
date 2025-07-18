@@ -58,20 +58,31 @@ export class TestManager {
     let passedTests = 0;
     let failedTests = 0;
 
-    for (const test of this.tests) {
+    console.log(`🧪 Running ${this.tests.length} accessibility tests...`);
+
+    for (let i = 0; i < this.tests.length; i++) {
+      const test = this.tests[i];
+      const startTime = Date.now();
+      
+      console.log(`   🔍 [${i + 1}/${this.tests.length}] ${test.name} (${test.category})...`);
+      
       try {
         const result = await test.run(context);
+        const duration = Date.now() - startTime;
         results.push(result);
         
         if (result.passed) {
           passedTests++;
+          console.log(`   ✅ ${test.name} passed in ${duration}ms (${result.errors.length} errors, ${result.warnings.length} warnings)`);
         } else {
           failedTests++;
+          console.log(`   ❌ ${test.name} failed in ${duration}ms (${result.errors.length} errors, ${result.warnings.length} warnings)`);
         }
         
         totalIssues += result.errors.length;
         totalWarnings += result.warnings.length;
       } catch (error) {
+        const duration = Date.now() - startTime;
         const errorResult: TestResult = {
           passed: false,
           count: 0,
@@ -81,6 +92,7 @@ export class TestManager {
         results.push(errorResult);
         failedTests++;
         totalIssues++;
+        console.log(`   💥 ${test.name} crashed after ${duration}ms: ${error}`);
       }
     }
 

@@ -50,9 +50,11 @@ export class AccessibilityChecker {
     };
 
     try {
+      if (options.verbose) console.log(`   🔧 Configuring page...`);
       // 🆕 Erweiterte Page-Konfiguration
       await this.configurePage(page, options);
 
+      if (options.verbose) console.log(`   🌐 Navigating to page...`);
       await page.goto(url, {
         waitUntil: options.waitUntil || "domcontentloaded",
         timeout: options.timeout || 10000,
@@ -60,13 +62,16 @@ export class AccessibilityChecker {
 
       // 🆕 Performance-Metriken sammeln
       if (options.collectPerformanceMetrics) {
+        if (options.verbose) console.log(`   📊 Collecting performance metrics...`);
         await this.collectPerformanceMetrics(page, result, options);
       }
 
       // Seitentitel prüfen
+      if (options.verbose) console.log(`   📋 Extracting page title...`);
       result.title = await page.title();
 
       // Bilder ohne alt-Attribut
+      if (options.verbose) console.log(`   🖼️  Checking images for alt attributes...`);
       result.imagesWithoutAlt = await page.locator("img:not([alt])").count();
       if (result.imagesWithoutAlt > 0) {
         result.warnings.push(
@@ -75,6 +80,7 @@ export class AccessibilityChecker {
       }
 
       // Buttons ohne aria-label
+      if (options.verbose) console.log(`   🔘 Checking buttons for aria labels...`);
       result.buttonsWithoutLabel = await page
         .locator("button:not([aria-label])")
         .filter({ hasText: "" })
@@ -86,6 +92,7 @@ export class AccessibilityChecker {
       }
 
       // Überschriften-Hierarchie
+      if (options.verbose) console.log(`   📝 Checking heading hierarchy...`);
       result.headingsCount = await page
         .locator("h1, h2, h3, h4, h5, h6")
         .count();
@@ -95,23 +102,28 @@ export class AccessibilityChecker {
 
       // 🆕 Erweiterte Accessibility-Tests
       if (options.testKeyboardNavigation) {
+        if (options.verbose) console.log(`   ⌨️  Testing keyboard navigation...`);
         await this.testKeyboardNavigation(page, result, options);
       }
 
       if (options.testColorContrast) {
+        if (options.verbose) console.log(`   🎨 Testing color contrast...`);
         await this.testColorContrast(page, result, options);
       }
 
       if (options.testFocusManagement) {
+        if (options.verbose) console.log(`   🎯 Testing focus management...`);
         await this.testFocusManagement(page, result, options);
       }
 
       // 🆕 Screenshots
       if (options.captureScreenshots) {
+        if (options.verbose) console.log(`   📸 Capturing screenshots...`);
         await this.captureScreenshots(page, url, result, options);
       }
 
       // pa11y Accessibility-Tests durchführen
+      if (options.verbose) console.log(`   🔍 Running pa11y accessibility tests...`);
       try {
         const pa11yResult = await pa11y(url, {
           timeout: options.timeout || 10000,
@@ -193,10 +205,46 @@ export class AccessibilityChecker {
   ): Promise<AccessibilityResult[]> {
     const results: AccessibilityResult[] = [];
     const maxPages = options.maxPages || urls.length;
+    const pagesToTest = urls.slice(0, maxPages);
 
-    for (let i = 0; i < Math.min(urls.length, maxPages); i++) {
-      const result = await this.testPage(urls[i], options);
-      results.push(result);
+    console.log(`🧪 Testing ${pagesToTest.length} pages...`);
+
+    for (let i = 0; i < pagesToTest.length; i++) {
+      const url = pagesToTest[i];
+      const startTime = Date.now();
+      
+      console.log(`\n📄 Testing page ${i + 1}/${pagesToTest.length}: ${url}`);
+      console.log(`   ⏱️  Starting test...`);
+      
+      try {
+        const result = await this.testPage(url, options);
+        const duration = Date.now() - startTime;
+        result.duration = duration;
+        results.push(result);
+        
+        console.log(`   ✅ Test completed in ${duration}ms`);
+        
+        if (result.passed) {
+          console.log(`   🎯 Result: PASSED (${result.errors.length} errors, ${result.warnings.length} warnings)`);
+        } else {
+          console.log(`   🎯 Result: FAILED (${result.errors.length} errors, ${result.warnings.length} warnings)`);
+        }
+      } catch (error) {
+        const duration = Date.now() - startTime;
+        console.error(`   💥 Error testing page ${i + 1} after ${duration}ms: ${error}`);
+        const errorResult: AccessibilityResult = {
+          url,
+          title: "",
+          imagesWithoutAlt: 0,
+          buttonsWithoutLabel: 0,
+          headingsCount: 0,
+          errors: [`Test failed: ${error}`],
+          warnings: [],
+          passed: false,
+          duration,
+        };
+        results.push(errorResult);
+      }
     }
 
     return results;

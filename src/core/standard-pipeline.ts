@@ -66,6 +66,11 @@ export class StandardPipeline {
     await checker.initialize();
     
     console.log('🧪 Führe Accessibility-Tests aus...');
+    console.log(`   📊 Collecting performance metrics: ${options.collectPerformanceMetrics ? 'Yes' : 'No'}`);
+    console.log(`   📸 Capturing screenshots: ${options.captureScreenshots ? 'Yes' : 'No'}`);
+    console.log(`   ⌨️  Testing keyboard navigation: ${options.testKeyboardNavigation ? 'Yes' : 'No'}`);
+    console.log(`   🎨 Testing color contrast: ${options.testColorContrast ? 'Yes' : 'No'}`);
+    console.log(`   🎯 Testing focus management: ${options.testFocusManagement ? 'Yes' : 'No'}`);
     
     // Tests ausführen
     const testOptions: TestOptions = {
@@ -95,6 +100,8 @@ export class StandardPipeline {
       testOptions
     );
     
+    console.log('\n📋 Creating test summary...');
+    
     // Zusammenfassung erstellen
     const summary: TestSummary = {
       totalPages: localUrls.length,
@@ -108,6 +115,8 @@ export class StandardPipeline {
     };
     
     await checker.cleanup();
+    
+    console.log('📄 Generating output files...');
     
     // Output-Dateien generieren
     const outputGenerator = new OutputGenerator();
@@ -126,6 +135,7 @@ export class StandardPipeline {
     
     // Detailed-Report generieren (falls gewünscht)
     if (options.generateDetailedReport !== false && summary.totalErrors > 0) {
+      console.log('   📋 Generating detailed error report...');
       const detailedReportGenerator = new DetailedReportGenerator();
       const detailedReportPath = await detailedReportGenerator.generateDetailedReport(summary, {
         outputDir: options.outputDir,
@@ -139,6 +149,7 @@ export class StandardPipeline {
     
     // Performance-Report generieren (falls gewünscht)
     if (options.generatePerformanceReport !== false && options.collectPerformanceMetrics) {
+      console.log('   📊 Generating performance report...');
       const performanceReportGenerator = new PerformanceReportGenerator();
       const performanceReportPath = await performanceReportGenerator.generatePerformanceReport(summary, {
         outputDir: options.outputDir,
@@ -152,6 +163,7 @@ export class StandardPipeline {
     
     // SEO-Report generieren (falls gewünscht)
     if (options.generateSeoReport !== false) {
+      console.log('   🔍 Generating SEO report...');
       const seoReportGenerator = new SeoReportGenerator();
       const seoReportPath = await seoReportGenerator.generateSeoReport(summary, {
         outputDir: options.outputDir,
