@@ -20,7 +20,7 @@ program
   .option('-f, --filter <patterns>', 'Exclude URL patterns (comma-separated)', '[...slug],[category],/demo/')
   .option('-i, --include <patterns>', 'Include URL patterns (comma-separated)')
   .option('-v, --verbose', 'Verbose output')
-  .option('--standard <standard>', 'Accessibility standard (WCAG2A|WCAG2AA|WCAG2AAA|Section508)', 'WCAG2AA')
+  .option('--standard <standard>', 'Accessibility standard (WCAG2A|WCAG2AA|WCAG2AAA|Section508)')
   .option('--include-details', 'Include detailed information in output')
   .option('--include-pa11y', 'Include pa11y issues in output')
   .option('--pa11y-standard <standard>', 'Pa11y standard (WCAG2A|WCAG2AA|WCAG2AAA|Section508)', 'WCAG2AA')
@@ -45,9 +45,17 @@ program
     console.log('🚀 Starting Accessibility Test...');
     console.log(`📄 Sitemap: ${sitemapUrl}`);
     
-    // Interactive prompt for max-pages if not specified
+    // Interactive prompts for all options if not specified
     let maxPages = options.maxPages;
-    if (!maxPages) {
+    let standard = options.standard;
+    let generateDetailedReport = options.detailedReport;
+    
+    // Set default standard if not provided
+    if (!standard) {
+      standard = 'WCAG2AA';
+    }
+    
+    if (!maxPages || !generateDetailedReport) {
       const maxPagesChoices = [
         { name: '5 pages (Quick test)', value: 5 },
         { name: '10 pages (Standard test)', value: 10 },
@@ -57,24 +65,6 @@ program
         { name: 'All pages (Maximum coverage)', value: 1000 }
       ];
       
-      const answer = await inquirer.prompt([
-        {
-          type: 'list',
-          name: 'maxPages',
-          message: 'How many pages would you like to test?',
-          choices: maxPagesChoices,
-          default: 20
-        }
-      ]);
-      
-      maxPages = answer.maxPages;
-    } else {
-      maxPages = parseInt(maxPages);
-    }
-    
-    // Interactive prompt for accessibility standard if not specified
-    let standard = options.standard;
-    if (!standard) {
       const standardChoices = [
         { name: 'WCAG 2.0 Level A (Basic)', value: 'WCAG2A' },
         { name: 'WCAG 2.0 Level AA (Recommended)', value: 'WCAG2AA' },
@@ -82,22 +72,51 @@ program
         { name: 'Section 508 (US Federal)', value: 'Section508' }
       ];
       
-      const standardAnswer = await inquirer.prompt([
-        {
-          type: 'list',
-          name: 'standard',
-          message: 'Which accessibility standard would you like to test against?',
-          choices: standardChoices,
-          default: 'WCAG2AA'
-        }
-      ]);
+      const prompts = [];
       
-      standard = standardAnswer.standard;
+      if (!maxPages) {
+        prompts.push({
+          type: 'list',
+          name: 'maxPages',
+          message: 'How many pages would you like to test?',
+          choices: maxPagesChoices,
+          default: 20
+        });
+      }
+      
+      // Always ask for standard (since we removed the default from CLI option)
+      prompts.push({
+        type: 'list',
+        name: 'standard',
+        message: 'Which accessibility standard would you like to test against?',
+        choices: standardChoices,
+        default: standard
+      });
+      
+      if (!generateDetailedReport) {
+        prompts.push({
+          type: 'confirm',
+          name: 'generateDetailedReport',
+          message: 'Would you like to generate a detailed error report for automated fixes?',
+          default: true
+        });
+      }
+      
+      const answers = await inquirer.prompt(prompts);
+      
+      maxPages = maxPages || answers.maxPages;
+      standard = answers.standard; // Always use the selected standard
+      generateDetailedReport = generateDetailedReport || answers.generateDetailedReport;
+      
+      if (maxPages) maxPages = parseInt(maxPages);
+    } else {
+      maxPages = parseInt(maxPages);
     }
     
     console.log(`🧪 Max Pages: ${maxPages}`);
     console.log(`⏱️  Timeout: ${options.timeout}ms`);
     console.log(`📋 Standard: ${standard}`);
+    console.log(`📋 Detailed Report: ${generateDetailedReport ? 'Yes' : 'No'}`);
     
     try {
       // Extract domain for filename
@@ -132,7 +151,7 @@ program
         outputDir: options.outputDir,
         includeDetails: options.includeDetails,
         includePa11yIssues: options.includePa11y,
-        generateDetailedReport: options.detailedReport,
+        generateDetailedReport: generateDetailedReport,
         hideElements: options.hideElements,
         includeNotices: options.includeNotices,
         includeWarnings: options.includeWarnings,
@@ -169,42 +188,8 @@ program
         console.log(`   - Success rate: ${summary.testedPages > 0 ? (summary.passedPages / summary.testedPages * 100).toFixed(1) : 0}%`);
         console.log(`📄 Markdown report: ${outputPath}`);
         
-        // Interaktive Abfrage für Detailed Report wenn Fehler gefunden wurden
-        if (summary.totalErrors > 0 && !options.detailedReport) {
-          console.log('');
-          console.log(`🔍 ${summary.totalErrors} accessibility errors found.`);
-          
-          const detailedReportAnswer = await inquirer.prompt([
-            {
-              type: 'confirm',
-              name: 'generateDetailedReport',
-              message: 'Would you like to generate a detailed error report for automated fixes?',
-              default: true
-            }
-          ]);
-          
-          if (detailedReportAnswer.generateDetailedReport) {
-            console.log('📋 Generating detailed error report...');
-            
-            // Detailed Report generieren
-            const detailedPipelineOptions = {
-              ...pipelineOptions,
-              generateDetailedReport: true
-            };
-            
-            const { outputFiles: detailedOutputFiles } = await pipeline.run(detailedPipelineOptions);
-            
-            // Nur die neue Detailed Report Datei anzeigen
-            const detailedReportFile = detailedOutputFiles.find(file => 
-              path.basename(file).includes('detailed-errors')
-            );
-            
-            if (detailedReportFile) {
-              console.log(`📋 Detailed Error Report: ${detailedReportFile}`);
-            }
-          }
-        } else if (options.detailedReport) {
-          // Wenn Detailed Report bereits generiert wurde
+        // Zeige alle generierten Dateien an
+        if (outputFiles.length > 0) {
           console.log(`📁 Generated files:`);
           outputFiles.forEach(file => {
             const filename = path.basename(file);
@@ -230,42 +215,8 @@ program
         console.log(`   - Errors: ${summary.totalErrors}`);
         console.log(`   - Warnings: ${summary.totalWarnings}`);
         
-        // Interaktive Abfrage für Detailed Report wenn Fehler gefunden wurden (auch ohne Markdown)
-        if (summary.totalErrors > 0 && !options.detailedReport) {
-          console.log('');
-          console.log(`🔍 ${summary.totalErrors} accessibility errors found.`);
-          
-          const detailedReportAnswer = await inquirer.prompt([
-            {
-              type: 'confirm',
-              name: 'generateDetailedReport',
-              message: 'Would you like to generate a detailed error report for automated fixes?',
-              default: true
-            }
-          ]);
-          
-          if (detailedReportAnswer.generateDetailedReport) {
-            console.log('📋 Generating detailed error report...');
-            
-            // Detailed Report generieren
-            const detailedPipelineOptions = {
-              ...pipelineOptions,
-              generateDetailedReport: true
-            };
-            
-            const { outputFiles: detailedOutputFiles } = await pipeline.run(detailedPipelineOptions);
-            
-            // Nur die neue Detailed Report Datei anzeigen
-            const detailedReportFile = detailedOutputFiles.find(file => 
-              path.basename(file).includes('detailed-errors')
-            );
-            
-            if (detailedReportFile) {
-              console.log(`📋 Detailed Error Report: ${detailedReportFile}`);
-            }
-          }
-        } else if (options.detailedReport && outputFiles.length > 0) {
-          // Wenn Detailed Report bereits generiert wurde
+        // Zeige alle generierten Dateien an (auch ohne Markdown)
+        if (outputFiles.length > 0) {
           console.log(`📁 Generated files:`);
           outputFiles.forEach(file => {
             const filename = path.basename(file);
