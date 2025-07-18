@@ -17,40 +17,40 @@ npm link
 
 ## 📖 Usage
 
-### Simple Command (Empfohlen)
+### Simple Command (Recommended)
 
 ```bash
-# Test mit automatischem Markdown-Output
+# Test with automatic markdown output
 a11y-test https://example.com/sitemap.xml
 
-# Mit benutzerdefinierten Optionen
+# With custom options
 a11y-test https://example.com/sitemap.xml --max-pages 50 --pa11y-standard WCAG2AAA
 
-# Mit benutzerdefiniertem Output-Verzeichnis
+# With custom output directory
 a11y-test https://example.com/sitemap.xml --output-dir ./my-reports
 
-# Ohne Markdown-Output (nur Console)
+# Without markdown output (console only)
 a11y-test https://example.com/sitemap.xml --no-markdown
 ```
 
 ### Advanced Options
 
 ```bash
-# Maximale Anzahl zu testender Seiten
+# Maximum number of pages to test
 a11y-test https://example.com/sitemap.xml --max-pages 10
 
-# Timeout anpassen
+# Adjust timeout
 a11y-test https://example.com/sitemap.xml --timeout 15000
 
-# Detaillierte Ausgabe
+# Verbose output
 a11y-test https://example.com/sitemap.xml --verbose
 
-# URL-Muster filtern
+# Filter URL patterns
 a11y-test https://example.com/sitemap.xml \
   --filter "demo,test,admin" \
   --include "blog,services"
 
-# Verschiedene pa11y-Standards
+# Different pa11y standards
 a11y-test https://example.com/sitemap.xml --pa11y-standard WCAG2AAA
 ```
 
@@ -109,9 +109,9 @@ The tool performs comprehensive accessibility checks using both Playwright and p
 
 ### Automatic Markdown Output
 
-Der Befehl generiert automatisch **Markdown-Output-Dateien** mit Domain-basierten Namen:
+The command automatically generates **Markdown output files** with domain-based names:
 
-#### **Markdown (Für Menschen)**
+#### **Markdown (For Humans)**
 ```markdown
 # Accessibility Test Report
 Generated: 2024-01-15T10:30:00.000Z
@@ -136,21 +136,21 @@ Generated: 2024-01-15T10:30:00.000Z
 - Address 12 accessibility warnings to improve user experience.
 ```
 
-**Dateiname-Format:**
+**Filename Format:**
 ```
 {domain}-accessibility-report-{YYYY-MM-DD}.md
 ```
 
-**Beispiele:**
+**Examples:**
 - `example-com-accessibility-report-2024-01-15.md`
 - `mywebsite-de-accessibility-report-2024-01-15.md`
 
-**Vorteile:**
-- Automatische Domain-basierte Namensgebung
-- Strukturierte Berichte mit Tabellen
-- Zusammenfassung und Empfehlungen
-- Einfach lesbar und teilbar
-- Perfekt für Dokumentation und Berichte
+**Benefits:**
+- Automatic domain-based naming
+- Structured reports with tables
+- Summary and recommendations
+- Easy to read and share
+- Perfect for documentation and reports
 
 ### Console Output
 ```
